@@ -13,6 +13,7 @@ const poppins = Poppins({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://bigbosstelugu9voting.com'),
   title: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote for Your Favorite Contestant',
   description: 'Vote for your favorite Bigg Boss Telugu Season 9 contestants online. Live voting polls, eviction predictions, latest updates and contestant profiles. Official BB Telugu 9 voting guide.',
   keywords: 'Bigg Boss Telugu 9 Voting, BB Telugu 9 Vote Online, Bigg Boss Telugu Season 9, Telugu Reality Show Voting, Hotstar Voting, StrawPoll Voting',

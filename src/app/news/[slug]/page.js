@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { newsArticles } from '@/data/contestants'
 import { generateMetaTags, generateStructuredData } from '@/utils/seo'
 
@@ -140,10 +141,13 @@ export default function ArticlePage({ params }) {
               {article.image && (
                 <div className="mb-8">
                   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
-                    <img
+                    <Image
                       src={article.image}
                       alt={article.title}
+                      width={800}
+                      height={450}
                       className="w-full h-full object-cover"
+                      priority
                     />
                   </div>
                 </div>
@@ -217,9 +221,11 @@ export default function ArticlePage({ params }) {
                       <article className="card hover:shadow-xl transition-all duration-300">
                         <div className="aspect-video relative overflow-hidden">
                           {relatedArticle.image ? (
-                            <img
+                            <Image
                               src={relatedArticle.image}
                               alt={relatedArticle.title}
+                              width={400}
+                              height={225}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                           ) : (
