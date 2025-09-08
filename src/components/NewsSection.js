@@ -65,9 +65,9 @@ export default function NewsSection() {
             <span className="text-green-400 font-semibold">LATEST NEWS</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Breaking
+            Bigg Boss Telugu 9 Breaking
             <span className="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              NEWS
+              NEWS & UPDATES
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

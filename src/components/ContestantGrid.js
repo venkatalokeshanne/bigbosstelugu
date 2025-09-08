@@ -64,12 +64,15 @@ export default function ContestantGrid() {
           <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full mb-6">
             <span className="text-purple-400 font-semibold">SEASON 9 CONTESTANTS</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Meet the
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+            Who Are Bigg Boss Telugu 9 Contestants 2025?
             <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
-              WARRIORS
+              Complete Profiles & Background Details Hyderabad
             </span>
           </h2>
+          <h3 className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+            BBT9 Cast Members | Star MAA Reality Show Participants Telugu
+          </h3>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {allbbContestants.length} brave contestants entered the house with dreams of glory. Get to know them, 
             follow their journey, and vote for your favorites.

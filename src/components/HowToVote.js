@@ -47,8 +47,11 @@ export default function HowToVote() {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            How to Vote for Your Favorite Contestant
+            How to Vote Bigg Boss Telugu 9 Online Free 2025? Step by Step Guide
           </h2>
+          <h3 className="text-xl md:text-2xl text-purple-300 font-semibold mb-6">
+            BBT9 Voting Methods | Disney+ Hotstar SMS Online Polls Hyderabad Telugu
+          </h3>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Multiple ways to cast your vote and support your favorite Bigg Boss Telugu 9 contestant. 
             Choose the method that works best for you.

@@ -111,13 +111,16 @@ export default function Hero() {
               <span className="text-white font-bold text-lg">SEASON 9 • 2025</span>
             </div>
 
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl xl:text-8xl font-black mb-6 leading-tight">
+            {/* Main Heading - SEO Optimized H1 */}
+            <h1 className="text-2xl md:text-3xl xl:text-4xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block">
-                BIGG BOSS
+                BIGG BOSS TELUGU 9
               </span>
-              <span className="text-white text-3xl md:text-5xl xl:text-6xl font-light block mt-2">
-                TELUGU
+              <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent block">
+                VOTING ONLINE 2025
+              </span>
+              <span className="text-white text-xs md:text-sm xl:text-base font-light block mt-2">
+                Vote Your Favorite BBT9 Contestant Free
               </span>
             </h1>
 

@@ -111,8 +111,12 @@ export default async function ContestantPage({ params }) {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-                {contestant.name}
+                {contestant.name} - Bigg Boss Telugu 9 Contestant Profile 2025
               </h1>
+              
+              <h2 className="text-2xl md:text-3xl text-purple-300 font-semibold mb-6">
+                Vote {contestant.name} BBT9 | Biography Age Profession Hyderabad Telugu
+              </h2>
               
               <div className="mb-8 space-y-4">
                 {contestant.profession && (

@@ -16,7 +16,7 @@ export function generateStructuredData(data) {
         "@type": "TVSeries",
         "genre": data.genre || "Reality TV",
         "numberOfSeasons": data.numberOfSeasons || 9,
-        "inLanguage": "te",
+        "inLanguage": ["te-IN", "en-US"],
         "countryOfOrigin": {
           "@type": "Country",
           "name": "India"
@@ -24,6 +24,19 @@ export function generateStructuredData(data) {
         "creator": {
           "@type": "Organization",
           "name": "Endemol Shine India"
+        },
+        "actor": {
+          "@type": "Person",
+          "name": "Nagarjuna Akkineni",
+          "jobTitle": "Host"
+        },
+        "startDate": "2024-09-01",
+        "contentRating": "TV-14",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.5",
+          "bestRating": "5",
+          "ratingCount": "10000"
         }
       }
 
@@ -113,12 +126,32 @@ export function generateMetaTags({
 }) {
   const baseUrl = 'https://bigbosstelugu9voting.com'
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl
-  const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/images/og-image.jpg`
+  const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/logo.png`
 
   return {
     title,
     description,
-    keywords,
+    keywords: Array.isArray(keywords) ? keywords.join(', ') : keywords,
+    
+    // Viewport and mobile optimization
+    viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
+    
+    // Basic SEO meta tags
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    
+    // Open Graph optimization
     openGraph: {
       title,
       description,
@@ -130,9 +163,18 @@ export function generateMetaTags({
           width: 1200,
           height: 630,
           alt: title,
+          type: 'image/png',
         },
+        {
+          url: ogImage,
+          width: 1080,
+          height: 1080,
+          alt: title,
+          type: 'image/png',
+        }
       ],
-      locale: 'en_US',
+      locale: 'te_IN',
+      alternateLocale: ['en_US', 'hi_IN'],
       type,
       ...(publishedAt && { publishedTime: publishedAt }),
       ...(modifiedAt && { modifiedTime: modifiedAt }),
@@ -140,17 +182,41 @@ export function generateMetaTags({
         authors: Array.isArray(author) ? author : [author] 
       }),
     },
+    
+    // Twitter Card optimization
     twitter: {
       card: 'summary_large_image',
+      site: '@StarMaa',
+      creator: '@StarMaa',
       title,
       description,
       images: [ogImage],
-      creator: '@StarMaa',
     },
+    
+    // Canonical and alternates
     alternates: {
       canonical: fullUrl,
+      languages: {
+        'te-IN': fullUrl,
+        'en-US': fullUrl,
+        'x-default': fullUrl
+      }
     },
-    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+    
+    // Additional meta tags for better SEO
+    other: {
+      'theme-color': '#ff6b35',
+      'msapplication-TileColor': '#ff6b35',
+      'msapplication-config': '/browserconfig.xml',
+      'apple-mobile-web-app-capable': 'yes',
+      'apple-mobile-web-app-status-bar-style': 'default',
+      'apple-mobile-web-app-title': 'BB Telugu 9',
+      'application-name': 'Bigg Boss Telugu 9 Voting',
+      'msapplication-tooltip': 'Vote for your favorite Bigg Boss Telugu 9 contestant',
+      'format-detection': 'telephone=no',
+      'mobile-web-app-capable': 'yes',
+      'apple-touch-fullscreen': 'yes',
+    }
   }
 }
 
@@ -164,5 +230,184 @@ export function generateBreadcrumbStructuredData(breadcrumbs) {
       "name": crumb.name,
       "item": crumb.url ? `https://bigbosstelugu9voting.com${crumb.url}` : undefined
     }))
+  }
+}
+
+// Generate comprehensive SEO keywords
+export function generateSEOKeywords(contestantName = '', category = 'general') {
+  const baseKeywords = [
+    "Bigg Boss Telugu 9 Voting",
+    "BB Telugu 9 Vote Online", 
+    "Bigg Boss Telugu 9 Elimination",
+    "BBT9 Voting Results",
+    "Telugu Reality Show Voting",
+    "Nagarjuna Bigg Boss Host",
+    "Star MAA Voting",
+    "Disney+ Hotstar Bigg Boss",
+    "Telugu TV Show Vote",
+    "Reality TV Voting India",
+    "Bigg Boss Telugu Season 9",
+    "BBT9 Contestants Vote",
+    "Bigg Boss Telugu Live Voting",
+    "Telugu Entertainment Voting",
+    "Star MAA Reality Show",
+    "Bigg Boss Telugu 9 Online",
+    "BBT9 Live Stream",
+    "Telugu Bigg Boss 2024",
+    "Elimination Vote Telugu",
+    "Reality Show Telugu"
+  ]
+
+  const categoryKeywords = {
+    contestant: [
+      `${contestantName} Bigg Boss Telugu`,
+      `Vote for ${contestantName} BBT9`,
+      `${contestantName} Elimination Vote`,
+      `${contestantName} Bigg Boss Contestant`,
+      `Support ${contestantName} Voting`,
+      `${contestantName} BBT9 Profile`,
+      `${contestantName} Bigg Boss Telugu 9`
+    ],
+    general: [
+      "How to Vote Bigg Boss Telugu 9",
+      "BBT9 Voting Process",
+      "Bigg Boss Telugu 9 Online Vote",
+      "Free Bigg Boss Voting",
+      "Bigg Boss Telugu Voting App",
+      "Star MAA Bigg Boss Vote",
+      "Disney Hotstar BBT9 Vote"
+    ],
+    news: [
+      "Bigg Boss Telugu 9 Latest News",
+      "BBT9 Updates Today",
+      "Bigg Boss Telugu 9 Elimination News",
+      "Telugu Reality TV News",
+      "BBT9 Episode Updates",
+      "Bigg Boss Telugu 9 Highlights"
+    ],
+    home: [
+      "Bigg Boss Telugu 9 Official Voting",
+      "BBT9 Voting Website",
+      "Vote BBT9 Contestants Online",
+      "Bigg Boss Telugu 9 Voting Portal",
+      "Star MAA BBT9 Official Vote"
+    ]
+  }
+
+  return [
+    ...baseKeywords,
+    ...(categoryKeywords[category] || categoryKeywords.general)
+  ]
+}
+
+// Generate Organization structured data
+export function generateOrganizationData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Bigg Boss Telugu 9 Voting",
+    "url": "https://bigbosstelugu9voting.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://bigbosstelugu9voting.com/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "sameAs": [
+      "https://www.hotstar.com/in/shows/bigg-boss-telugu",
+      "https://twitter.com/StarMaa",
+      "https://www.facebook.com/StarMaa",
+      "https://www.instagram.com/starmaa"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["Telugu", "English", "Hindi"]
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "knowsAbout": [
+      "Reality TV",
+      "Entertainment",
+      "Telugu Television",
+      "Voting Systems",
+      "Bigg Boss Telugu"
+    ]
+  }
+}
+
+// Generate Website structured data
+export function generateWebsiteData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bigg Boss Telugu 9 Voting",
+    "alternateName": "BBT9 Voting",
+    "url": "https://bigbosstelugu9voting.com",
+    "description": "Official voting platform for Bigg Boss Telugu 9. Vote for your favorite contestants online.",
+    "inLanguage": ["te-IN", "en-US"],
+    "isAccessibleForFree": true,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://bigbosstelugu9voting.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bigg Boss Telugu 9 Voting",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bigbosstelugu9voting.com/logo.png"
+      }
+    },
+    "copyrightYear": 2024,
+    "genre": "Reality TV Voting Platform"
+  }
+}
+
+// Generate FAQ structured data
+export function generateFAQData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How to vote in Bigg Boss Telugu 9?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can vote for your favorite Bigg Boss Telugu 9 contestants through Disney+ Hotstar app or by visiting our official voting website. Each user gets limited votes per day."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Is Bigg Boss Telugu 9 voting free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, voting for Bigg Boss Telugu 9 is completely free. You can vote through the Disney+ Hotstar app or official voting platforms without any charges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When does voting close each week?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Voting for Bigg Boss Telugu 9 typically closes on Friday nights before the weekend episodes. Exact timings are announced during the show."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is the host of Bigg Boss Telugu 9?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nagarjuna Akkineni is the host of Bigg Boss Telugu 9, continuing his role from previous seasons of the popular reality show."
+        }
+      }
+    ]
   }
 }

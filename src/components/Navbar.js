@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Navbar() {
@@ -13,8 +14,14 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-black text-xl">BB</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300 group-hover:scale-105 overflow-hidden border border-white/10">
+                <Image
+                  src="/logo.png"
+                  alt="Bigg Boss Telugu 9 Logo"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
                 <span className="text-white text-xs font-bold">9</span>

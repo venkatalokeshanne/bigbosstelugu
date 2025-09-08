@@ -44,9 +44,12 @@ export default function VotingSection() {
             <span className="text-white font-semibold">LIVE VOTING NOW OPEN</span>
           </div>
           
-          <h2 className="text-5xl md:text-7xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-red-200 bg-clip-text text-transparent mb-6">
-            Cast Your Vote
+          <h2 className="text-2xl md:text-4xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-red-200 bg-clip-text text-transparent mb-6">
+            How to Vote Bigg Boss Telugu 9 Contestants Online Free 2025?
           </h2>
+          <h3 className="text-lg md:text-xl text-purple-300 font-semibold mb-4">
+            BBT9 Voting Guide Hyderabad | Star MAA Disney+ Hotstar Telugu
+          </h3>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Your vote decides the fate of your favorite contestant! Join millions of viewers in shaping the destiny of 
             <span className="text-purple-400 font-semibold"> Bigg Boss Telugu 9</span>. Every vote counts in this ultimate battle for survival.

@@ -56,11 +56,14 @@ export default function FAQSection() {
             <span className="text-blue-400 font-semibold">FAQ</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Frequently Asked
+            Bigg Boss Telugu 9 Voting FAQ 2025 - Common Questions Answered
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              QUESTIONS
+              Hyderabad Telugu Star MAA Guide
             </span>
           </h2>
+          <h3 className="text-2xl md:text-3xl text-gray-300 font-semibold mb-4">
+            How to Vote BBT9? Voting Rules & Procedures Explained Telugu
+          </h3>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Got questions about Bigg Boss Telugu 9 voting? We've got answers! 
             Find everything you need to know about the voting process.

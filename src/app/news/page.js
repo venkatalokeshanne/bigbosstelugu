@@ -3,7 +3,28 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { fetchNews, fetchFeaturedNews, urlFor, formatTimeAgo } from '@/lib/sanity-client'
+import { fetchNews, fetchFeaturedNews, formatTimeAgo, urlFor } from '@/lib/sanity-client'
+
+// Helper function to get category icons
+function getCategoryIcon(category) {
+  const iconMap = {
+    'breaking': '🚨',
+    'eviction': '👋',
+    'nominations': '🗳️', 
+    'tasks': '🎯',
+    'drama': '🎭',
+    'romance': '💕',
+    'fights': '⚡',
+    'updates': '📰',
+    'gossip': '💬',
+    'elimination': '❌',
+    'winner': '👑',
+    'highlights': '⭐',
+    'interviews': '🎤',
+    'behind-the-scenes': '🎬'
+  }
+  return iconMap[category] || '📝'
+}
 
 export default function NewsPage() {
   const [news, setNews] = useState([])
@@ -14,19 +35,24 @@ export default function NewsPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [newsData, featuredData] = await Promise.all([
+        console.log('Fetching news from Sanity...')
+        const [allNews, featured] = await Promise.all([
           fetchNews(),
           fetchFeaturedNews()
         ])
-        setNews(newsData)
-        setFeaturedNews(featuredData)
+        
+        console.log('Fetched news:', allNews.length, 'articles')
+        console.log('Fetched featured news:', featured.length, 'articles')
+        
+        setNews(allNews)
+        setFeaturedNews(featured)
       } catch (error) {
         console.error('Error fetching news:', error)
       } finally {
         setLoading(false)
       }
     }
-
+    
     fetchData()
   }, [])
 

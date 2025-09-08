@@ -102,12 +102,15 @@ export default function LiveUpdates() {
           <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-red-500/20 to-pink-500/20 border border-red-500/30 rounded-full mb-6">
             <span className="text-red-400 font-semibold">LIVE FROM THE HOUSE</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Live Updates &
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+            What's Happening in Bigg Boss Telugu 9 House Today 2025?
             <span className="block bg-gradient-to-r from-red-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              NEWS
+              Live Updates & Breaking News Hyderabad
             </span>
           </h2>
+          <h3 className="text-lg md:text-xl text-gray-300 font-semibold mb-4">
+            BBT9 Real-time House Updates | Star MAA Live Episodes Telugu
+          </h3>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Stay ahead of the game with real-time house updates, breaking news, and 
             exclusive behind-the-scenes content from the Bigg Boss Telugu 9 house.
