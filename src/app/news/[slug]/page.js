@@ -1,84 +1,97 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { newsArticles } from '@/data/contestants'
+import { fetchNewsArticle, fetchNews, fetchRelatedNews, urlFor } from '@/lib/sanity-client'
 import { generateMetaTags, generateStructuredData } from '@/utils/seo'
 
 export async function generateStaticParams() {
-  return newsArticles.map((article) => ({
-    slug: article.slug,
-  }))
+  try {
+    const articles = await fetchNews()
+    return articles.map((article) => ({
+      slug: article.slug,
+    }))
+  } catch (error) {
+    console.error('Error generating static params:', error)
+    return []
+  }
 }
 
 export async function generateMetadata({ params }) {
-  const article = newsArticles.find(a => a.slug === params.slug)
-  
-  if (!article) {
+  try {
+    const article = await fetchNewsArticle(params.slug)
+    
+    if (!article) {
+      return {
+        title: 'Article Not Found',
+      }
+    }
+
+    return generateMetaTags({
+      title: `${article.title} | Bigg Boss Telugu 9 News`,
+      description: article.excerpt,
+      keywords: article.tags?.join(', '),
+      url: `/news/${article.slug}`,
+      image: article.featuredImage ? urlFor(article.featuredImage).url() : undefined,
+      type: 'article',
+      publishedAt: article.publishedAt,
+      modifiedAt: article.modifiedAt,
+      author: article.author
+    })
+  } catch (error) {
+    console.error('Error generating metadata:', error)
     return {
       title: 'Article Not Found',
     }
   }
-
-  return generateMetaTags({
-    title: `${article.title} | Bigg Boss Telugu 9 News`,
-    description: article.excerpt,
-    keywords: article.tags?.join(', '),
-    url: `/news/${article.slug}`,
-    image: article.image,
-    type: 'article',
-    publishedAt: article.publishedAt,
-    modifiedAt: article.modifiedAt,
-    author: article.author
-  })
 }
 
-export default function ArticlePage({ params }) {
-  const article = newsArticles.find(a => a.slug === params.slug)
-  
-  if (!article) {
-    notFound()
-  }
-
-  const structuredData = generateStructuredData({
-    type: 'NewsArticle',
-    title: article.title,
-    description: article.excerpt,
-    image: article.image,
-    publishedAt: article.publishedAt,
-    modifiedAt: article.modifiedAt,
-    author: article.author,
-    category: article.category,
-    tags: article.tags,
-    content: article.content,
-    url: `/news/${article.slug}`
-  })
-
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    })
-  }
-
-  const getCategoryColor = (category) => {
-    switch (category.toLowerCase()) {
-      case 'evictions':
-        return 'bg-red-100 text-red-800'
-      case 'tasks':
-        return 'bg-blue-100 text-blue-800'
-      case 'twists':
-        return 'bg-purple-100 text-purple-800'
-      default:
-        return 'bg-gray-100 text-gray-800'
+export default async function ArticlePage({ params }) {
+  try {
+    const article = await fetchNewsArticle(params.slug)
+    
+    if (!article || !article.isPublished) {
+      notFound()
     }
-  }
 
-  const relatedArticles = newsArticles
-    .filter(a => a.id !== article.id && a.category === article.category)
-    .slice(0, 3)
+    const structuredData = generateStructuredData({
+      type: 'NewsArticle',
+      title: article.title,
+      description: article.excerpt,
+      image: article.featuredImage ? urlFor(article.featuredImage).url() : undefined,
+      publishedAt: article.publishedAt,
+      modifiedAt: article.modifiedAt,
+      author: article.author,
+      category: article.category,
+      tags: article.tags,
+      content: article.content,
+      url: `/news/${article.slug}`
+    })
+
+    const formatDate = (dateString) => {
+      return new Date(dateString).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    }
+
+    const getCategoryColor = (category) => {
+      switch (category.toLowerCase()) {
+        case 'evictions':
+          return 'bg-red-100 text-red-800'
+        case 'tasks':
+          return 'bg-blue-100 text-blue-800'
+        case 'twists':
+          return 'bg-purple-100 text-purple-800'
+        default:
+          return 'bg-gray-100 text-gray-800'
+      }
+    }
+
+    // Fetch related articles from the same category
+    const relatedArticles = await fetchRelatedNews(article.category, article._id)
 
   return (
     <>
@@ -127,9 +140,6 @@ export default function ArticlePage({ params }) {
                   <div className="flex items-center space-x-2">
                     <span>{formatDate(article.publishedAt)}</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <span>{article.readTime}</span>
-                  </div>
                 </div>
 
                 <p className="text-xl text-gray-700 leading-relaxed">
@@ -138,11 +148,11 @@ export default function ArticlePage({ params }) {
               </header>
 
               {/* Featured Image */}
-              {article.image && (
+              {article.featuredImage && (
                 <div className="mb-8">
                   <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
                     <Image
-                      src={article.image}
+                      src={urlFor(article.featuredImage).url()}
                       alt={article.title}
                       width={800}
                       height={450}
@@ -156,11 +166,17 @@ export default function ArticlePage({ params }) {
               {/* Article Content */}
               <div className="prose prose-lg max-w-none mb-12">
                 <div className="bg-white rounded-xl p-8 shadow-sm">
-                  {article.content.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-6 text-gray-700 leading-relaxed last:mb-0">
-                      {paragraph}
-                    </p>
-                  ))}
+                  {typeof article.content === 'string' ? (
+                    article.content.split('\n\n').map((paragraph, index) => (
+                      <p key={index} className="mb-6 text-gray-700 leading-relaxed last:mb-0">
+                        {paragraph}
+                      </p>
+                    ))
+                  ) : (
+                    <div className="mb-6 text-gray-700 leading-relaxed">
+                      {article.content}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -214,15 +230,15 @@ export default function ArticlePage({ params }) {
                 <div className="grid md:grid-cols-3 gap-8">
                   {relatedArticles.map((relatedArticle) => (
                     <Link
-                      key={relatedArticle.id}
+                      key={relatedArticle._id}
                       href={`/news/${relatedArticle.slug}`}
                       className="group"
                     >
                       <article className="card hover:shadow-xl transition-all duration-300">
                         <div className="aspect-video relative overflow-hidden">
-                          {relatedArticle.image ? (
+                          {relatedArticle.featuredImage ? (
                             <Image
-                              src={relatedArticle.image}
+                              src={urlFor(relatedArticle.featuredImage).url()}
                               alt={relatedArticle.title}
                               width={400}
                               height={225}
@@ -290,4 +306,8 @@ export default function ArticlePage({ params }) {
       </div>
     </>
   )
+  } catch (error) {
+    console.error('Error rendering article page:', error)
+    notFound()
+  }
 }

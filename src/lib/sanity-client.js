@@ -98,6 +98,39 @@ export const queries = {
     featuredImage
   }`,
 
+  // Get single news article by slug
+  newsArticle: `*[_type == "news" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    content,
+    category,
+    author,
+    publishedAt,
+    isPublished,
+    isFeatured,
+    featuredImage,
+    tags
+  }`,
+
+  // Get single news article by slug
+  newsArticle: `*[_type == "news" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    excerpt,
+    content,
+    category,
+    author,
+    publishedAt,
+    modifiedAt,
+    isPublished,
+    isFeatured,
+    featuredImage,
+    tags
+  }`,
+
   // Get live updates
   liveUpdates: `*[_type == "liveUpdate" && !(_id in path("drafts.**"))] | order(timestamp desc) {
     _id,
@@ -195,6 +228,16 @@ export const fetchFeaturedNews = async () => {
   }
 }
 
+export const fetchNewsArticle = async (slug) => {
+  try {
+    const article = await client.fetch(queries.newsArticle, { slug })
+    return article
+  } catch (error) {
+    console.error('Error fetching news article:', error)
+    return null
+  }
+}
+
 export const fetchLiveUpdates = async () => {
   try {
     const updates = await client.fetch(queries.liveUpdates)
@@ -221,6 +264,28 @@ export const fetchFAQs = async () => {
     return faqs
   } catch (error) {
     console.error('Error fetching FAQs:', error)
+    return []
+  }
+}
+
+export const fetchRelatedNews = async (category, excludeId) => {
+  try {
+    const relatedNews = await client.fetch(
+      `*[_type == "news" && category == $category && _id != $excludeId && !(_id in path("drafts.**"))] | order(publishedAt desc)[0...3] {
+        _id,
+        title,
+        "slug": slug.current,
+        excerpt,
+        publishedAt,
+        category,
+        author,
+        featuredImage
+      }`,
+      { category, excludeId }
+    )
+    return relatedNews
+  } catch (error) {
+    console.error('Error fetching related news:', error)
     return []
   }
 }
