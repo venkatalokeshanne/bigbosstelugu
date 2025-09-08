@@ -49,7 +49,7 @@ export default async function ContestantsPage() {
             </h1>
             
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              {allContestants.length} brave souls entered the Bigg Boss Telugu 9 house with dreams of glory. 
+              15 brave souls entered the Bigg Boss Telugu 9 house with dreams of glory. 
               Get to know them, follow their incredible journey, and vote for your favorites to keep them in the game.
             </p>
 

@@ -10,6 +10,23 @@ export default function Hero() {
   const [featuredContestant, setFeaturedContestant] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  // Function to scroll to voting section
+  const scrollToVoting = () => {
+    const votingSection = document.querySelector('#vote-section')
+    if (votingSection) {
+      votingSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' 
+      })
+    } else {
+      // Fallback: scroll to approximate position if ID not found
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -215,7 +232,10 @@ export default function Hero() {
                     )}
 
                     {/* Vote Button for Featured */}
-                    <button className="w-full bg-gradient-to-r from-purple-500 to-red-500 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-purple-600 hover:to-red-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105">
+                    <button 
+                      onClick={scrollToVoting}
+                      className="w-full bg-gradient-to-r from-purple-500 to-red-500 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:from-purple-600 hover:to-red-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 active:scale-95 cursor-pointer focus:outline-none focus:ring-4 focus:ring-purple-300/50"
+                    >
                       Vote for {featuredContestant.name.split(' ')[0]} 🗳️
                     </button>
                   </div>

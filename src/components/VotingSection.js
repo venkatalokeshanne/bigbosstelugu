@@ -123,7 +123,7 @@ export default function VotingSection() {
                   }}
                   frameBorder="0" 
                   allowFullScreen 
-                  allowTransparency="true"
+                  allowtransparency="true"
                   scrolling="no"
                   onLoad={() => setIsLoaded(true)}
                 >
@@ -155,7 +155,7 @@ export default function VotingSection() {
                 
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center group hover:bg-white/10 transition-all duration-300">
                   <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                    {timeLeft.hours}h
+                    1 week
                   </div>
                   <div className="text-sm text-gray-300 uppercase tracking-wider">Time Left</div>
                 </div>
