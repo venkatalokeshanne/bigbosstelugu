@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://bigbosstelugu9voting.com',
+  siteUrl: process.env.SITE_URL || 'https://bigbossteluguvotes.in',
   generateRobotsTxt: true,
   changefreq: 'daily',
   priority: 0.7,
@@ -86,7 +86,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://bigbosstelugu9voting.com/sitemap.xml',
+      'https://bigbossteluguvotes.in/sitemap.xml',
     ],
   },
 }

@@ -6,7 +6,7 @@ export function generateStructuredData(data) {
     "@type": data.type,
     "name": data.name,
     "description": data.description,
-    "url": data.url || "https://bigbosstelugu9voting.com",
+    "url": data.url || "https://bigbossteluguvotes.in",
   }
 
   switch (data.type) {
@@ -68,7 +68,7 @@ export function generateStructuredData(data) {
           "name": "Bigg Boss Telugu 9 Voting",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://bigbosstelugu9voting.com/logo.png"
+            "url": "https://bigbossteluguvotes.in/logo.png"
           }
         },
         "articleSection": data.category,
@@ -95,10 +95,10 @@ export function generateStructuredData(data) {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Bigg Boss Telugu 9 Voting",
-        "url": "https://bigbosstelugu9voting.com",
+        "url": "https://bigbossteluguvotes.in",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://bigbosstelugu9voting.com/search?q={search_term_string}",
+          "target": "https://bigbossteluguvotes.in/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         },
         "sameAs": [
@@ -124,7 +124,7 @@ export function generateMetaTags({
   modifiedAt,
   author
 }) {
-  const baseUrl = 'https://bigbosstelugu9voting.com'
+  const baseUrl = 'https://bigbossteluguvotes.in'
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl
   const ogImage = image ? `${baseUrl}${image}` : `${baseUrl}/logo.png`
 
@@ -228,7 +228,7 @@ export function generateBreadcrumbStructuredData(breadcrumbs) {
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": crumb.url ? `https://bigbosstelugu9voting.com${crumb.url}` : undefined
+      "item": crumb.url ? `https://bigbossteluguvotes.in${crumb.url}` : undefined
     }))
   }
 }
@@ -306,10 +306,10 @@ export function generateOrganizationData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Bigg Boss Telugu 9 Voting",
-    "url": "https://bigbosstelugu9voting.com",
+    "url": "https://bigbossteluguvotes.in",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://bigbosstelugu9voting.com/logo.png",
+      "url": "https://bigbossteluguvotes.in/logo.png",
       "width": 512,
       "height": 512
     },
@@ -345,7 +345,7 @@ export function generateWebsiteData() {
     "@type": "WebSite",
     "name": "Bigg Boss Telugu 9 Voting",
     "alternateName": "BBT9 Voting",
-    "url": "https://bigbosstelugu9voting.com",
+    "url": "https://bigbossteluguvotes.in",
     "description": "Official voting platform for Bigg Boss Telugu 9. Vote for your favorite contestants online.",
     "inLanguage": ["te-IN", "en-US"],
     "isAccessibleForFree": true,
@@ -353,7 +353,7 @@ export function generateWebsiteData() {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://bigbosstelugu9voting.com/search?q={search_term_string}"
+        "urlTemplate": "https://bigbossteluguvotes.in/search?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     },
@@ -362,7 +362,7 @@ export function generateWebsiteData() {
       "name": "Bigg Boss Telugu 9 Voting",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://bigbosstelugu9voting.com/logo.png"
+        "url": "https://bigbossteluguvotes.in/logo.png"
       }
     },
     "copyrightYear": 2024,
