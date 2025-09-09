@@ -204,7 +204,7 @@ export default function VotingSection() {
             </div>
             
             {/* Poll Container - Optimized */}
-            <div className="bg-gray-900/60 relative">
+            <div className="bg-gray-900/60 relative py-8">
               
               {/* StrawPoll Embed - Lazy Loaded and Optimized */}
               <LazyStrawPoll 

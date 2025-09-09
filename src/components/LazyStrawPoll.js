@@ -29,24 +29,12 @@ export default function LazyStrawPoll({ pollId, className = '' }) {
   return (
     <div 
       ref={containerRef}
-      className={`w-full relative ${className}`}
+      className={`w-full py-4 relative ${className}`}
       id={`strawpoll_${pollId}`}
     >
       {isVisible ? (
         <>
-          {showFallback ? (
-            <div className={className}>
-              <FallbackVoting />
-              <div className="mt-4 text-center">
-                <button 
-                  onClick={() => setShowFallback(false)}
-                  className="text-blue-400 hover:text-blue-300 text-sm underline"
-                >
-                  Show external poll instead
-                </button>
-              </div>
-            </div>
-          ) : (
+
             <>
               <iframe 
                 title={`StrawPoll Embed - ${pollId}`}
@@ -66,7 +54,7 @@ export default function LazyStrawPoll({ pollId, className = '' }) {
                 loading="lazy"
               />
             </>
-          )}
+          
         </>
       ) : (
         <div className="flex items-center justify-center h-96 bg-gray-800 rounded-lg">
