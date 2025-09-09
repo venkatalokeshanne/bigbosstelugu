@@ -16,7 +16,7 @@ In `src/app/layout.js`, added the `metadataBase` property:
 
 ```javascript
 export const metadata = {
-  metadataBase: new URL('https://bigbosstelugu9voting.com'),
+  metadataBase: new URL('https://bigbossteluguvotes.in'),
   title: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote for Your Favorite Contestant',
   // ... rest of metadata
 }
@@ -25,7 +25,7 @@ export const metadata = {
 ## Benefits
 
 ### 1. **Proper URL Resolution**
-- Relative image URLs like `/images/og-image.jpg` now resolve to `https://bigbosstelugu9voting.com/images/og-image.jpg`
+- Relative image URLs like `/images/og-image.jpg` now resolve to `https://bigbossteluguvotes.in/images/og-image.jpg`
 - Social media platforms receive correct absolute URLs
 
 ### 2. **Improved SEO**
@@ -54,7 +54,7 @@ export const metadata = {
 images: ['/images/og-image.jpg']
 
 // After (automatically resolved)
-images: ['https://bigbosstelugu9voting.com/images/og-image.jpg']
+images: ['https://bigbossteluguvotes.in/images/og-image.jpg']
 ```
 
 The metadataBase warning is now resolved and all social media sharing will work correctly! 🎉

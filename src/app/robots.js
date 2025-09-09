@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ['/api/', '/admin/', '/_next/'],
       },
     ],
-    sitemap: 'https://bigbosstelugu9voting.com/sitemap.xml',
+    sitemap: 'https://bigbossteluguvotes.in/sitemap.xml',
   }
 }

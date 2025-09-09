@@ -14,7 +14,7 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://bigbosstelugu9voting.com'),
+  metadataBase: new URL('https://bigbossteluguvotes.in'),
   title: {
     default: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote for Your Favorite Contestant',
     template: '%s | Bigg Boss Telugu 9 Voting'
@@ -77,7 +77,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://bigbosstelugu9voting.com',
+    url: 'https://bigbossteluguvotes.in',
     siteName: 'Bigg Boss Telugu 9 Voting',
     title: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote Now',
     description: 'Vote for your favorite Bigg Boss Telugu Season 9 contestants online. Live voting polls, eviction predictions, and latest updates.',
@@ -124,10 +124,10 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://bigbosstelugu9voting.com',
+    canonical: 'https://bigbossteluguvotes.in',
     languages: {
-      'en-US': 'https://bigbosstelugu9voting.com',
-      'te-IN': 'https://bigbosstelugu9voting.com/te',
+      'en-US': 'https://bigbossteluguvotes.in',
+      'te-IN': 'https://bigbossteluguvotes.in/te',
     },
   },
   other: {
@@ -149,20 +149,20 @@ export default function RootLayout({ children }) {
     "@graph": [
       {
         "@type": "Website",
-        "@id": "https://bigbosstelugu9voting.com/#website",
-        "url": "https://bigbosstelugu9voting.com/",
+        "@id": "https://bigbossteluguvotes.in/#website",
+        "url": "https://bigbossteluguvotes.in/",
         "name": "Bigg Boss Telugu 9 Voting",
         "alternateName": "BBT9 Voting",
         "description": "Official fan website for Bigg Boss Telugu Season 9 voting, contestant updates, and latest news",
         "publisher": {
-          "@id": "https://bigbosstelugu9voting.com/#organization"
+          "@id": "https://bigbossteluguvotes.in/#organization"
         },
         "potentialAction": [
           {
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://bigbosstelugu9voting.com/search?q={search_term_string}"
+              "urlTemplate": "https://bigbossteluguvotes.in/search?q={search_term_string}"
             },
             "query-input": "required name=search_term_string"
           }
@@ -179,21 +179,21 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "Organization",
-        "@id": "https://bigbosstelugu9voting.com/#organization",
+        "@id": "https://bigbossteluguvotes.in/#organization",
         "name": "Bigg Boss Telugu 9 Voting",
-        "url": "https://bigbosstelugu9voting.com/",
+        "url": "https://bigbossteluguvotes.in/",
         "logo": {
           "@type": "ImageObject",
           "inLanguage": "en-US",
-          "@id": "https://bigbosstelugu9voting.com/#/schema/logo",
-          "url": "https://bigbosstelugu9voting.com/logo.png",
-          "contentUrl": "https://bigbosstelugu9voting.com/logo.png",
+          "@id": "https://bigbossteluguvotes.in/#/schema/logo",
+          "url": "https://bigbossteluguvotes.in/logo.png",
+          "contentUrl": "https://bigbossteluguvotes.in/logo.png",
           "width": 512,
           "height": 512,
           "caption": "Bigg Boss Telugu 9 Voting"
         },
         "image": {
-          "@id": "https://bigbosstelugu9voting.com/#/schema/logo"
+          "@id": "https://bigbossteluguvotes.in/#/schema/logo"
         },
         "contactPoint": {
           "@type": "ContactPoint",
@@ -330,14 +330,14 @@ export default function RootLayout({ children }) {
         <meta name="subject" content="Bigg Boss Telugu 9 Voting Platform" />
         <meta name="summary" content="Official voting platform for Bigg Boss Telugu 9 reality show" />
         <meta name="topic" content="Reality TV Voting" />
-        <meta name="identifier-URL" content="https://bigbosstelugu9voting.com" />
+        <meta name="identifier-URL" content="https://bigbossteluguvotes.in" />
         <meta name="directory" content="submission" />
         <meta name="category" content="Entertainment" />
         <meta name="resource-type" content="document" />
         <meta name="abstract" content="Vote for your favorite Bigg Boss Telugu 9 contestants online with official voting platform" />
         <meta name="language" content="Telugu, English" />
         <meta name="owner" content="Bigg Boss Telugu 9 Voting Team" />
-        <meta name="url" content="https://bigbosstelugu9voting.com" />
+        <meta name="url" content="https://bigbossteluguvotes.in" />
         <meta name="og:locality" content="Hyderabad" />
         <meta name="og:region" content="Telangana" />
         <meta name="og:country-name" content="India" />
