@@ -9,6 +9,37 @@ const nextConfig = {
     ],
     formats: ['image/webp', 'image/avif'],
   },
+  
+  // Performance optimizations for reducing unused JavaScript
+  experimental: {
+    optimizePackageImports: ['@vercel/analytics'],
+  },
+  
+  // Bundle optimization
+  webpack: (config, { isServer }) => {
+    // Optimize bundle splitting
+    if (!isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        analytics: {
+          name: 'analytics',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/](@vercel\/analytics|gtag)[\\/]/,
+          priority: 30,
+          reuseExistingChunk: true,
+        },
+        commons: {
+          name: 'commons',
+          chunks: 'all',
+          minChunks: 2,
+          priority: 20,
+          reuseExistingChunk: true,
+        },
+      };
+    }
+    return config;
+  },
+  
   async headers() {
     return [
       {
@@ -26,6 +57,21 @@ const nextConfig = {
             key: 'X-XSS-Protection',
             value: '1; mode=block',
           },
+          // Performance headers
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        // Static assets caching
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
         ],
       },
     ];
@@ -42,6 +88,7 @@ const nextConfig = {
   trailingSlash: false,
   poweredByHeader: false,
   compress: true,
+  swcMinify: true, // Use SWC for faster minification
 };
 
 module.exports = nextConfig;

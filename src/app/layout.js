@@ -14,6 +14,14 @@ const poppins = Poppins({
   variable: '--font-poppins' 
 })
 
+// Viewport configuration (separate from metadata as per Next.js 14+ requirement)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+}
+
 export const metadata = {
   metadataBase: new URL('https://bigbossteluguvotes.in'),
   title: {
@@ -109,12 +117,6 @@ export const metadata = {
       url: '/images/og-image.jpg',
       alt: 'Bigg Boss Telugu 9 Voting Online',
     },
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
   },
   verification: {
     google: 'your-google-site-verification-code',
@@ -307,7 +309,6 @@ export default function RootLayout({ children }) {
         
         {/* Theme and Mobile Optimization */}
         <meta name="theme-color" content="#dc2626" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -347,7 +348,25 @@ export default function RootLayout({ children }) {
         <meta httpEquiv="Cache-Control" content="public, max-age=31536000" />
         <meta httpEquiv="Expires" content={new Date(Date.now() + 31536000000).toUTCString()} />
         
-        {/* Preconnect for Performance */}
+        {/* Preconnect and DNS Prefetch for Performance - Reduce Unused JS */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://strawpoll.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        
+        {/* Preload Critical Resources */}
+        <link 
+          rel="modulepreload" 
+          href="/_next/static/chunks/pages/_app.js" 
+          as="script" 
+          crossOrigin="anonymous" 
+        />
+        
+        {/* Resource Hints for Third-party Scripts */}
+        <link rel="prefetch" href="https://strawpoll.com/dist/main.css?v=255" />
+        <link rel="preload" href="/logo.png" as="image" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.strawpoll.com" />

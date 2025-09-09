@@ -1,11 +1,23 @@
 import Hero from '../components/Hero'
 import VotingSection from '../components/VotingSection'
 import ContestantGrid from '../components/ContestantGrid'
-import HowToVote from '../components/HowToVote'
-import LiveUpdates from '../components/LiveUpdates'
-import FAQSection from '../components/FAQSection'
-import NewsSection from '../components/NewsSection'
 import { generateStructuredData } from '../utils/seo'
+
+// Dynamic imports for better performance
+import dynamic from 'next/dynamic'
+
+const HowToVote = dynamic(() => import('../components/HowToVote'), {
+  loading: () => <div className="min-h-[200px] bg-gray-900/50 animate-pulse rounded-lg"></div>
+})
+const LiveUpdates = dynamic(() => import('../components/LiveUpdates'), {
+  loading: () => <div className="min-h-[300px] bg-gray-900/50 animate-pulse rounded-lg"></div>
+})
+const FAQSection = dynamic(() => import('../components/FAQSection'), {
+  loading: () => <div className="min-h-[400px] bg-gray-900/50 animate-pulse rounded-lg"></div>
+})
+const NewsSection = dynamic(() => import('../components/NewsSection'), {
+  loading: () => <div className="min-h-[500px] bg-gray-900/50 animate-pulse rounded-lg"></div>
+})
 
 export const metadata = {
   title: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote for Your Favorite Contestant',

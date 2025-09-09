@@ -1,0 +1,18 @@
+{
+  "votingSettings": {
+    "eliminationWeek": "Week 2 Elimination",
+    "votingQuestion": "Who was your favorite contestant in Week 2?",
+    "strawpollId": "strawpoll_ajnE1Xj40nW",
+    "votingStatus": "closed",
+    "isActive": false,
+    "startDate": null,
+    "endDate": "2025-09-06T18:47:26.380Z",
+    "_createdAt": "2025-09-09T18:47:28Z",
+    "_id": "7ldTpdru1wGizQJ2jGZcbw",
+    "_updatedAt": "2025-09-09T18:47:28Z"
+  },
+  "generatedAt": "2025-09-09T18:48:15.908Z",
+  "buildVersion": "1.0.0",
+  "source": "sanity"
+}
+

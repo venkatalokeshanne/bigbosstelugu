@@ -145,6 +145,11 @@ async function generateContestantsData() {
     console.log(`📄 Generated: ${filePath}`)
     console.log(`⏰ Generated at: ${processedData.generatedAt}`)
     
+    // Also generate voting settings data
+    console.log('🔄 Also generating voting settings data...')
+    const { generateVotingData } = require('./generate-voting-data.js')
+    await generateVotingData()
+    
   } catch (error) {
     console.error('❌ Build script failed:', error.message)
     process.exit(1)

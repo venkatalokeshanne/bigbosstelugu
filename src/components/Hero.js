@@ -62,42 +62,40 @@ export default function Hero() {
   }, [contestants])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900/30 to-black">
-      {/* Dynamic Background with Contestant Images */}
-      <div className="absolute inset-0 opacity-5">
-        {contestants.slice(0, 8).map((contestant, index) => (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+      {/* Simplified Background - Performance Optimized */}
+      <div className="absolute inset-0 opacity-10">
+        {contestants.slice(0, 4).map((contestant, index) => (
           <div
             key={contestant._id}
-            className={`absolute w-32 h-32 rounded-full overflow-hidden animate-float-slow`}
+            className={`absolute w-24 h-24 rounded-full overflow-hidden`}
             style={{
-              left: `${10 + (index % 4) * 25}%`,
-              top: `${15 + Math.floor(index / 4) * 70}%`,
-              animationDelay: `${index * 0.5}s`,
+              left: `${20 + (index % 2) * 60}%`,
+              top: `${25 + Math.floor(index / 2) * 50}%`,
             }}
           >
             {contestant.imageUrl && (
               <Image
                 src={contestant.imageUrl}
                 alt={contestant.name}
-                width={128}
-                height={128}
+                width={96}
+                height={96}
                 className="object-cover w-full h-full filter grayscale"
+                loading="lazy"
               />
             )}
           </div>
         ))}
       </div>
 
-      {/* Animated Background Elements */}
+      {/* Simplified Background Elements - Performance Optimized */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-16 w-24 h-24 bg-gradient-to-r from-pink-400/20 to-red-400/20 rounded-full animate-bounce-slow"></div>
-        <div className="absolute top-1/3 right-20 w-16 h-16 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-full animate-float"></div>
+        <div className="absolute top-20 left-10 w-24 h-24 bg-blue-400/10 rounded-full"></div>
+        <div className="absolute bottom-20 right-16 w-16 h-16 bg-pink-400/10 rounded-full"></div>
         
-        {/* Floating Voting Icons */}
-        <div className="absolute top-1/4 left-1/4 text-4xl animate-float opacity-30">🗳️</div>
-        <div className="absolute bottom-1/4 right-1/4 text-3xl animate-bounce-slow opacity-20">⭐</div>
-        <div className="absolute top-3/4 left-1/3 text-2xl animate-pulse opacity-25">👑</div>
+        {/* Static Voting Icons */}
+        <div className="absolute top-1/4 left-1/4 text-3xl opacity-20">🗳️</div>
+        <div className="absolute bottom-1/4 right-1/4 text-2xl opacity-15">⭐</div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -106,17 +104,17 @@ export default function Hero() {
           {/* Left Side - Main Content */}
           <div className="text-center lg:text-left">
             {/* Season Badge */}
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 mb-8">
+            <div className="inline-flex items-center gap-3 bg-red-500/20 border border-white/10 rounded-full px-6 py-3 mb-8">
               <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
               <span className="text-white font-bold text-lg">SEASON 9 • 2025</span>
             </div>
 
-            {/* Main Heading - SEO Optimized H1 */}
+            {/* Main Heading - SEO Optimized H1 - Performance Enhanced */}
             <h1 className="text-2xl md:text-3xl xl:text-4xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block">
+              <span className="text-blue-400 block">
                 BIGG BOSS TELUGU 9
               </span>
-              <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent block">
+              <span className="text-orange-400 block">
                 VOTING ONLINE 2025
               </span>
               <span className="text-white text-xs md:text-sm xl:text-base font-light block mt-2">

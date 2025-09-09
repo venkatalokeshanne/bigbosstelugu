@@ -1,14 +1,134 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { getOptimizedVotingSettings, isVotingActive } from '../lib/optimized-voting'
 
 export default function VotingSection() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [votingSettings, setVotingSettings] = useState({
+    eliminationWeek: 'Loading...',
+    votingQuestion: 'Loading...',
+    strawpollId: 'ajnE1Xj40nW',
+    votingStatus: 'live'
+  })
   const [timeLeft, setTimeLeft] = useState({
     hours: 23,
     minutes: 45,
     seconds: 30
   })
+
+  // Load voting settings on component mount
+  useEffect(() => {
+    try {
+      const settings = getOptimizedVotingSettings()
+      const active = isVotingActive()
+      
+      setVotingSettings({
+        ...settings,
+        isActive: active
+      })
+      
+      console.log('Voting settings loaded:', settings)
+    } catch (error) {
+      console.error('Error loading voting settings:', error)
+      // Keep default fallback settings
+    }
+  }, [])
+
+  // Auto-resize iframe effect
+  useEffect(() => {
+    const resizeStrawPollIframe = () => {
+      const iframe = document.getElementById('strawpoll_iframe_ajnE1Xj40nW');
+      const container = document.getElementById('strawpoll_ajnE1Xj40nW');
+      
+      if (iframe && container) {
+        const screenWidth = window.innerWidth;
+        let targetHeight = 900; // Default for desktop
+        
+        // Mobile-first responsive approach
+        if (screenWidth < 640) {
+          targetHeight = 1100; // Mobile - extra height for better display
+          iframe.style.minHeight = '900px';
+          // Ensure container takes full width on mobile
+          container.style.padding = '0 16px';
+          container.style.margin = '0';
+        } else if (screenWidth < 768) {
+          targetHeight = 1000; // Small tablet
+          iframe.style.minHeight = '800px';
+          container.style.padding = '0 24px';
+        } else if (screenWidth < 1024) {
+          targetHeight = 950; // Large tablet
+          iframe.style.minHeight = '750px';
+          container.style.padding = '0 32px';
+        } else {
+          targetHeight = 900; // Desktop
+          iframe.style.minHeight = '700px';
+          container.style.padding = '0 32px';
+        }
+        
+        iframe.style.height = `${targetHeight}px`;
+        iframe.style.width = '100%';
+        
+        // Optimize for mobile viewport
+        if (screenWidth < 640) {
+          // Ensure no horizontal scrolling on mobile
+          iframe.style.maxWidth = '100%';
+          iframe.style.overflowX = 'hidden';
+        }
+        
+        // Try to get actual content height if possible
+        try {
+          if (iframe.contentWindow) {
+            setTimeout(() => {
+              try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (iframeDoc && iframeDoc.body) {
+                  const contentHeight = Math.max(
+                    iframeDoc.body.scrollHeight,
+                    iframeDoc.body.offsetHeight,
+                    iframeDoc.documentElement.clientHeight,
+                    iframeDoc.documentElement.scrollHeight,
+                    iframeDoc.documentElement.offsetHeight
+                  );
+                  
+                  if (contentHeight > 400 && contentHeight < 2500) {
+                    const extraSpace = screenWidth < 640 ? 200 : 100;
+                    iframe.style.height = (contentHeight + extraSpace) + 'px';
+                  }
+                }
+              } catch (e) {
+                // CORS restriction - keep the responsive height
+                console.log('Using responsive fallback height');
+              }
+            }, 2000);
+          }
+        } catch (error) {
+          console.log('Iframe resize fallback applied');
+        }
+      }
+    };
+
+    // Resize on window resize with debouncing
+    let resizeTimeout;
+    const debouncedResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resizeStrawPollIframe, 250);
+    };
+    
+    window.addEventListener('resize', debouncedResize);
+    window.addEventListener('orientationchange', debouncedResize);
+    
+    // Initial resize after component mount
+    setTimeout(resizeStrawPollIframe, 1000);
+    setTimeout(resizeStrawPollIframe, 3000);
+    setTimeout(resizeStrawPollIframe, 5000);
+    
+    return () => {
+      window.removeEventListener('resize', debouncedResize);
+      window.removeEventListener('orientationchange', debouncedResize);
+      clearTimeout(resizeTimeout);
+    };
+  }, []);
 
   // Countdown timer effect
   useEffect(() => {
@@ -37,45 +157,44 @@ export default function VotingSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,107,107,0.1),transparent_70%)]"></div>
       
       <div className="container-custom relative z-10">
-        {/* Enhanced Header */}
+        {/* Enhanced Header - LCP Optimized */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 mb-6">
+          <div className="inline-flex items-center gap-3 bg-red-500/20 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 mb-6">
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
             <span className="text-white font-semibold">LIVE VOTING NOW OPEN</span>
           </div>
           
-          <h2 className="text-2xl md:text-4xl font-display font-bold bg-gradient-to-r from-white via-purple-200 to-red-200 bg-clip-text text-transparent mb-6">
-            How to Vote Bigg Boss Telugu 9 Contestants Online Free 2025?
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Vote Bigg Boss Telugu 9 Online Free 2025
           </h2>
-          <h3 className="text-lg md:text-xl text-purple-300 font-semibold mb-4">
-            BBT9 Voting Guide Hyderabad | Star MAA Disney+ Hotstar Telugu
+          <h3 className="text-lg md:text-xl text-purple-300 font-medium mb-4">
+            BBT9 Voting Guide Hyderabad | Star MAA Disney+ Hotstar
           </h3>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Your vote decides the fate of your favorite contestant! Join millions of viewers in shaping the destiny of 
-            <span className="text-purple-400 font-semibold"> Bigg Boss Telugu 9</span>. Every vote counts in this ultimate battle for survival.
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Your vote decides the fate of your favorite contestant! Join millions in shaping 
+            <span className="text-purple-400 font-medium"> Bigg Boss Telugu 9</span> destiny.
           </p>
         </div>
 
-        {/* Main Voting Card - Enhanced */}
+        {/* Main Voting Card - Performance Optimized */}
         <div className="max-w-6xl mx-auto mb-20">
-          <div className="bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-purple-500/10">
-            {/* Card Header - Redesigned */}
-            <div className="relative bg-gradient-to-r from-purple-600/80 via-red-600/80 to-pink-600/80 backdrop-blur-sm px-8 py-8">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-red-600/20"></div>
-              <div className="relative flex flex-col md:flex-row items-center justify-between text-white">
+          <div className="bg-gray-900/70 rounded-3xl overflow-hidden border border-gray-700/50 shadow-xl">
+            {/* Card Header - Simplified */}
+            <div className="relative bg-purple-600/90 px-8 py-8">
+              <div className="flex flex-col md:flex-row items-center justify-between text-white">
                 <div className="mb-4 md:mb-0">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-4 h-4 bg-red-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-semibold uppercase tracking-wider">Week 3 Elimination</span>
+                    <span className="text-sm font-semibold uppercase tracking-wider">{votingSettings.eliminationWeek}</span>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-2 text-white">
                     🗳️ Live Voting Poll
                   </h3>
-                  <p className="text-purple-100 text-lg">Who should be saved from elimination this week?</p>
+                  <p className="text-purple-100 text-lg">{votingSettings.votingQuestion}</p>
                 </div>
                 
                 {/* Countdown Timer */}
-                <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                <div className="bg-black/40 rounded-2xl p-6 border border-white/20">
                   <div className="text-center">
                     <div className="text-sm text-purple-200 mb-2 uppercase tracking-wider">Vote Now</div>
                   </div>
@@ -83,10 +202,10 @@ export default function VotingSection() {
               </div>
             </div>
             
-            {/* Poll Container - Enhanced */}
-            <div className="bg-gradient-to-br from-gray-900/50 to-purple-900/30 backdrop-blur-sm relative">
+            {/* Poll Container - Optimized */}
+            <div className="bg-gray-900/60 relative">
               {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm rounded-2xl z-10 min-h-[400px]">
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 rounded-2xl z-10 min-h-[400px]">
                   <div className="text-center">
                     <div className="relative mb-8">
                       <div className="w-20 h-20 border-4 border-purple-300/30 rounded-full animate-spin border-t-purple-500 mx-auto"></div>
@@ -94,7 +213,7 @@ export default function VotingSection() {
                         <span className="text-3xl animate-bounce">🗳️</span>
                       </div>
                     </div>
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <div className="bg-gray-800/60 rounded-2xl p-6 border border-gray-600">
                       <p className="text-2xl font-bold text-white mb-2">Loading Voting Poll...</p>
                       <p className="text-purple-300">Get ready to support your favorite contestant!</p>
                       <div className="mt-4 flex justify-center">
@@ -109,9 +228,9 @@ export default function VotingSection() {
                 </div>
               )}
               
-              {/* Enhanced StrawPoll Embed - Auto-resizing */}
+              {/* StrawPoll Embed - Direct Load */}
               <div 
-                className="w-full overflow-hidden" 
+                className="w-full relative px-4 sm:px-6 md:px-8" 
                 id="strawpoll_ajnE1Xj40nW"
               >
                 <iframe 

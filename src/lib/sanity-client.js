@@ -160,6 +160,18 @@ export const queries = {
     isLive,
     priority,
     timestamp
+  }`,
+
+  // Get active voting settings
+  activeVotingSettings: `*[_type == "votingSettings" && isActive == true && !(_id in path("drafts.**"))][0] {
+    _id,
+    title,
+    eliminationWeek,
+    votingQuestion,
+    strawpollUrl,
+    strawpollId,
+    votingStatus,
+    endDate
   }`
 }
 
@@ -287,5 +299,26 @@ export const fetchRelatedNews = async (category, excludeId) => {
   } catch (error) {
     console.error('Error fetching related news:', error)
     return []
+  }
+}
+
+export const fetchActiveVotingSettings = async () => {
+  try {
+    const settings = await client.fetch(queries.activeVotingSettings)
+    return settings || {
+      eliminationWeek: 'Week 3 Elimination',
+      votingQuestion: 'Who should be saved from elimination this week?',
+      strawpollId: 'ajnE1Xj40nW',
+      votingStatus: 'live'
+    }
+  } catch (error) {
+    console.error('Error fetching voting settings:', error)
+    // Return fallback values
+    return {
+      eliminationWeek: 'Week 3 Elimination',
+      votingQuestion: 'Who should be saved from elimination this week?',
+      strawpollId: 'ajnE1Xj40nW',
+      votingStatus: 'live'
+    }
   }
 }
