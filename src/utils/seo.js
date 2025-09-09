@@ -133,9 +133,6 @@ export function generateMetaTags({
     description,
     keywords: Array.isArray(keywords) ? keywords.join(', ') : keywords,
     
-    // Viewport and mobile optimization
-    viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
-    
     // Basic SEO meta tags
     robots: {
       index: true,
@@ -408,6 +405,20 @@ export function generateFAQData() {
           "text": "Nagarjuna Akkineni is the host of Bigg Boss Telugu 9, continuing his role from previous seasons of the popular reality show."
         }
       }
+    ]
+  }
+}
+
+// Generate viewport configuration (separate from metadata in Next.js App Router)
+export function generateViewport() {
+  return {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+      { media: '(prefers-color-scheme: dark)', color: '#0f172a' }
     ]
   }
 }

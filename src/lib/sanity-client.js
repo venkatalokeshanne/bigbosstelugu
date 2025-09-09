@@ -108,22 +108,6 @@ export const queries = {
     category,
     author,
     publishedAt,
-    isPublished,
-    isFeatured,
-    featuredImage,
-    tags
-  }`,
-
-  // Get single news article by slug
-  newsArticle: `*[_type == "news" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
-    _id,
-    title,
-    "slug": slug.current,
-    excerpt,
-    content,
-    category,
-    author,
-    publishedAt,
     modifiedAt,
     isPublished,
     isFeatured,

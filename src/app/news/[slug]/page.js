@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { fetchNewsArticle, fetchNews, fetchRelatedNews, urlFor } from '@/lib/sanity-client'
-import { generateMetaTags, generateStructuredData } from '@/utils/seo'
+import { generateMetaTags, generateStructuredData, generateViewport } from '@/utils/seo'
 
 export async function generateStaticParams() {
   try {
@@ -15,6 +15,8 @@ export async function generateStaticParams() {
     return []
   }
 }
+
+export const viewport = generateViewport()
 
 export async function generateMetadata({ params }) {
   try {
@@ -47,9 +49,16 @@ export async function generateMetadata({ params }) {
 
 export default async function ArticlePage({ params }) {
   try {
+    // Ensure params.slug exists and is valid
+    if (!params?.slug || typeof params.slug !== 'string') {
+      console.error('Invalid slug parameter:', params)
+      notFound()
+    }
+
     const article = await fetchNewsArticle(params.slug)
     
     if (!article || !article.isPublished) {
+      console.error(`Article not found or not published for slug: ${params.slug}`)
       notFound()
     }
 

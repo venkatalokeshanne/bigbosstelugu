@@ -1,7 +1,22 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getOptimizedContestantBySlug } from '../../../lib/optimized-contestants'
+import { getOptimizedContestantBySlug, getOptimizedContestants } from '../../../lib/optimized-contestants'
+import { generateViewport } from '../../../utils/seo'
+
+export const viewport = generateViewport()
+
+export async function generateStaticParams() {
+  try {
+    const contestants = await getOptimizedContestants()
+    return contestants.map((contestant) => ({
+      slug: contestant.slug,
+    }))
+  } catch (error) {
+    console.error('Error generating static params for contestants:', error)
+    return []
+  }
+}
 
 export async function generateMetadata({ params }) {
   try {
@@ -42,13 +57,20 @@ export default async function ContestantPage({ params }) {
   let contestant
   
   try {
+    // Ensure params.slug exists and is valid
+    if (!params?.slug || typeof params.slug !== 'string') {
+      console.error('Invalid slug parameter:', params)
+      notFound()
+    }
+
     contestant = await getOptimizedContestantBySlug(params.slug)
+    
+    if (!contestant) {
+      console.error(`Contestant not found for slug: ${params.slug}`)
+      notFound()
+    }
   } catch (error) {
     console.error('Error fetching contestant:', error)
-    notFound()
-  }
-  
-  if (!contestant) {
     notFound()
   }
 
