@@ -120,10 +120,10 @@ export const metadata = {
   },
   verification: {
     google: 'your-google-site-verification-code',
-    yandex: 'your-yandex-verification-code',
+    yandex: '37c56eb5514fe5ed',
     yahoo: 'your-yahoo-verification-code',
     other: {
-      'msvalidate.01': 'your-bing-verification-code',
+      'msvalidate.01': '6D2854935215EC667A7ACD129BB9399D',
     },
   },
   alternates: {
@@ -135,6 +135,7 @@ export const metadata = {
   },
   other: {
     'google-site-verification': 'your-google-site-verification-code',
+    'msvalidate.01': '6D2854935215EC667A7ACD129BB9399D',
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
