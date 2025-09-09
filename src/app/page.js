@@ -1,6 +1,7 @@
 import Hero from '../components/Hero'
 import VotingSection from '../components/VotingSection'
 import ContestantGrid from '../components/ContestantGrid'
+import PosterSection from '../components/PosterSection'
 import { generateStructuredData } from '../utils/seo'
 
 // Dynamic imports for better performance
@@ -31,6 +32,14 @@ export const metadata = {
     description: 'Vote for your favorite Bigg Boss Telugu Season 9 contestants online. Live voting polls and latest updates.',
     url: 'https://bigbossteluguvotes.in',
     type: 'website',
+    images: [
+      {
+        url: '/images/bigboss.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Bigg Boss Telugu 9 Official Logo',
+      },
+    ],
   },
 }
 
@@ -177,6 +186,7 @@ export default function HomePage() {
       </div>
       
       <Hero />
+      <PosterSection />
       <VotingSection />
       <ContestantGrid />
       <HowToVote />
