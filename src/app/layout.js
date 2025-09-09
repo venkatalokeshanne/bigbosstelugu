@@ -348,13 +348,14 @@ export default function RootLayout({ children }) {
         <meta httpEquiv="Cache-Control" content="public, max-age=31536000" />
         <meta httpEquiv="Expires" content={new Date(Date.now() + 31536000000).toUTCString()} />
         
-        {/* Preconnect and DNS Prefetch for Performance - Reduce Unused JS */}
+        {/* Preconnect and DNS Prefetch for Performance - Optimized */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://strawpoll.com" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
+        <link rel="dns-prefetch" href="https://cdn.strawpoll.com" />
         
         {/* Preload Critical Resources */}
         <link 
@@ -365,11 +366,9 @@ export default function RootLayout({ children }) {
         />
         
         {/* Resource Hints for Third-party Scripts */}
-        <link rel="prefetch" href="https://strawpoll.com/dist/main.css?v=255" />
         <link rel="preload" href="/logo.png" as="image" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://cdn.strawpoll.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
@@ -377,7 +376,6 @@ export default function RootLayout({ children }) {
         <link rel="prefetch" href="/manifest.json" />
         
         {/* Scripts */}
-        <script async src="https://cdn.strawpoll.com/dist/widgets.js" charSet="utf-8"></script>
         <GoogleTagManager />
         <GoogleAnalytics />
         <Analytics />

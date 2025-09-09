@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { getOptimizedVotingSettings, isVotingActive } from '../lib/optimized-voting'
+import LazyStrawPoll from './LazyStrawPoll'
 
 export default function VotingSection() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -204,54 +205,12 @@ export default function VotingSection() {
             
             {/* Poll Container - Optimized */}
             <div className="bg-gray-900/60 relative">
-              {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 rounded-2xl z-10 min-h-[400px]">
-                  <div className="text-center">
-                    <div className="relative mb-8">
-                      <div className="w-20 h-20 border-4 border-purple-300/30 rounded-full animate-spin border-t-purple-500 mx-auto"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-3xl animate-bounce">🗳️</span>
-                      </div>
-                    </div>
-                    <div className="bg-gray-800/60 rounded-2xl p-6 border border-gray-600">
-                      <p className="text-2xl font-bold text-white mb-2">Loading Voting Poll...</p>
-                      <p className="text-purple-300">Get ready to support your favorite contestant!</p>
-                      <div className="mt-4 flex justify-center">
-                        <div className="flex gap-1">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
               
-              {/* StrawPoll Embed - Direct Load */}
-              <div 
-                className="w-full relative px-4 sm:px-6 md:px-8" 
-                id="strawpoll_ajnE1Xj40nW"
-              >
-                <iframe 
-                  title="StrawPoll Embed - Bigg Boss Telugu 9 Voting" 
-                  id="strawpoll_iframe_ajnE1Xj40nW" 
-                  src="https://strawpoll.com/embed/ajnE1Xj40nW" 
-                  className="w-full border-none block"
-                  style={{
-                    height: '600px',
-                    minHeight: '500px',
-                    maxHeight: 'none'
-                  }}
-                  frameBorder="0" 
-                  allowFullScreen 
-                  allowtransparency="true"
-                  scrolling="no"
-                  onLoad={() => setIsLoaded(true)}
-                >
-                  Loading voting interface...
-                </iframe>
-              </div>
+              {/* StrawPoll Embed - Lazy Loaded and Optimized */}
+              <LazyStrawPoll 
+                pollId="ajnE1Xj40nW" 
+                className="px-4 sm:px-6 md:px-8"
+              />
             </div>
 
             {/* Poll Stats - Redesigned */}
