@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import StickyVoteButton from '../components/StickyVoteButton'
 import GoogleAnalytics from '../components/GoogleAnalytics'
+import GoogleTagManager from '../components/GoogleTagManager'
 import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -359,10 +360,21 @@ export default function RootLayout({ children }) {
         
         {/* Scripts */}
         <script async src="https://cdn.strawpoll.com/dist/widgets.js" charSet="utf-8"></script>
+        <GoogleTagManager />
         <GoogleAnalytics />
         <Analytics />
       </head>
       <body className="min-h-screen bg-gray-900 dark:bg-gray-900 text-white antialiased">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MX2WVXWS"
+            height="0" 
+            width="0" 
+            style={{display:'none',visibility:'hidden'}}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <Navbar />
         <main>{children}</main>
         <Footer />
