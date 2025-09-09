@@ -122,6 +122,24 @@ function writeDataToFile(data) {
 }
 
 /**
+ * Check if existing contestants data is available and recent
+ */
+function checkExistingData() {
+  try {
+    const filePath = path.join(process.cwd(), 'src', 'data', 'contestants.json')
+    if (fs.existsSync(filePath)) {
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+      console.log(`📄 Found existing data generated at: ${data.generatedAt}`)
+      return data
+    }
+    return null
+  } catch (error) {
+    console.log('⚠️  Error reading existing data:', error.message)
+    return null
+  }
+}
+
+/**
  * Main function
  */
 async function generateContestantsData() {
@@ -147,6 +165,18 @@ async function generateContestantsData() {
     
   } catch (error) {
     console.error('❌ Build script failed:', error.message)
+    
+    // Check if we have existing data to fall back to
+    const existingData = checkExistingData()
+    if (existingData) {
+      console.log('✅ Using existing contestants data as fallback')
+      console.log(`📄 Existing data: ${existingData.stats.total} contestants`)
+      console.log(`⏰ Generated at: ${existingData.generatedAt}`)
+      console.log('🔄 Build can continue with existing data')
+      return // Success - existing data available
+    }
+    
+    console.error('❌ No fallback data available. Build failed.')
     process.exit(1)
   }
 }

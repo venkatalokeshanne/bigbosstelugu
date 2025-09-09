@@ -1,12 +1,15 @@
 import { createClient } from '@sanity/client'
-import staticContestantsData from '../data/contestants.json'
+
+// Import contestants data directly
+import contestantsData from '../data/contestants.json'
+const staticContestantsData = contestantsData
 
 
 // Sanity client configuration
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'p6ro2n3d',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2023-10-01',
   useCdn: true,
 })
 

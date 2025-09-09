@@ -1,17 +1,14 @@
 import './globals.css'
-import { Inter, Poppins } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import StickyVoteButton from '../components/StickyVoteButton'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import { Analytics } from "@vercel/analytics/next"
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700', '800'],
-  subsets: ['latin'], 
-  variable: '--font-poppins' 
-})
+// Declare font variables with fallbacks
+const fontVariables = '--font-inter --font-poppins'
+
+// We'll handle fonts in CSS with @import as fallback
 
 export const metadata = {
   metadataBase: new URL('https://bigbosstelugu9voting.com'),
@@ -297,7 +294,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} dark`}>
+    <html lang="en" className="dark">
       <head>
         <script
           type="application/ld+json"
