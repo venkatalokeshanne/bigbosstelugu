@@ -3,7 +3,13 @@
 import Script from 'next/script'
 
 export default function GoogleTagManager() {
-  const GTM_ID = 'GTM-MX2WVXWS'
+  // Use environment variable or fallback to existing ID
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-MX2WVXWS'
+  
+  // Don't render in development if no GTM ID is set
+  if (process.env.NODE_ENV === 'development' && !process.env.NEXT_PUBLIC_GTM_ID) {
+    return null
+  }
 
   return (
     <Script id="google-tag-manager" strategy="afterInteractive">

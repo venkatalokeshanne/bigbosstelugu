@@ -3,8 +3,13 @@
 import Script from 'next/script'
 
 export default function GoogleAnalytics() {
-  // Replace with your actual Google Analytics measurement ID
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'
+  // Use environment variable or fallback to placeholder
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX'
+  
+  // Don't render in development or if ID is still placeholder
+  if (process.env.NODE_ENV === 'development' || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+    return null
+  }
 
   return (
     <>
@@ -20,6 +25,8 @@ export default function GoogleAnalytics() {
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_title: document.title,
             page_location: window.location.href,
+            anonymize_ip: true,
+            cookie_flags: 'secure;samesite=lax',
           });
         `}
       </Script>

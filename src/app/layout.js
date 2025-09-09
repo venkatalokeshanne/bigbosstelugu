@@ -145,6 +145,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  // Get GTM ID for noscript fallback
+  const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-MX2WVXWS'
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -368,7 +371,7 @@ export default function RootLayout({ children }) {
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MX2WVXWS"
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
             height="0" 
             width="0" 
             style={{display:'none',visibility:'hidden'}}
