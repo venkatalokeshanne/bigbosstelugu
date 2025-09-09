@@ -156,9 +156,9 @@ export default function ContestantGrid() {
         {eliminatedContestants.length > 0 && (
           <div className="mb-16">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-bold text-white mb-4">
                 Eliminated Contestants
-              </h3>
+              </h2>
               <p className="text-gray-400 max-w-2xl mx-auto">
                 These contestants have left the house but their journey continues in our hearts
               </p>
@@ -197,9 +197,9 @@ export default function ContestantGrid() {
                     </div>
                     
                     <div className="p-3">
-                      <h4 className="font-medium text-white text-sm truncate mb-1">
+                      <h3 className="font-medium text-white text-sm truncate mb-1">
                         {contestant.name}
-                      </h4>
+                      </h3>
                       <p className="text-red-400 text-xs">Eliminated</p>
                     </div>
                   </div>
@@ -212,9 +212,9 @@ export default function ContestantGrid() {
         {/* Call to Action */}
         <div className="text-center">
           <div className="inline-block p-8 bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-white mb-4">
               Want to know more about the contestants?
-            </h3>
+            </h2>
             <p className="text-gray-300 mb-6 max-w-md mx-auto">
               Dive deeper into their stories, backgrounds, and journey in the Bigg Boss house
             </p>

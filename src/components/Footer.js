@@ -61,8 +61,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Bigg Boss Telugu 9 Quick Navigation</h3>
-            <h4 className="text-sm text-purple-300 font-medium mb-3">BBT9 2025 Official Pages</h4>
+            <h2 className="text-lg font-semibold mb-4">Bigg Boss Telugu 9 Quick Navigation</h2>
+            <h3 className="text-sm text-purple-300 font-medium mb-3">BBT9 2025 Official Pages</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
@@ -94,8 +94,8 @@ export default function Footer() {
 
           {/* Voting Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">How to Vote Online Free?</h3>
-            <h4 className="text-sm text-purple-300 font-medium mb-3">BBT9 Voting Methods Hyderabad</h4>
+            <h2 className="text-lg font-semibold mb-4">How to Vote Online Free?</h2>
+            <h3 className="text-sm text-purple-300 font-medium mb-3">BBT9 Voting Methods Hyderabad</h3>
             <ul className="space-y-2 text-sm">
               <li className="text-gray-400">
                 <span className="font-medium text-white">Hotstar:</span> Official voting

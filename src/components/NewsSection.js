@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { fetchFeaturedNews, urlFor } from '../lib/sanity-client'
 
 export default function NewsSection() {
   const [news, setNews] = useState([])
@@ -12,12 +11,19 @@ export default function NewsSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const featuredNews = await fetchFeaturedNews()
-        setNews(featuredNews)
+        const response = await fetch('/api/news');
+        if (response.ok) {
+          const featuredNews = await response.json();
+          setNews(featuredNews);
+        } else {
+          console.error('Failed to fetch news');
+          setNews([]);
+        }
       } catch (error) {
-        console.error('Error fetching news:', error)
+        console.error('Error fetching news:', error);
+        setNews([]);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
 
@@ -94,10 +100,10 @@ export default function NewsSection() {
               >
                 <article className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/10">
                   {/* Featured Image */}
-                  {article.featuredImage && (
+                  {article.featuredImageUrl && (
                     <div className="aspect-video relative overflow-hidden">
                       <Image
-                        src={urlFor(article.featuredImage).width(600).height(400).url()}
+                        src={article.featuredImageUrl}
                         alt={article.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"

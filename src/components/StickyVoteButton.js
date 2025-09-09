@@ -34,7 +34,7 @@ export default function StickyVoteButton() {
             <div className="absolute bottom-20 right-0 bg-gradient-to-br from-white/95 via-white/90 to-white/85 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-6 w-72 transform transition-all duration-300 animate-fade-in">
               <div className="text-center mb-4">
                 <div className="text-3xl mb-2 animate-bounce">🗳️</div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">Quick Vote</h3>
+                <h2 className="font-bold text-gray-900 text-lg mb-1">Quick Vote</h2>
                 <p className="text-sm text-gray-600">Choose your voting method</p>
               </div>
               
@@ -102,7 +102,7 @@ export default function StickyVoteButton() {
         <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl p-4 w-52 hover:shadow-purple-500/10 transition-all duration-500">
           <div className="text-center mb-4">
             <div className="text-3xl mb-2 animate-bounce">🗳️</div>
-            <h3 className="font-bold text-white text-lg mb-1">Quick Vote</h3>
+            <h2 className="font-bold text-white text-lg mb-1">Quick Vote</h2>
             <p className="text-gray-300 text-xs">Support your favorite</p>
           </div>
           

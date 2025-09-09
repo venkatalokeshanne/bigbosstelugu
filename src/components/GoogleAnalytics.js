@@ -1,61 +1,85 @@
 'use client'
 
-import Script from 'next/script'
 import { useEffect, useState } from 'react'
+import Script from 'next/script'
 
 export default function GoogleAnalytics() {
-  const [shouldLoadAnalytics, setShouldLoadAnalytics] = useState(false)
-  const GA_MEASUREMENT_ID = 'G-TGDG975RBL'
+  const [shouldLoad, setShouldLoad] = useState(false)
+  const [hasInteracted, setHasInteracted] = useState(false)
 
-  // Lazy load analytics after user interaction or 3 seconds delay
+  // Prevent hydration mismatch by delaying script loading
   useEffect(() => {
-    const loadAnalytics = () => setShouldLoadAnalytics(true)
-    
-    // Load after user interaction
-    const handleInteraction = () => {
-      loadAnalytics()
-      document.removeEventListener('click', handleInteraction)
-      document.removeEventListener('scroll', handleInteraction)
-      document.removeEventListener('touchstart', handleInteraction)
-    }
+    // Delay initial load to prevent hydration issues
+    const timer = setTimeout(() => {
+      setShouldLoad(true)
+    }, 100)
 
-    // Load after 3 seconds if no interaction
-    const timer = setTimeout(loadAnalytics, 3000)
-
-    // Add event listeners for user interaction
-    document.addEventListener('click', handleInteraction, { passive: true })
-    document.addEventListener('scroll', handleInteraction, { passive: true })
-    document.addEventListener('touchstart', handleInteraction, { passive: true })
-
-    return () => {
-      clearTimeout(timer)
-      document.removeEventListener('click', handleInteraction)
-      document.removeEventListener('scroll', handleInteraction)
-      document.removeEventListener('touchstart', handleInteraction)
-    }
+    return () => clearTimeout(timer)
   }, [])
 
-  // Only render scripts when needed
-  if (!shouldLoadAnalytics) return null
+  useEffect(() => {
+    if (!shouldLoad || hasInteracted) return
+
+    // Load on user interaction (scroll, click, or touch)
+    const handleInteraction = () => {
+      if (!hasInteracted) {
+        setHasInteracted(true)
+      }
+    }
+
+    const events = ['scroll', 'click', 'touchstart', 'mousemove']
+    events.forEach(event => {
+      document.addEventListener(event, handleInteraction, { passive: true, once: true })
+    })
+
+    // Auto-load after 3 seconds if no interaction
+    const autoLoadTimer = setTimeout(() => {
+      if (!hasInteracted) {
+        setHasInteracted(true)
+      }
+    }, 3000)
+
+    return () => {
+      events.forEach(event => {
+        document.removeEventListener(event, handleInteraction)
+      })
+      clearTimeout(autoLoadTimer)
+    }
+  }, [shouldLoad, hasInteracted])
+
+  // Don't render anything until client-side to prevent hydration mismatch
+  if (!shouldLoad) {
+    return null
+  }
 
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="lazyOnload"
-      />
-      <Script id="google-analytics" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}', {
-            page_title: document.title,
-            page_location: window.location.href,
-            send_page_view: true
-          });
-        `}
-      </Script>
+      {hasInteracted && (
+        <>
+          {/* Google Analytics gtag script */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-TGDG975RBL"
+            strategy="afterInteractive"
+            onLoad={() => {
+              // Initialize gtag
+              window.dataLayer = window.dataLayer || []
+              function gtag() {
+                window.dataLayer.push(arguments)
+              }
+              window.gtag = gtag
+              gtag('js', new Date())
+              gtag('config', 'G-TGDG975RBL', {
+                page_title: document.title,
+                page_location: window.location.href,
+                send_page_view: true
+              })
+            }}
+            onError={(e) => {
+              console.error('Google Analytics failed to load:', e)
+            }}
+          />
+        </>
+      )}
     </>
   )
 }

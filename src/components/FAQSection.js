@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { fetchFAQs } from '../lib/sanity-client'
 
 export default function FAQSection() {
   const [faqs, setFaqs] = useState([])
@@ -11,12 +10,19 @@ export default function FAQSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const faqData = await fetchFAQs()
-        setFaqs(faqData)
+        const response = await fetch('/api/faqs');
+        if (response.ok) {
+          const faqData = await response.json();
+          setFaqs(faqData);
+        } else {
+          console.error('Failed to fetch FAQs');
+          setFaqs([]);
+        }
       } catch (error) {
-        console.error('Error fetching FAQs:', error)
+        console.error('Error fetching FAQs:', error);
+        setFaqs([]);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
 
@@ -130,9 +136,9 @@ export default function FAQSection() {
         {faqs.length > 0 && (
           <div className="mt-16 text-center">
             <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-3xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h2 className="text-2xl font-bold text-white mb-4">
                 Still Have Questions?
-              </h3>
+              </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Can't find the answer you're looking for? Get in touch with our support team 
                 or check the official Bigg Boss Telugu social media pages.

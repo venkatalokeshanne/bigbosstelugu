@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { fetchLiveUpdates } from '../lib/sanity-client'
 
 export default function LiveUpdates() {
   const [updates, setUpdates] = useState([])
@@ -10,12 +9,19 @@ export default function LiveUpdates() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const liveUpdates = await fetchLiveUpdates()
-        setUpdates(liveUpdates)
+        const response = await fetch('/api/live-updates');
+        if (response.ok) {
+          const liveUpdates = await response.json();
+          setUpdates(liveUpdates);
+        } else {
+          console.error('Failed to fetch live updates');
+          setUpdates([]);
+        }
       } catch (error) {
-        console.error('Error fetching live updates:', error)
+        console.error('Error fetching live updates:', error);
+        setUpdates([]);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
 

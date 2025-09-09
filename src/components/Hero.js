@@ -221,7 +221,7 @@ export default function Hero() {
 
                   {/* Contestant Info */}
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold text-white mb-2">{featuredContestant.name}</h3>
+                    <h2 className="text-3xl font-bold text-white mb-2">{featuredContestant.name}</h2>
                     <p className="text-purple-300 text-lg mb-3">{featuredContestant.profession}</p>
                     <p className="text-gray-300 text-sm mb-4">From {featuredContestant.hometown}</p>
                     

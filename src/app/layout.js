@@ -373,8 +373,7 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/logo.png" as="image" type="image/png" />
+        {/* Prefetch Non-Critical Resources */}
         <link rel="prefetch" href="/manifest.json" />
         
         {/* Scripts */}
