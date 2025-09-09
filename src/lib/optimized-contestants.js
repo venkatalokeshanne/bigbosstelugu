@@ -1,14 +1,4 @@
-import { createClient } from '@sanity/client'
 import staticContestantsData from '../data/contestants.json'
-
-
-// Sanity client configuration
-const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION,
-  useCdn: true,
-})
 
 // Cache for the contestants data
 let contestantsCache = null
@@ -37,39 +27,59 @@ export async function loadOptimizedContestants() {
   } catch (error) {
     console.log('⚠️  Optimized JSON not found, falling back to Sanity API...')
     
-    // Fallback to direct Sanity API call (for development)
-    const { fetchContestants } = await import('../lib/sanity-client')
-    const contestants = await fetchContestants()
-    
-    // Shuffle function for randomization
-    const shuffleArray = (array) => {
-      const shuffled = [...array]
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    try {
+      // Fallback to direct Sanity API call (for development)
+      const { fetchContestants } = await import('../lib/sanity-client')
+      const contestants = await fetchContestants()
+      
+      // Shuffle function for randomization
+      const shuffleArray = (array) => {
+        const shuffled = [...array]
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+        }
+        return shuffled
       }
-      return shuffled
+      
+      const activeContestants = shuffleArray(contestants.filter(c => c.status === 'active'))
+      const eliminatedContestants = shuffleArray(contestants.filter(c => c.status === 'eliminated'))
+      
+      const fallbackData = {
+        contestants,
+        activeContestants,
+        eliminatedContestants,
+        stats: {
+          total: contestants.length,
+          active: activeContestants.length,
+          eliminated: eliminatedContestants.length
+        },
+        generatedAt: new Date().toISOString()
+      }
+      
+      // Cache the fallback data
+      contestantsCache = fallbackData
+      
+      return fallbackData
+    } catch (sanityError) {
+      console.error('Sanity API also failed, using empty fallback:', sanityError)
+      
+      // Return minimal fallback data if everything fails
+      const emptyFallback = {
+        contestants: [],
+        activeContestants: [],
+        eliminatedContestants: [],
+        stats: {
+          total: 0,
+          active: 0,
+          eliminated: 0
+        },
+        generatedAt: new Date().toISOString()
+      }
+      
+      contestantsCache = emptyFallback
+      return emptyFallback
     }
-    
-    const activeContestants = shuffleArray(contestants.filter(c => c.status === 'active'))
-    const eliminatedContestants = shuffleArray(contestants.filter(c => c.status === 'eliminated'))
-    
-    const fallbackData = {
-      contestants,
-      activeContestants,
-      eliminatedContestants,
-      stats: {
-        total: contestants.length,
-        active: activeContestants.length,
-        eliminated: eliminatedContestants.length
-      },
-      generatedAt: new Date().toISOString()
-    }
-    
-    // Cache the fallback data
-    contestantsCache = fallbackData
-    
-    return fallbackData
   }
 }
 

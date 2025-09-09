@@ -4,11 +4,43 @@ import { useState, useEffect } from 'react'
 
 export default function VotingSection() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [iframeHeight, setIframeHeight] = useState(600)
   const [timeLeft, setTimeLeft] = useState({
     hours: 23,
     minutes: 45,
     seconds: 30
   })
+
+  // Dynamic iframe height calculation
+  useEffect(() => {
+    const calculateOptimalHeight = () => {
+      const viewportHeight = window.innerHeight
+      const headerHeight = 200 // Approximate header height
+      const footerHeight = 150 // Approximate footer space
+      const optimalHeight = Math.max(500, Math.min(800, viewportHeight - headerHeight - footerHeight))
+      setIframeHeight(optimalHeight)
+    }
+
+    // Calculate initial height
+    calculateOptimalHeight()
+
+    // Recalculate on window resize
+    window.addEventListener('resize', calculateOptimalHeight)
+    
+    // Listen for messages from iframe (if StrawPoll sends height info)
+    const handleMessage = (event) => {
+      if (event.origin === 'https://strawpoll.com' && event.data.height) {
+        setIframeHeight(Math.max(500, Math.min(800, event.data.height + 50)))
+      }
+    }
+    
+    window.addEventListener('message', handleMessage)
+
+    return () => {
+      window.removeEventListener('resize', calculateOptimalHeight)
+      window.removeEventListener('message', handleMessage)
+    }
+  }, [])
 
   // Countdown timer effect
   useEffect(() => {
@@ -83,10 +115,13 @@ export default function VotingSection() {
               </div>
             </div>
             
-            {/* Poll Container - Enhanced */}
+            {/* Poll Container - Enhanced with Dynamic Height */}
             <div className="bg-gradient-to-br from-gray-900/50 to-purple-900/30 backdrop-blur-sm relative">
               {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm rounded-2xl z-10 min-h-[400px]">
+                <div 
+                  className="absolute inset-0 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm rounded-2xl z-10"
+                  style={{ minHeight: `${iframeHeight}px` }}
+                >
                   <div className="text-center">
                     <div className="relative mb-8">
                       <div className="w-20 h-20 border-4 border-purple-300/30 rounded-full animate-spin border-t-purple-500 mx-auto"></div>
@@ -109,29 +144,57 @@ export default function VotingSection() {
                 </div>
               )}
               
-              {/* Enhanced StrawPoll Embed - Auto-resizing */}
+              {/* Enhanced StrawPoll Embed - Dynamic Auto-resizing */}
               <div 
-                className="w-full overflow-hidden" 
+                className="w-full overflow-hidden relative" 
                 id="strawpoll_ajnE1Xj40nW"
+                style={{ 
+                  minHeight: `${iframeHeight}px`,
+                  height: `${iframeHeight}px`
+                }}
               >
                 <iframe 
                   title="StrawPoll Embed - Bigg Boss Telugu 9 Voting" 
                   id="strawpoll_iframe_ajnE1Xj40nW" 
                   src="https://strawpoll.com/embed/ajnE1Xj40nW" 
-                  className="w-full border-none block"
+                  className="w-full border-none block absolute inset-0"
                   style={{
-                    height: '600px',
-                    minHeight: '500px',
-                    maxHeight: 'none'
+                    height: '100%',
+                    minHeight: `${iframeHeight}px`,
+                    maxHeight: 'none',
+                    transition: 'height 0.3s ease-in-out'
                   }}
                   frameBorder="0" 
                   allowFullScreen 
                   allowtransparency="true"
                   scrolling="no"
-                  onLoad={() => setIsLoaded(true)}
+                  onLoad={() => {
+                    setIsLoaded(true)
+                    // Try to detect content height after load
+                    setTimeout(() => {
+                      try {
+                        const iframe = document.getElementById('strawpoll_iframe_ajnE1Xj40nW')
+                        if (iframe && iframe.contentDocument) {
+                          const contentHeight = iframe.contentDocument.body.scrollHeight
+                          if (contentHeight > 0) {
+                            setIframeHeight(Math.max(500, Math.min(800, contentHeight + 50)))
+                          }
+                        }
+                      } catch (e) {
+                        // Cross-origin restrictions prevent access, which is expected
+                        console.log('Using responsive height calculation for iframe')
+                      }
+                    }, 1000)
+                  }}
                 >
                   Loading voting interface...
                 </iframe>
+                
+                {/* Responsive overlay for better mobile experience */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-t from-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
             </div>
 
