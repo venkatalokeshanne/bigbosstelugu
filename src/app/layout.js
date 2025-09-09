@@ -3,7 +3,8 @@ import { Inter, Poppins } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import StickyVoteButton from '../components/StickyVoteButton'
-import GoogleAnalytics from '../components/GoogleAnalytics'
+import GoogleTagManager from '../components/GoogleTagManager'
+import GoogleTagManagerNoScript from '../components/GoogleTagManagerNoScript'
 import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -359,10 +360,11 @@ export default function RootLayout({ children }) {
         
         {/* Scripts */}
         <script async src="https://cdn.strawpoll.com/dist/widgets.js" charSet="utf-8"></script>
-        <GoogleAnalytics />
+        <GoogleTagManager />
         <Analytics />
       </head>
       <body className="min-h-screen bg-gray-900 dark:bg-gray-900 text-white antialiased">
+        <GoogleTagManagerNoScript />
         <Navbar />
         <main>{children}</main>
         <Footer />
