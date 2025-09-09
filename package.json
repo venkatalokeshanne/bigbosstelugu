@@ -11,7 +11,8 @@
     "lint": "next lint",
     "sitemap": "next-sitemap",
     "generate-data": "node scripts/generate-contestants-data.js",
-    "test-optimization": "node scripts/test-optimization.js"
+    "test-optimization": "node scripts/test-optimization.js",
+    "test-google-tags": "node scripts/test-google-tags.js"
   },
   "dependencies": {
     "@sanity/client": "^7.11.0",
