@@ -118,7 +118,7 @@ export default function Hero() {
                 VOTING ONLINE 2025
               </span>
               <span className="text-white text-xs md:text-sm xl:text-base font-light block mt-2">
-                Vote Your Favorite BBT9 Contestant Free
+                Vote Your Favorite BB Telugu Nine Contestant Free
               </span>
             </h1>
 
@@ -126,11 +126,11 @@ export default function Hero() {
             <div className="mb-8">
               {featuredContestant && (
                 <p className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in">
-                  Currently featuring <span className="text-purple-400 font-bold">{featuredContestant.name}</span>
+                  Currently featuring <span className="text-purple-400 font-bold">{featuredContestant.name}</span> from Bigg Boss Telugu 9
                 </p>
               )}
               <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
-                Your vote decides the fate of your favorite contestants. Join millions in the ultimate reality show battle!
+                Your vote decides the fate of your favorite BB Telugu Nine contestants. Join millions in the ultimate Bigg Boss Telugu 9 reality show battle!
               </p>
             </div>
 
@@ -142,7 +142,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-red-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center justify-center">
-                  🗳️ Vote Now • FREE
+                  🗳️ Vote Bigg Boss Telugu 9 • FREE
                   <svg className="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
                   </svg>

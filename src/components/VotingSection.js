@@ -166,13 +166,13 @@ export default function VotingSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Vote Bigg Boss Telugu 9 Online Free 2025
+            Vote Bigg Boss Telugu Nine Online Free 2025
           </h2>
           <h3 className="text-lg md:text-xl text-purple-300 font-medium mb-4">
-            BBT9 Voting Guide Hyderabad | Star MAA Disney+ Hotstar
+            BB Telugu 9 Voting Guide Hyderabad | Star MAA Disney+ Hotstar
           </h3>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Your vote decides the fate of your favorite contestant! Join millions in shaping 
+            Your vote decides the fate of your favorite BB Telugu Nine contestant! Join millions in shaping 
             <span className="text-purple-400 font-medium"> Bigg Boss Telugu 9</span> destiny.
           </p>
         </div>
@@ -263,11 +263,11 @@ export default function VotingSection() {
                   <span className="text-5xl">🎯</span>
                 </div>
                 <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-red-200 bg-clip-text text-transparent mb-6">
-                  Every Vote Matters!
+                  Every BB Telugu 9 Vote Matters!
                 </h3>
                 <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                  Your favorite contestant needs YOUR support to stay in the house. 
-                  Don't wait - vote now and make a difference in their journey!
+                  Your favorite Bigg Boss Telugu Nine contestant needs YOUR support to stay in the house. 
+                  Don't wait - vote for BB Telugu 9 now and make a difference in their journey!
                 </p>
               </div>
               
@@ -276,7 +276,7 @@ export default function VotingSection() {
                   href="#strawpoll_ajnE1Xj40nW" 
                   className="bg-gradient-to-r from-purple-600 to-red-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:from-purple-700 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105"
                 >
-                  🗳️ Vote in Poll Above
+                  🗳️ Vote BB Telugu 9 Above
                 </a>
                 <a
                   href="https://www.hotstar.com/in/shows/bigg-boss-telugu/vote"
@@ -284,7 +284,7 @@ export default function VotingSection() {
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105"
                 >
-                  📺 Official Hotstar Vote
+                  📺 Official BB Telugu 9 Hotstar Vote
                 </a>
               </div>
               

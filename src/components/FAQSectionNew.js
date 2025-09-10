@@ -56,18 +56,18 @@ export default function FAQSection() {
     },
     {
       _id: 'default-10',
-      question: 'How to Vote Telugu bigg boss 9?',
-      answer: 'You can vote through: 1) Disney+ Hotstar app (up to 10 votes per day), 2) Missed call numbers (50 votes per week), 3) Google voting polls (unofficial), 4) SMS voting when available.'
+      question: 'How to Vote Bigg Boss Telugu Nine?',
+      answer: 'You can vote for BB Telugu 9 through: 1) Disney+ Hotstar app (up to 10 votes per day), 2) Bigg Boss Telugu Nine missed call numbers (50 votes per week), 3) Google voting polls (unofficial), 4) SMS voting when available for BB Telugu 9.'
     },
     {
       _id: 'default-11',
-      question: 'Who is leading Bigg Boss Telugu?',
-      answer: 'The leading contestant changes weekly based on voting trends. Check our voting poll results and weekly updates for current standings.'
+      question: 'Who is leading Bigg Boss Telugu Nine?',
+      answer: 'The leading BB Telugu 9 contestant changes weekly based on voting trends. Check our Bigg Boss Telugu Nine voting poll results and weekly updates for current standings.'
     },
     {
       _id: 'default-12',
-      question: 'Who has the highest votes in Bigg Boss Telugu?',
-      answer: 'Vote counts are revealed during elimination episodes. The contestant with maximum votes is typically announced as safe from elimination during weekend episodes.'
+      question: 'Who has the highest votes in Bigg Boss Telugu Nine?',
+      answer: 'BB Telugu 9 vote counts are revealed during elimination episodes. The Bigg Boss Telugu Nine contestant with maximum votes is typically announced as safe from elimination during weekend episodes.'
     }
   ]
 
@@ -134,7 +134,7 @@ export default function FAQSection() {
             </span>
           </h2>
           <h3 className="text-2xl md:text-3xl text-gray-300 font-semibold mb-4">
-            How to Vote BBT9? Voting Rules & Procedures Explained Telugu
+            How to Vote BB Telugu 9? Voting Rules & Procedures Explained Telugu
           </h3>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Got questions about Bigg Boss Telugu 9 voting? We've got answers! 

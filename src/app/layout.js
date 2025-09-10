@@ -25,29 +25,29 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://bigbossteluguvotes.in'),
   title: {
-    default: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote for Your Favorite Contestant',
-    template: '%s | Bigg Boss Telugu 9 Voting'
+    default: 'Bigg Boss Telugu Nine Voting Online 2025 | Vote for Your Favorite BB Telugu 9 Contestant',
+    template: '%s | Bigg Boss Telugu Nine Voting'
   },
-  description: 'Vote for your favorite Bigg Boss Telugu Season 9 contestants online. Live voting polls, eviction predictions, latest updates and contestant profiles. Official BB Telugu 9 voting guide.',
+  description: 'Vote for your favorite Bigg Boss Telugu Nine contestants online. Live BB Telugu 9 voting polls, eviction predictions, latest Bigg Boss Telugu 9 updates and contestant profiles. Official BB Telugu Nine voting guide.',
   keywords: [
     'Bigg Boss Telugu 9 Voting',
-    'BB Telugu 9 Vote Online', 
-    'Bigg Boss Telugu Season 9',
-    'Telugu Reality Show Voting',
-    'Hotstar Voting',
-    'StrawPoll Voting',
-    'BB Telugu 9 Contestants',
-    'Bigg Boss Telugu 9 Elimination',
-    'BB Telugu 9 Latest Updates',
-    'Nagarjuna Bigg Boss Telugu',
-    'Telugu Bigg Boss Vote',
-    'BB Telugu 9 Winner Prediction',
-    'Bigg Boss Telugu 9 Live Updates',
-    'BB Telugu Season 9 Voting Poll'
+    'BB Telugu Nine Vote Online', 
+    'Bigg Boss Telugu Nine',
+    'BB Telugu 9 Reality Show Voting',
+    'Bigg Boss Telugu 9 Hotstar Voting',
+    'BB Telugu Nine StrawPoll Voting',
+    'Bigg Boss Telugu 9 Contestants',
+    'BB Telugu Nine Elimination',
+    'Bigg Boss Telugu 9 Latest Updates',
+    'Nagarjuna Bigg Boss Telugu Nine',
+    'BB Telugu 9 Vote',
+    'Bigg Boss Telugu Nine Winner Prediction',
+    'BB Telugu 9 Live Updates',
+    'Bigg Boss Telugu Nine Voting Poll'
   ],
-  authors: [{ name: 'Bigg Boss Telugu 9 Team' }],
-  creator: 'Bigg Boss Telugu 9 Voting',
-  publisher: 'Bigg Boss Telugu 9 Voting',
+  authors: [{ name: 'Bigg Boss Telugu Nine Team' }],
+  creator: 'Bigg Boss Telugu Nine Voting',
+  publisher: 'Bigg Boss Telugu Nine Voting',
   formatDetection: {
     email: false,
     address: false,
