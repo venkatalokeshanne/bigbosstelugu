@@ -29,18 +29,18 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-      title: `${contestant.name} - Bigg Boss Telugu 9 Contestant | Profile & Updates`,
-      description: `Get to know ${contestant.name}, ${contestant.age ? `${contestant.age}-year-old ` : ''}${contestant.profession || 'contestant'} from ${contestant.hometown || 'Telugu states'}. Vote and support your favorite BB Telugu 9 contestant.`,
-      keywords: `${contestant.name}, ${contestant.name} Bigg Boss Telugu 9, vote ${contestant.name}, BB Telugu 9 ${contestant.name}`,
+      title: `${contestant.name} - Bigg Boss Telugu 10 Contestant | Profile & Updates`,
+      description: `Get to know ${contestant.name}, ${contestant.age ? `${contestant.age}-year-old ` : ''}${contestant.profession || 'contestant'} from ${contestant.hometown || 'Telugu states'}. Vote and support your favorite BB Telugu 10 contestant.`,
+      keywords: `${contestant.name}, ${contestant.name} Bigg Boss Telugu 10, vote ${contestant.name}, BB Telugu 10 ${contestant.name}`,
       openGraph: {
-        title: `${contestant.name} - Bigg Boss Telugu 9`,
-        description: `Vote for ${contestant.name} in Bigg Boss Telugu 9`,
+        title: `${contestant.name} - Bigg Boss Telugu 10`,
+        description: `Vote for ${contestant.name} in Bigg Boss Telugu 10`,
         images: [
           {
             url: contestant.imageUrl || '/images/contestants/default.jpg',
             width: 800,
             height: 600,
-            alt: `${contestant.name} - Bigg Boss Telugu 9 Contestant`,
+            alt: `${contestant.name} - Bigg Boss Telugu 10 Contestant`,
           },
         ],
       },
@@ -95,7 +95,7 @@ export default async function ContestantPage({ params }) {
                 {contestant.imageUrl ? (
                   <Image
                     src={contestant.imageUrl}
-                    alt={`${contestant.name} - Bigg Boss Telugu 9 Contestant`}
+                    alt={`${contestant.name} - Bigg Boss Telugu 10 Contestant`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -129,15 +129,15 @@ export default async function ContestantPage({ params }) {
             {/* Contestant Info */}
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full mb-6">
-                <span className="text-purple-400 font-semibold">BIGG BOSS TELUGU 9</span>
+                <span className="text-purple-400 font-semibold">BIGG BOSS TELUGU 10</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-                {contestant.name} - Bigg Boss Telugu 9 Contestant Profile 2025
+                {contestant.name} - Bigg Boss Telugu 10 Contestant Profile 2026
               </h1>
               
               <h2 className="text-2xl md:text-3xl text-purple-300 font-semibold mb-6">
-                Vote {contestant.name} BBT9 | Biography Age Profession Hyderabad Telugu
+                Vote {contestant.name} BBT10 | Biography Age Profession Hyderabad Telugu
               </h2>
               
               <div className="mb-8 space-y-4">

@@ -26,7 +26,7 @@ export default function FAQSection() {
     },
     {
       _id: 'default-4',
-      question: 'Who got the highest votes in BB9 Telugu Voting?',
+      question: 'Who got the highest votes in BB10 Telugu Voting?',
       answer: 'The voting results and percentages are announced during the elimination episodes. The contestant leading in votes is usually safe from elimination.'
     },
     {
@@ -36,28 +36,28 @@ export default function FAQSection() {
     },
     {
       _id: 'default-6',
-      question: 'Who is eliminated in BB9 Telugu today?',
+      question: 'Who is eliminated in BB10 Telugu today?',
       answer: 'Elimination results are announced every weekend during the special episodes hosted by Nagarjuna. Check our updates section for the latest elimination news.'
     },
     {
       _id: 'default-7',
       question: 'Where can I watch Bigg Boss in Telugu?',
-      answer: 'You can watch Bigg Boss Telugu 9 on Star Maa TV (9 PM on weekdays, 8 PM on weekends) or stream live on Disney+ Hotstar app.'
+      answer: 'You can watch Bigg Boss Telugu 10 on Star Maa TV (9 PM on weekdays, 8 PM on weekends) or stream live on JioHotstar app.'
     },
     {
       _id: 'default-8',
       question: 'Who is the host of Bigg Boss season 9 Telugu?',
-      answer: 'Akkineni Nagarjuna is the host of Bigg Boss Telugu Season 9. He has been hosting the show for the past several seasons.'
+      answer: 'Akkineni Nagarjuna is the host of Bigg Boss Telugu Season 10. He has been hosting the show for the past several seasons.'
     },
     {
       _id: 'default-9',
       question: 'How can I watch Bigg Boss in Telugu in USA?',
-      answer: 'International viewers can watch through Disney+ Hotstar with international subscription or through official Star Maa international streaming services.'
+      answer: 'International viewers can watch through JioHotstar with international subscription or through official Star Maa international streaming services.'
     },
     {
       _id: 'default-10',
       question: 'How to Vote Telugu bigg boss 9?',
-      answer: 'You can vote through: 1) Disney+ Hotstar app (up to 10 votes per day), 2) Missed call numbers (50 votes per week), 3) Google voting polls (unofficial), 4) SMS voting when available.'
+      answer: 'You can vote through: 1) JioHotstar app (up to 10 votes per day), 2) Missed call numbers (50 votes per week), 3) Google voting polls (unofficial), 4) SMS voting when available.'
     },
     {
       _id: 'default-11',
@@ -128,16 +128,16 @@ export default function FAQSection() {
             <span className="text-blue-400 font-semibold">FAQ</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Bigg Boss Telugu 9 Voting FAQ 2025 - Common Questions Answered
+            Bigg Boss Telugu 10 Voting FAQ 2026 - Common Questions Answered
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Hyderabad Telugu Star MAA Guide
             </span>
           </h2>
           <h3 className="text-2xl md:text-3xl text-gray-300 font-semibold mb-4">
-            How to Vote BBT9? Voting Rules & Procedures Explained Telugu
+            How to Vote BBT10? Voting Rules & Procedures Explained Telugu
           </h3>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Got questions about Bigg Boss Telugu 9 voting? We've got answers! 
+            Got questions about Bigg Boss Telugu 10 voting? We've got answers! 
             Find everything you need to know about the voting process.
           </p>
         </div>

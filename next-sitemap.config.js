@@ -61,9 +61,8 @@ module.exports = {
 
     // Add news pages
     const newsArticles = [
-      'week-3-eviction-results',
-      'luxury-budget-task-controversy', 
-      'secret-room-twist-revealed'
+      'bigg-boss-telugu-10-probable-contestants-list',
+      'bigg-boss-agnipariksha-telugu-season-10',
     ]
     
     newsArticles.forEach((slug) => {

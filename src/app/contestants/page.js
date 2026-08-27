@@ -7,12 +7,12 @@ import {
 } from '../../lib/optimized-contestants'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Contestants | Meet All Participants 2025',
-  description: 'Meet all Bigg Boss Telugu Season 9 contestants. View profiles, vote for your favorites, and get latest updates on all participants from the house.',
-  keywords: 'Bigg Boss Telugu 9 contestants, BB Telugu 9 participants, contestant profiles, voting, Telugu reality show',
+  title: 'Bigg Boss Telugu 10 Contestants | Meet All Participants 2026',
+  description: 'Meet all Bigg Boss Telugu Season 10 contestants. View profiles, vote for your favorites, and get latest updates on all participants from the house.',
+  keywords: 'Bigg Boss Telugu 10 contestants, BB Telugu 10 participants, contestant profiles, voting, Telugu reality show',
   openGraph: {
-    title: 'All Bigg Boss Telugu 9 Contestants - Profiles & Voting',
-    description: 'Discover all contestants of Bigg Boss Telugu 9. Vote for your favorites and follow their journey.',
+    title: 'All Bigg Boss Telugu 10 Contestants - Profiles & Voting',
+    description: 'Discover all contestants of Bigg Boss Telugu 10. Vote for your favorites and follow their journey.',
     images: ['/images/contestants/group-photo.jpg'],
   }
 }
@@ -38,18 +38,18 @@ export default async function ContestantsPage() {
         <div className="container-custom relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full mb-6">
-              <span className="text-purple-400 font-semibold">SEASON 9 • ALL CONTESTANTS</span>
+              <span className="text-purple-400 font-semibold">SEASON 10 • ALL CONTESTANTS</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-              Bigg Boss Telugu 9
+              Bigg Boss Telugu 10
               <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
                 CONTESTANTS LIST
               </span>
             </h1>
             
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              15 brave souls entered the Bigg Boss Telugu 9 house with dreams of glory. 
+              15 brave souls entered the Bigg Boss Telugu 10 house with dreams of glory. 
               Get to know them, follow their incredible journey, and vote for your favorites to keep them in the game.
             </p>
 
@@ -114,7 +114,7 @@ export default async function ContestantsPage() {
                       {contestant.imageUrl ? (
                         <Image
                           src={contestant.imageUrl}
-                          alt={`${contestant.name} - Bigg Boss Telugu 9 Contestant`}
+                          alt={`${contestant.name} - Bigg Boss Telugu 10 Contestant`}
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 16vw"

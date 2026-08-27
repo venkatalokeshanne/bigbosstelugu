@@ -17,14 +17,14 @@ export default function Navbar() {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300 group-hover:scale-105 overflow-hidden border border-white/10">
                 <Image
                   src="/logo.png"
-                  alt="Bigg Boss Telugu 9 Logo"
+                  alt="Bigg Boss Telugu 10 Logo"
                   width={48}
                   height={48}
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">9</span>
+                <span className="text-white text-xs font-bold">10</span>
               </div>
             </div>
             <div>
@@ -32,7 +32,7 @@ export default function Navbar() {
                 BIGG BOSS
               </span>
               <span className="text-sm font-medium text-blue-400 block leading-tight">
-                TELUGU S9
+                TELUGU S10
               </span>
             </div>
           </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
               href="/watch-online-international" 
               className="relative text-gray-300 hover:text-white font-semibold transition-all duration-300 group"
             >
-              Watch Bigg Boss Telugu 9 Online
+              Watch Bigg Boss Telugu 10 Online
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
             <Link 
@@ -122,7 +122,7 @@ export default function Navbar() {
                 className="block text-gray-300 hover:text-primary-400 font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Watch Bigg Boss Telugu 9 Online
+                Watch Bigg Boss Telugu 10 Online
               </Link>
               <Link 
                 href="/#vote-section" 

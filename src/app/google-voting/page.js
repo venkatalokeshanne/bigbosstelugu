@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Google Voting | Vote via Google Assistant BB Telugu 9',
-  description: 'Learn how to vote for Bigg Boss Telugu 9 contestants using Google Assistant. Complete guide for Google voting, voice commands, and step-by-step instructions for BB Telugu Season 9.',
+  title: 'Bigg Boss Telugu 10 Google Voting | Vote via Google Assistant BB Telugu 10',
+  description: 'Learn how to vote for Bigg Boss Telugu 10 contestants using Google Assistant. Complete guide for Google voting, voice commands, and step-by-step instructions for BB Telugu Season 10.',
   keywords: [
-    'Bigg Boss Telugu 9 Google voting', 'BB Telugu 9 Google Assistant', 'voice voting BB Telugu',
-    'Google Assistant Bigg Boss voting', 'BB Telugu 9 voice vote', 'Google voting guide'
+    'Bigg Boss Telugu 10 Google voting', 'BB Telugu 10 Google Assistant', 'voice voting BB Telugu',
+    'Google Assistant Bigg Boss voting', 'BB Telugu 10 voice vote', 'Google voting guide'
   ]
 }
 
@@ -28,8 +28,8 @@ export default function GoogleVoting() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Google Voting Guide"
-          description="Complete guide to vote for BB Telugu 9 contestants using Google Assistant"
+          title="Bigg Boss Telugu 10 Google Voting Guide"
+          description="Complete guide to vote for BB Telugu 10 contestants using Google Assistant"
         />
         
         <div className="container mx-auto px-4 py-8">
@@ -38,7 +38,7 @@ export default function GoogleVoting() {
               Google Assistant Voting
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Vote for your favorite Bigg Boss Telugu 9 contestants using voice commands with Google Assistant
+              Vote for your favorite Bigg Boss Telugu 10 contestants using voice commands with Google Assistant
             </p>
           </div>
 
@@ -80,10 +80,10 @@ export default function GoogleVoting() {
                     <p className="text-blue-300 font-semibold">"Ok Google, Bigg Boss Telugu voting"</p>
                   </div>
                   <div className="bg-purple-500/20 p-3 rounded-lg border border-purple-400">
-                    <p className="text-purple-300 font-semibold">"Hey Google, vote for BB Telugu 9"</p>
+                    <p className="text-purple-300 font-semibold">"Hey Google, vote for BB Telugu 10"</p>
                   </div>
                   <div className="bg-orange-500/20 p-3 rounded-lg border border-orange-400">
-                    <p className="text-orange-300 font-semibold">"Ok Google, Bigg Boss Telugu Season 9 vote"</p>
+                    <p className="text-orange-300 font-semibold">"Ok Google, Bigg Boss Telugu Season 10 vote"</p>
                   </div>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function GoogleVoting() {
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               <Link href="/voting-guide" className="bg-white/10 p-4 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-                <h4 className="text-white font-semibold mb-2">Disney+ Hotstar</h4>
+                <h4 className="text-white font-semibold mb-2">JioHotstar</h4>
                 <p className="text-gray-300 text-sm">Official voting through mobile app</p>
               </Link>
               <Link href="/missed-call-voting" className="bg-white/10 p-4 rounded-lg border border-white/20 hover:bg-white/20 transition-all">

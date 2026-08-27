@@ -86,6 +86,18 @@ export default async function sitemap() {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/agnipariksha`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/probable-contestants`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/contestant-photos`,
       lastModified: new Date(),
       changeFrequency: 'daily',
@@ -133,7 +145,7 @@ export default async function sitemap() {
 
   // News articles (enhanced with more realistic content)
   const newsArticles = [
-    'bigg-boss-telugu-9-grand-launch',
+    'bigg-boss-telugu-10-grand-launch',
     'week-1-nominations-revealed',
     'luxury-budget-task-highlights',
     'elimination-predictions-week-3',

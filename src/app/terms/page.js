@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata = {
-  title: 'Terms and Conditions - Bigg Boss Telugu 9 Voting Platform',
-  description: 'Terms and Conditions for using the Bigg Boss Telugu 9 Official Voting Platform. Read our usage guidelines and voting rules.',
+  title: 'Terms and Conditions - Bigg Boss Telugu 10 Voting Platform',
+  description: 'Terms and Conditions for using the Bigg Boss Telugu 10 Official Voting Platform. Read our usage guidelines and voting rules.',
 };
 
 export default function Terms() {
@@ -24,7 +24,7 @@ export default function Terms() {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">Acceptance of Terms</h2>
                 <p className="leading-relaxed">
-                  By accessing and using this Bigg Boss Telugu 9 voting platform, you accept 
+                  By accessing and using this Bigg Boss Telugu 10 voting platform, you accept 
                   and agree to be bound by the terms and provision of this agreement.
                 </p>
               </section>
@@ -57,7 +57,7 @@ export default function Terms() {
                 <h2 className="text-2xl font-bold text-white mb-4">Disclaimer</h2>
                 <p className="leading-relaxed">
                   This is an unofficial fan-made voting platform. Official voting happens 
-                  through Disney+ Hotstar and Star MAA. Results shown here are indicative 
+                  through JioHotstar and Star MAA. Results shown here are indicative 
                   and may not reflect actual show outcomes.
                 </p>
               </section>

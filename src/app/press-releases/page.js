@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Press Releases | BB Telugu Season 9 Official News',
-  description: 'Latest press releases and official announcements for Bigg Boss Telugu 9. Get authentic news updates, contestant announcements, and show updates from BB Telugu Season 9.',
+  title: 'Bigg Boss Telugu 10 Press Releases | BB Telugu Season 10 Official News',
+  description: 'Latest press releases and official announcements for Bigg Boss Telugu 10. Get authentic news updates, contestant announcements, and show updates from BB Telugu Season 10.',
   keywords: [
-    'Bigg Boss Telugu 9 press releases', 'BB Telugu official news', 'Bigg Boss Telugu announcements',
-    'BB Telugu 9 official updates', 'press announcements', 'official news'
+    'Bigg Boss Telugu 10 press releases', 'BB Telugu official news', 'Bigg Boss Telugu announcements',
+    'BB Telugu 10 official updates', 'press announcements', 'official news'
   ]
 }
 
@@ -28,8 +28,8 @@ export default function PressReleases() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Press Releases"
-          description="Official press releases and announcements for Bigg Boss Telugu Season 9"
+          title="Bigg Boss Telugu 10 Press Releases"
+          description="Official press releases and announcements for Bigg Boss Telugu Season 10"
         />
         
         <div className="container mx-auto px-4 py-8">
@@ -38,14 +38,14 @@ export default function PressReleases() {
               Press Releases
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Official press releases, announcements, and authentic news updates for Bigg Boss Telugu Season 9
+              Official press releases, announcements, and authentic news updates for Bigg Boss Telugu Season 10
             </p>
           </div>
 
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 mb-8">
             <h2 className="text-3xl font-bold text-white mb-6">Coming Soon</h2>
             <p className="text-gray-300 mb-4">
-              This section will feature official press releases and announcements from the Bigg Boss Telugu 9 production team.
+              This section will feature official press releases and announcements from the Bigg Boss Telugu 10 production team.
               Stay tuned for the latest updates and official news.
             </p>
             <div className="bg-blue-500/20 p-4 rounded-lg border border-blue-400">

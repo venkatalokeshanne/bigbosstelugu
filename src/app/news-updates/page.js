@@ -3,15 +3,15 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Latest News Updates | BB Telugu Season 9 Daily News',
-  description: 'Stay updated with latest Bigg Boss Telugu 9 news, daily updates, contestant developments, and show highlights. Get real-time BB Telugu Season 9 news.',
-  keywords: ['Bigg Boss Telugu 9 news', 'BB Telugu latest updates', 'daily news updates']
+  title: 'Bigg Boss Telugu 10 Latest News Updates | BB Telugu Season 10 Daily News',
+  description: 'Stay updated with latest Bigg Boss Telugu 10 news, daily updates, contestant developments, and show highlights. Get real-time BB Telugu Season 10 news.',
+  keywords: ['Bigg Boss Telugu 10 news', 'BB Telugu latest updates', 'daily news updates']
 }
 
 export default function NewsUpdates() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <SEOEnhancer title="Bigg Boss Telugu 9 Latest News Updates" description="Latest news and updates for BB Telugu 9" />
+      <SEOEnhancer title="Bigg Boss Telugu 10 Latest News Updates" description="Latest news and updates for BB Telugu 10" />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-white text-center mb-8">Latest News Updates</h1>
         <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 mb-8">

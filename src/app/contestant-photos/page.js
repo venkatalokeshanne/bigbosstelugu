@@ -3,15 +3,15 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Contestant Photos | BB Telugu Season 9 Pictures Gallery',
-  description: 'View Bigg Boss Telugu 9 contestant photos, pictures, and image gallery. High-quality photos of all BB Telugu Season 9 participants and memorable moments.',
-  keywords: ['Bigg Boss Telugu 9 photos', 'BB Telugu contestant pictures', 'contestant photo gallery']
+  title: 'Bigg Boss Telugu 10 Contestant Photos | BB Telugu Season 10 Pictures Gallery',
+  description: 'View Bigg Boss Telugu 10 contestant photos, pictures, and image gallery. High-quality photos of all BB Telugu Season 10 participants and memorable moments.',
+  keywords: ['Bigg Boss Telugu 10 photos', 'BB Telugu contestant pictures', 'contestant photo gallery']
 }
 
 export default function ContestantPhotos() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <SEOEnhancer title="Bigg Boss Telugu 9 Contestant Photos" description="Photo gallery of BB Telugu 9 contestants" />
+      <SEOEnhancer title="Bigg Boss Telugu 10 Contestant Photos" description="Photo gallery of BB Telugu 10 contestants" />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-white text-center mb-8">Contestant Photos</h1>
         <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 mb-8">

@@ -25,29 +25,34 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://bigbossteluguvotes.in'),
   title: {
-    default: 'Bigg Boss Telugu Nine Voting Online 2025 | Vote for Your Favorite BB Telugu 9 Contestant',
-    template: '%s | Bigg Boss Telugu Nine Voting'
+    default: 'Bigg Boss Telugu 10 Voting Online 2026 | Vote for Your Favorite BB Telugu 10 Contestant',
+    template: '%s | Bigg Boss Telugu 10 Voting'
   },
-  description: 'Vote for your favorite Bigg Boss Telugu Nine contestants online. Live BB Telugu 9 voting polls, eviction predictions, latest Bigg Boss Telugu 9 updates and contestant profiles. Official BB Telugu Nine voting guide.',
+  description: 'Vote for your favorite Bigg Boss Telugu 10 contestants online. Live BB Telugu 10 voting polls, eviction predictions, latest Bigg Boss Telugu 10 updates and contestant profiles. Official BB Telugu 10 voting guide.',
   keywords: [
-    'Bigg Boss Telugu 9 Voting',
-    'BB Telugu Nine Vote Online', 
-    'Bigg Boss Telugu Nine',
-    'BB Telugu 9 Reality Show Voting',
-    'Bigg Boss Telugu 9 Hotstar Voting',
-    'BB Telugu Nine StrawPoll Voting',
-    'Bigg Boss Telugu 9 Contestants',
-    'BB Telugu Nine Elimination',
-    'Bigg Boss Telugu 9 Latest Updates',
-    'Nagarjuna Bigg Boss Telugu Nine',
-    'BB Telugu 9 Vote',
-    'Bigg Boss Telugu Nine Winner Prediction',
-    'BB Telugu 9 Live Updates',
-    'Bigg Boss Telugu Nine Voting Poll'
+    'Bigg Boss Telugu 10 Voting',
+    'BB Telugu 10 Vote Online', 
+    'Bigg Boss Telugu 10',
+    'BB Telugu 10 Reality Show Voting',
+    'Bigg Boss Telugu 10 Hotstar Voting',
+    'BB Telugu 10 StrawPoll Voting',
+    'Bigg Boss Telugu 10 Contestants',
+    'BB Telugu 10 Elimination',
+    'Bigg Boss Telugu 10 Latest Updates',
+    'Nagarjuna Bigg Boss Telugu 10',
+    'BB Telugu 10 Vote',
+    'Bigg Boss Telugu 10 Winner Prediction',
+    'BB Telugu 10 Live Updates',
+    'Bigg Boss Telugu 10 Voting Poll',
+    'Bigg Boss Telugu 10 Start Date',
+    'Bigg Boss Telugu 10 JioHotstar',
+    'Bigg Boss Agnipariksha Telugu Season 10',
+    'Bigg Boss Telugu 10 Probable Contestants',
+    'Bigg Boss Telugu 10 Dasavatharam'
   ],
-  authors: [{ name: 'Bigg Boss Telugu Nine Team' }],
-  creator: 'Bigg Boss Telugu Nine Voting',
-  publisher: 'Bigg Boss Telugu Nine Voting',
+  authors: [{ name: 'Bigg Boss Telugu 10 Team' }],
+  creator: 'Bigg Boss Telugu 10 Voting',
+  publisher: 'Bigg Boss Telugu 10 Voting',
   formatDetection: {
     email: false,
     address: false,
@@ -87,22 +92,22 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://bigbossteluguvotes.in',
-    siteName: 'Bigg Boss Telugu 9 Voting',
-    title: 'Bigg Boss Telugu 9 Voting Online 2025 | Vote Now',
-    description: 'Vote for your favorite Bigg Boss Telugu Season 9 contestants online. Live voting polls, eviction predictions, and latest updates.',
+    siteName: 'Bigg Boss Telugu 10 Voting',
+    title: 'Bigg Boss Telugu 10 Voting Online 2026 | Vote Now',
+    description: 'Vote for your favorite Bigg Boss Telugu Season 10 contestants online. Live voting polls, eviction predictions, and latest updates.',
     images: [
       {
         url: '/images/bigboss.jpg',
         width: 1200,
         height: 630,
-        alt: 'Bigg Boss Telugu 9 Voting Online - Vote for Your Favorite Contestant',
+        alt: 'Bigg Boss Telugu 10 Voting Online - Vote for Your Favorite Contestant',
         type: 'image/jpeg',
       },
       {
         url: '/logo.png',
         width: 400,
         height: 400,
-        alt: 'Bigg Boss Telugu 9 Logo',
+        alt: 'Bigg Boss Telugu 10 Logo',
         type: 'image/png',
       },
     ],
@@ -111,11 +116,11 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@BigBossTeluguVoting',
     creator: '@BigBossTeluguVoting',
-    title: 'Bigg Boss Telugu 9 Voting Online 2025',
-    description: 'Vote for your favorite Bigg Boss Telugu Season 9 contestants online. Live polls, updates & predictions.',
+    title: 'Bigg Boss Telugu 10 Voting Online 2026',
+    description: 'Vote for your favorite Bigg Boss Telugu Season 10 contestants online. Live polls, updates & predictions.',
     images: {
       url: '/images/bigboss.jpg',
-      alt: 'Bigg Boss Telugu 9 Voting Online',
+      alt: 'Bigg Boss Telugu 10 Voting Online',
     },
   },
   verification: {
@@ -139,8 +144,8 @@ export const metadata = {
     'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
-    'application-name': 'BB Telugu 9 Voting',
-    'apple-mobile-web-app-title': 'BB Telugu 9 Voting',
+    'application-name': 'BB Telugu 10 Voting',
+    'apple-mobile-web-app-title': 'BB Telugu 10 Voting',
     'theme-color': '#dc2626',
     'msapplication-TileColor': '#dc2626',
     'msapplication-navbutton-color': '#dc2626',
@@ -155,9 +160,9 @@ export default function RootLayout({ children }) {
         "@type": "Website",
         "@id": "https://bigbossteluguvotes.in/#website",
         "url": "https://bigbossteluguvotes.in/",
-        "name": "Bigg Boss Telugu 9 Voting",
-        "alternateName": "BBT9 Voting",
-        "description": "Official fan website for Bigg Boss Telugu Season 9 voting, contestant updates, and latest news",
+        "name": "Bigg Boss Telugu 10 Voting",
+        "alternateName": "BBT10 Voting",
+        "description": "Official fan website for Bigg Boss Telugu Season 10 voting, contestant updates, and latest news",
         "publisher": {
           "@id": "https://bigbossteluguvotes.in/#organization"
         },
@@ -173,7 +178,7 @@ export default function RootLayout({ children }) {
         ],
         "inLanguage": ["te-IN", "en-US"],
         "isAccessibleForFree": true,
-        "copyrightYear": 2024,
+        "copyrightYear": 2026,
         "genre": "Reality TV Voting Platform",
         "sameAs": [
           "https://www.hotstar.com/in/shows/bigg-boss-telugu",
@@ -184,7 +189,7 @@ export default function RootLayout({ children }) {
       {
         "@type": "Organization",
         "@id": "https://bigbossteluguvotes.in/#organization",
-        "name": "Bigg Boss Telugu 9 Voting",
+        "name": "Bigg Boss Telugu 10 Voting",
         "url": "https://bigbossteluguvotes.in/",
         "logo": {
           "@type": "ImageObject",
@@ -194,7 +199,7 @@ export default function RootLayout({ children }) {
           "contentUrl": "https://bigbossteluguvotes.in/logo.png",
           "width": 512,
           "height": 512,
-          "caption": "Bigg Boss Telugu 9 Voting"
+          "caption": "Bigg Boss Telugu 10 Voting"
         },
         "image": {
           "@id": "https://bigbossteluguvotes.in/#/schema/logo"
@@ -224,12 +229,12 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "TVSeries",
-        "name": "Bigg Boss Telugu Season 9",
-        "alternateName": ["BB Telugu 9", "BBT9", "Bigg Boss Telugu 9"],
-        "description": "Reality TV show where contestants compete for the title in a house with 24/7 surveillance. Hosted by Nagarjuna Akkineni.",
+        "name": "Bigg Boss Telugu Season 10",
+        "alternateName": ["BB Telugu 10", "BBT10", "Bigg Boss Telugu 10", "Bigg Boss Telugu Dasavatharam"],
+        "description": "Reality TV show where contestants compete for the title in a house with 24/7 surveillance. Season 10, themed 'Dasavatharam' (The Ten Avatars), is hosted by Nagarjuna Akkineni for the 8th consecutive season, with the grand premiere on September 6, 2026.",
         "genre": ["Reality TV", "Game Show", "Entertainment"],
-        "numberOfSeasons": 9,
-        "startDate": "2024-09-01",
+        "numberOfSeasons": 10,
+        "startDate": "2026-09-06",
         "inLanguage": ["te-IN", "en-US"],
         "contentRating": "TV-14",
         "countryOfOrigin": {
@@ -249,12 +254,6 @@ export default function RootLayout({ children }) {
           "@type": "Organization",
           "name": "Endemol Shine India"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.5",
-          "bestRating": "5",
-          "ratingCount": "15000"
-        },
         "sameAs": [
           "https://www.hotstar.com/in/shows/bigg-boss-telugu",
           "https://en.wikipedia.org/wiki/Bigg_Boss_Telugu"
@@ -265,18 +264,18 @@ export default function RootLayout({ children }) {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How to vote in Bigg Boss Telugu 9?",
+            "name": "How to vote in Bigg Boss Telugu 10?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can vote for your favorite Bigg Boss Telugu 9 contestants through Disney+ Hotstar app or by visiting our official voting website. Each user gets limited votes per day."
+              "text": "You can vote for your favorite Bigg Boss Telugu 10 contestants through JioHotstar app or by visiting our official voting website. Each user gets limited votes per day."
             }
           },
           {
             "@type": "Question", 
-            "name": "Is Bigg Boss Telugu 9 voting free?",
+            "name": "Is Bigg Boss Telugu 10 voting free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, voting for Bigg Boss Telugu 9 is completely free. You can vote through the Disney+ Hotstar app or official voting platforms without any charges."
+              "text": "Yes, voting for Bigg Boss Telugu 10 is completely free. You can vote through the JioHotstar app or official voting platforms without any charges."
             }
           },
           {
@@ -284,15 +283,23 @@ export default function RootLayout({ children }) {
             "name": "When does voting close each week?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Voting for Bigg Boss Telugu 9 typically closes on Friday nights before the weekend episodes. Exact timings are announced during the show."
+              "text": "Voting for Bigg Boss Telugu 10 typically closes on Friday nights before the weekend episodes. Exact timings are announced during the show."
             }
           },
           {
             "@type": "Question",
-            "name": "Who is the host of Bigg Boss Telugu 9?",
+            "name": "Who is the host of Bigg Boss Telugu 10?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nagarjuna Akkineni is the host of Bigg Boss Telugu 9, continuing his role from previous seasons of the popular reality show."
+              "text": "Nagarjuna Akkineni is the host of Bigg Boss Telugu 10, continuing his role from previous seasons of the popular reality show."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Bigg Boss Agnipariksha Telugu Season 10?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bigg Boss Agnipariksha Telugu Season 10 is the official pre-show audition series for Bigg Boss Telugu 10, which premiered on August 15, 2026 on JioHotstar and Star Maa ahead of the main season's grand premiere on September 6, 2026."
             }
           }
         ]
@@ -316,8 +323,8 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="msapplication-TileColor" content="#dc2626" />
         <meta name="msapplication-navbutton-color" content="#dc2626" />
-        <meta name="apple-mobile-web-app-title" content="BB Telugu 9 Voting" />
-        <meta name="application-name" content="BB Telugu 9 Voting" />
+        <meta name="apple-mobile-web-app-title" content="BB Telugu 10 Voting" />
+        <meta name="application-name" content="BB Telugu 10 Voting" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="referrer" content="origin-when-cross-origin" />
         
@@ -330,16 +337,16 @@ export default function RootLayout({ children }) {
         <meta name="distribution" content="Global" />
         <meta name="rating" content="General" />
         <meta name="revisit-after" content="1 days" />
-        <meta name="subject" content="Bigg Boss Telugu 9 Voting Platform" />
-        <meta name="summary" content="Official voting platform for Bigg Boss Telugu 9 reality show" />
+        <meta name="subject" content="Bigg Boss Telugu 10 Voting Platform" />
+        <meta name="summary" content="Official voting platform for Bigg Boss Telugu 10 reality show" />
         <meta name="topic" content="Reality TV Voting" />
         <meta name="identifier-URL" content="https://bigbossteluguvotes.in" />
         <meta name="directory" content="submission" />
         <meta name="category" content="Entertainment" />
         <meta name="resource-type" content="document" />
-        <meta name="abstract" content="Vote for your favorite Bigg Boss Telugu 9 contestants online with official voting platform" />
+        <meta name="abstract" content="Vote for your favorite Bigg Boss Telugu 10 contestants online with official voting platform" />
         <meta name="language" content="Telugu, English" />
-        <meta name="owner" content="Bigg Boss Telugu 9 Voting Team" />
+        <meta name="owner" content="Bigg Boss Telugu 10 Voting Team" />
         <meta name="url" content="https://bigbossteluguvotes.in" />
         <meta name="og:locality" content="Hyderabad" />
         <meta name="og:region" content="Telangana" />
