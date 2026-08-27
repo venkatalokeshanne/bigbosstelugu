@@ -24,7 +24,7 @@ export default function Navbar() {
                 />
               </div>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs font-bold">9</span>
+                <span className="text-white text-xs font-bold">10</span>
               </div>
             </div>
             <div>
@@ -32,7 +32,7 @@ export default function Navbar() {
                 BIGG BOSS
               </span>
               <span className="text-sm font-medium text-blue-400 block leading-tight">
-                TELUGU S9
+                TELUGU S10
               </span>
             </div>
           </Link>

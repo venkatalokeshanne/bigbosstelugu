@@ -26,7 +26,7 @@ export default function FAQSection() {
     },
     {
       _id: 'default-4',
-      question: 'Who got the highest votes in BB9 Telugu Voting?',
+      question: 'Who got the highest votes in BB10 Telugu Voting?',
       answer: 'The voting results and percentages are announced during the elimination episodes. The contestant leading in votes is usually safe from elimination.'
     },
     {
@@ -36,7 +36,7 @@ export default function FAQSection() {
     },
     {
       _id: 'default-6',
-      question: 'Who is eliminated in BB9 Telugu today?',
+      question: 'Who is eliminated in BB10 Telugu today?',
       answer: 'Elimination results are announced every weekend during the special episodes hosted by Nagarjuna. Check our updates section for the latest elimination news.'
     },
     {
