@@ -51,38 +51,38 @@ export function SEOHeading6({ children, className = "", ...props }) {
 // SEO-optimized keyword-rich headings
 export const seoHeadings = {
   homepage: {
-    h1: "Bigg Boss Telugu 9 Voting - Vote Online for Your Favorite Contestant",
+    h1: "Bigg Boss Telugu 10 Voting - Vote Online for Your Favorite Contestant",
     h2: {
-      voting: "Vote Bigg Boss Telugu 9 Contestants Online",
-      contestants: "Bigg Boss Telugu 9 Contestants Profiles", 
-      news: "Bigg Boss Telugu 9 Breaking News & Updates",
-      howToVote: "How to Vote Bigg Boss Telugu 9 Online - Complete Voting Guide",
-      faq: "Bigg Boss Telugu 9 Voting - Frequently Asked Questions",
-      liveUpdates: "Bigg Boss Telugu 9 Live Updates & Latest News"
+      voting: "Vote Bigg Boss Telugu 10 Contestants Online",
+      contestants: "Bigg Boss Telugu 10 Contestants Profiles", 
+      news: "Bigg Boss Telugu 10 Breaking News & Updates",
+      howToVote: "How to Vote Bigg Boss Telugu 10 Online - Complete Voting Guide",
+      faq: "Bigg Boss Telugu 10 Voting - Frequently Asked Questions",
+      liveUpdates: "Bigg Boss Telugu 10 Live Updates & Latest News"
     }
   },
   contestants: {
-    h1: "Bigg Boss Telugu 9 Contestants List - Complete Profiles & Voting",
+    h1: "Bigg Boss Telugu 10 Contestants List - Complete Profiles & Voting",
     h2: {
-      active: "Active Bigg Boss Telugu 9 Contestants",
-      eliminated: "Eliminated Contestants - Bigg Boss Telugu 9",
-      voting: "Vote for Bigg Boss Telugu 9 Contestants Online"
+      active: "Active Bigg Boss Telugu 10 Contestants",
+      eliminated: "Eliminated Contestants - Bigg Boss Telugu 10",
+      voting: "Vote for Bigg Boss Telugu 10 Contestants Online"
     }
   },
   news: {
-    h1: "Bigg Boss Telugu 9 News & Updates - Latest Episodes & Eliminations",
+    h1: "Bigg Boss Telugu 10 News & Updates - Latest Episodes & Eliminations",
     h2: {
-      featured: "Featured Bigg Boss Telugu 9 News Stories",
-      latest: "Latest Bigg Boss Telugu 9 News Articles",
-      updates: "Live Updates from Bigg Boss Telugu 9 House"
+      featured: "Featured Bigg Boss Telugu 10 News Stories",
+      latest: "Latest Bigg Boss Telugu 10 News Articles",
+      updates: "Live Updates from Bigg Boss Telugu 10 House"
     }
   },
   individual: {
     // Dynamic based on contestant name
-    h1: (name) => `${name} - Bigg Boss Telugu 9 Contestant Profile & Voting`,
+    h1: (name) => `${name} - Bigg Boss Telugu 10 Contestant Profile & Voting`,
     h2: {
       profile: "Contestant Profile & Biography",
-      journey: "Journey in Bigg Boss Telugu 9 House",
+      journey: "Journey in Bigg Boss Telugu 10 House",
       vote: "Vote for This Contestant"
     }
   }
@@ -120,8 +120,8 @@ function generateSEORecommendations(headings) {
   
   // Check for keyword optimization
   const h1 = headings.find(h => h.tag === 'h1')
-  if (h1 && !h1.text.toLowerCase().includes('bigg boss telugu 9')) {
-    recommendations.push('Include main keyword "Bigg Boss Telugu 9" in H1 tag')
+  if (h1 && !h1.text.toLowerCase().includes('bigg boss telugu 10')) {
+    recommendations.push('Include main keyword "Bigg Boss Telugu 10" in H1 tag')
   }
   
   // Check for voting keywords

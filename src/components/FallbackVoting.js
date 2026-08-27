@@ -44,7 +44,7 @@ export default function FallbackVoting() {
         <div className="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4 mb-6">
           <p className="text-blue-300 text-sm font-medium mb-2">For official voting:</p>
           <ul className="text-blue-200 text-sm space-y-1">
-            <li>• Disney+ Hotstar App (Most Impact)</li>
+            <li>• JioHotstar App (Most Impact)</li>
             <li>• SMS: "BB {selectedContestant}" to 58888</li>
           </ul>
         </div>
@@ -97,7 +97,7 @@ export default function FallbackVoting() {
       </div>
       
       <div className="mt-4 text-xs text-gray-500 text-center">
-        This is a demo vote. For official voting, use Disney+ Hotstar or SMS.
+        This is a demo vote. For official voting, use JioHotstar or SMS.
       </div>
     </div>
   )

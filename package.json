@@ -1,7 +1,7 @@
 {
-  "name": "bigg-boss-telugu-9-voting",
+  "name": "bigg-boss-telugu-10-voting",
   "version": "1.0.0",
-  "description": "Official Bigg Boss Telugu 9 Voting Website - Vote Online for Your Favorite Contestants",
+  "description": "Official Bigg Boss Telugu 10 Voting Website - Vote Online for Your Favorite Contestants",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -31,10 +31,10 @@
     "tailwindcss": "^3.4.7"
   },
   "keywords": [
-    "Bigg Boss Telugu 9",
-    "Bigg Boss Telugu 9 Voting",
-    "BB Telugu 9 Vote Online",
-    "Bigg Boss Telugu Season 9",
+    "Bigg Boss Telugu 10",
+    "Bigg Boss Telugu 10 Voting",
+    "BB Telugu 10 Vote Online",
+    "Bigg Boss Telugu Season 10",
     "Telugu Reality Show Voting",
     "Hotstar Voting",
     "StrawPoll Voting"

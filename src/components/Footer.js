@@ -14,11 +14,11 @@ export default function Footer() {
                 <span className="text-white font-bold text-xl">BB</span>
               </div>
               <span className="text-xl font-bold">
-                Bigg Boss Telugu 9 Voting
+                Bigg Boss Telugu 10 Voting
               </span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              Your ultimate destination for Bigg Boss Telugu 9 voting, contestant updates, 
+              Your ultimate destination for Bigg Boss Telugu 10 voting, contestant updates, 
               news, and live results. Vote for your favorite contestants and stay updated 
               with all house activities.
             </p>
@@ -61,8 +61,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h2 className="text-lg font-semibold mb-4">Bigg Boss Telugu 9 Quick Navigation</h2>
-            <h3 className="text-sm text-purple-300 font-medium mb-3">BBT9 2025 Official Pages</h3>
+            <h2 className="text-lg font-semibold mb-4">Bigg Boss Telugu 10 Quick Navigation</h2>
+            <h3 className="text-sm text-purple-300 font-medium mb-3">BBT10 2026 Official Pages</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
@@ -95,7 +95,7 @@ export default function Footer() {
           {/* Voting Info */}
           <div>
             <h2 className="text-lg font-semibold mb-4">How to Vote Online Free?</h2>
-            <h3 className="text-sm text-purple-300 font-medium mb-3">BBT9 Voting Methods Hyderabad</h3>
+            <h3 className="text-sm text-purple-300 font-medium mb-3">BBT10 Voting Methods Hyderabad</h3>
             <ul className="space-y-2 text-sm">
               <li className="text-gray-400">
                 <span className="font-medium text-white">Hotstar:</span> Official voting
@@ -117,7 +117,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © {currentYear} Bigg Boss Telugu 9 Voting. All rights reserved. 
+              © {currentYear} Bigg Boss Telugu 10 Voting. All rights reserved. 
               This is an unofficial fan website.
             </div>
             <div className="flex space-x-6 text-sm">

@@ -12,12 +12,12 @@ export default function ContentSection() {
         {/* Main Article Style Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Bigg Boss Telugu 9 Voting, BB Telugu Nine Contestants and Latest Updates
+            Bigg Boss Telugu 10 Voting, BB Telugu 10 Contestants and Latest Updates
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            As you know, you have to vote to save any Bigg Boss Telugu Nine contestant. So Bigg Boss Telugu 9 
+            As you know, you have to vote to save any Bigg Boss Telugu 10 contestant. So Bigg Boss Telugu 10 
             Voting process is the same for this year as well. Keep reading to know how to vote 
-            BB Telugu 9 contestants to save them from elimination.
+            BB Telugu 10 contestants to save them from elimination.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function ContentSection() {
           <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/images/bigboss.jpg"
-              alt="Bigg Boss Telugu 9 Vote Featured Image - BB Telugu Nine Voting Process"
+              alt="Bigg Boss Telugu 10 Vote Featured Image - BB Telugu 10 Voting Process"
               width={1024}
               height={615}
               className="w-full h-auto"
@@ -42,9 +42,9 @@ export default function ContentSection() {
         <div className="prose prose-lg prose-invert max-w-6xl mx-auto mb-16">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
             <p className="text-gray-300 leading-relaxed mb-6">
-              After so much anticipation, it is officially announced that Season 9 of Bigg Boss Telugu 
+              After so much anticipation, it is officially announced that Season 10 of Bigg Boss Telugu 
               is going to be started in September. Everyone thought that the most controversial show, 
-              Bigg Boss Telugu Nine will be canceled this year as the team already hosted the Bigg Boss 
+              Bigg Boss Telugu 10 will be canceled this year as the team already hosted the Bigg Boss 
               Telugu Non Stop OTT version.
             </p>
             
@@ -56,7 +56,7 @@ export default function ContentSection() {
 
             <p className="text-gray-300 leading-relaxed">
               <strong className="text-purple-400">Akkineni Nagarjuna</strong> appears as the host in 
-              Bigg Boss Telugu 9 whereas Jr. NTR hosted Season 1 and Nani Hosted the Show in Season 2. 
+              Bigg Boss Telugu 10 whereas Jr. NTR hosted Season 1 and Nani Hosted the Show in Season 2. 
               Akkineni Nagarjuna Was the host for the past five years. He has hosted Bigg Boss Telugu 3, 
               Bigg Boss 4 Telugu, Bigg Boss Non stop, and now, Bigg Boss 9 Telugu.
             </p>
@@ -94,7 +94,7 @@ export default function ContentSection() {
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Streaming Partners</td>
-                    <td className="px-6 py-4 text-gray-300">Disney Plus Hotstar</td>
+                    <td className="px-6 py-4 text-gray-300">JioHotstar</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Watch on</td>
@@ -106,7 +106,7 @@ export default function ContentSection() {
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Release Date</td>
-                    <td className="px-6 py-4 text-gray-300">September 07, 2025</td>
+                    <td className="px-6 py-4 text-gray-300">September 07, 2026</td>
                   </tr>
                 </tbody>
               </table>
@@ -151,9 +151,9 @@ export default function ContentSection() {
                   </p>
                   
                   <p className="leading-relaxed">
-                    Now you can vote and Watch Bigg Boss Telugu Season 9 on Hotstar App. Star Maa Bigg Boss 
+                    Now you can vote and Watch Bigg Boss Telugu Season 10 on Hotstar App. Star Maa Bigg Boss 
                     Telugu Vote Results are announced by host, Akkineni Nagarjuna every week. Bigg Boss Telugu 
-                    Season 9, the Biggest Reality show in Telugu airing on Star Maa television and also live 
+                    Season 10, the Biggest Reality show in Telugu airing on Star Maa television and also live 
                     stream on their streaming partner Hotstar App.
                   </p>
 

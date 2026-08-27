@@ -118,7 +118,7 @@ export default function AdminPosterPage() {
                         value={poster.title}
                         onChange={(e) => handlePosterChange(index, 'title', e.target.value)}
                         className="w-full px-4 py-2 bg-gray-600 border border-gray-500 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                        placeholder="e.g., Bigg Boss Telugu 9 - Episode Highlights"
+                        placeholder="e.g., Bigg Boss Telugu 10 - Episode Highlights"
                         required
                       />
                     </div>

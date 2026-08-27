@@ -1,22 +1,22 @@
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Watch Bigg Boss Telugu 9 Online in USA, UK, Europe 2025 | BB Telugu Nine International Streaming',
-  description: 'Complete guide to watch Bigg Boss Telugu Nine online from USA, UK, Europe and other countries. Stream BB Telugu 9 episodes live and on-demand using Hotstar, VPN, YuppTV. Watch Bigg Boss Telugu Nine internationally.',
-  keywords: 'watch bigg boss telugu 9 online USA, BB Telugu Nine UK streaming, bigg boss telugu 9 Europe, BB Telugu Nine international streaming, VPN for bigg boss telugu 9, hotstar bigg boss telugu nine abroad, YuppTV bigg boss telugu 9, watch BB Telugu Nine outside India, bigg boss telugu 9 global streaming',
+  title: 'Watch Bigg Boss Telugu 10 Online in USA, UK, Europe 2026 | BB Telugu 10 International Streaming',
+  description: 'Complete guide to watch Bigg Boss Telugu 10 online from USA, UK, Europe and other countries. Stream BB Telugu 10 episodes live and on-demand using Hotstar, VPN, YuppTV. Watch Bigg Boss Telugu 10 internationally.',
+  keywords: 'watch bigg boss telugu 10 online USA, BB Telugu 10 UK streaming, bigg boss telugu 10 Europe, BB Telugu 10 international streaming, VPN for bigg boss telugu 10, hotstar bigg boss telugu 10 abroad, YuppTV bigg boss telugu 10, watch BB Telugu 10 outside India, bigg boss telugu 10 global streaming',
   alternates: {
     canonical: 'https://bigbossteluguvotes.in/watch-online-international',
   },
   openGraph: {
-    title: 'Watch Bigg Boss Telugu 9 Online Internationally | BB Telugu Nine USA, UK, Europe',
-    description: 'Stream BB Telugu Nine episodes from anywhere in the world. Complete international Bigg Boss Telugu 9 viewing guide with VPN setup and streaming platforms.',
+    title: 'Watch Bigg Boss Telugu 10 Online Internationally | BB Telugu 10 USA, UK, Europe',
+    description: 'Stream BB Telugu 10 episodes from anywhere in the world. Complete international Bigg Boss Telugu 10 viewing guide with VPN setup and streaming platforms.',
     url: 'https://bigbossteluguvotes.in/watch-online-international',
     images: [
       {
         url: '/images/bb-international-streaming.jpg',
         width: 1200,
         height: 630,
-        alt: 'Watch Bigg Boss Telugu 9 Online Internationally - BB Telugu Nine Streaming Guide',
+        alt: 'Watch Bigg Boss Telugu 10 Online Internationally - BB Telugu 10 Streaming Guide',
       },
     ],
   },
@@ -32,14 +32,14 @@ export default function WatchOnlineInternational() {
             <span className="text-blue-400 font-semibold">🌍 International Streaming</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-            Watch Bigg Boss Telugu 9 Online
+            Watch Bigg Boss Telugu 10 Online
             <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              BB Telugu Nine - USA, UK, Europe & Worldwide
+              BB Telugu 10 - USA, UK, Europe & Worldwide
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-            Complete guide to stream Bigg Boss Telugu Nine episodes from anywhere in the world. 
-            Watch live BB Telugu 9 episodes, highlights, and catch up on missed Bigg Boss Telugu Nine content using our recommended 
+            Complete guide to stream Bigg Boss Telugu 10 episodes from anywhere in the world. 
+            Watch live BB Telugu 10 episodes, highlights, and catch up on missed Bigg Boss Telugu 10 content using our recommended 
             streaming methods and platforms.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function WatchOnlineInternational() {
               priority
             />
             <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-lg text-sm">
-              Watch BB Telugu 9 from anywhere in the world
+              Watch BB Telugu 10 from anywhere in the world
             </div>
           </div>
         </div>
@@ -71,15 +71,15 @@ export default function WatchOnlineInternational() {
             </p>
             
             <p className="text-gray-300 leading-relaxed mb-6">
-              Bigg Boss Telugu 9 is broadcasted on <strong className="text-purple-400">Star Maa</strong> and 
+              Bigg Boss Telugu 10 is broadcasted on <strong className="text-purple-400">Star Maa</strong> and 
               hosted by <strong className="text-purple-400">Akkineni Nagarjuna</strong>. The show features 
               celebrities staying in a house for 100 days, and viewers can watch how they live together and 
               compete for the title.
             </p>
 
             <p className="text-gray-300 leading-relaxed">
-              Unfortunately, you cannot watch or live stream Bigg Boss Telugu Season 9 directly outside India 
-              due to geographical restrictions. But don't worry - we'll show you how to watch BB Telugu 9 
+              Unfortunately, you cannot watch or live stream Bigg Boss Telugu Season 10 directly outside India 
+              due to geographical restrictions. But don't worry - we'll show you how to watch BB Telugu 10 
               from the USA, Europe, UK, and other countries using legal streaming methods.
             </p>
           </div>
@@ -88,17 +88,17 @@ export default function WatchOnlineInternational() {
         {/* Streaming Methods */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            📺 Best Ways to Watch BB Telugu 9 Internationally
+            📺 Best Ways to Watch BB Telugu 10 Internationally
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Disney+ Hotstar Method */}
+            {/* JioHotstar Method */}
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">📱</span>
                 </div>
-                <h3 className="text-xl font-bold text-white">Disney+ Hotstar</h3>
+                <h3 className="text-xl font-bold text-white">JioHotstar</h3>
                 <p className="text-purple-400 text-sm">Premium Streaming</p>
               </div>
               
@@ -240,7 +240,7 @@ export default function WatchOnlineInternational() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm font-bold">5</span>
-                    <span>Open Hotstar or other streaming apps and start watching BB Telugu 9</span>
+                    <span>Open Hotstar or other streaming apps and start watching BB Telugu 10</span>
                   </li>
                 </ol>
               </div>
@@ -299,7 +299,7 @@ export default function WatchOnlineInternational() {
                 </thead>
                 <tbody className="divide-y divide-white/10">
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="px-6 py-4 font-semibold text-purple-400">Disney+ Hotstar</td>
+                    <td className="px-6 py-4 font-semibold text-purple-400">JioHotstar</td>
                     <td className="px-6 py-4 text-green-400">✅ Yes</td>
                     <td className="px-6 py-4 text-green-400">✅ Yes</td>
                     <td className="px-6 py-4 text-yellow-400">⚠️ Yes</td>
@@ -433,8 +433,8 @@ export default function WatchOnlineInternational() {
           <div className="max-w-4xl mx-auto space-y-6">
             {[
               {
-                question: "Can I watch Bigg Boss Telugu 9 live outside India?",
-                answer: "Yes, you can watch BB Telugu 9 live outside India using platforms like YuppTV (available in USA, UK) or Disney+ Hotstar with a VPN connection to an Indian server."
+                question: "Can I watch Bigg Boss Telugu 10 live outside India?",
+                answer: "Yes, you can watch BB Telugu 10 live outside India using platforms like YuppTV (available in USA, UK) or JioHotstar with a VPN connection to an Indian server."
               },
               {
                 question: "Is it legal to use VPN for streaming?",
@@ -446,10 +446,10 @@ export default function WatchOnlineInternational() {
               },
               {
                 question: "Can I vote for contestants while watching from abroad?",
-                answer: "Yes, you can vote for BB Telugu 9 contestants from abroad using the same VPN setup. The Hotstar app allows voting when connected through an Indian server."
+                answer: "Yes, you can vote for BB Telugu 10 contestants from abroad using the same VPN setup. The Hotstar app allows voting when connected through an Indian server."
               },
               {
-                question: "Are there any free options to watch BB Telugu 9 internationally?",
+                question: "Are there any free options to watch BB Telugu 10 internationally?",
                 answer: "YouTube offers free episode highlights and some content, but for full episodes and live streaming, you'll need paid subscriptions to Hotstar, YuppTV, or similar platforms."
               }
             ].map((faq, index) => (
@@ -468,14 +468,14 @@ export default function WatchOnlineInternational() {
               🎬 Conclusion
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
-              We've shown you the best ways to watch Bigg Boss Telugu 9 from anywhere in the world. 
+              We've shown you the best ways to watch Bigg Boss Telugu 10 from anywhere in the world. 
               While geographical restrictions exist, using the right combination of streaming platforms 
               and VPN services allows international viewers to enjoy this thrilling reality show.
             </p>
             <p className="text-gray-300 leading-relaxed">
               Choose the method that works best for your location and budget. Remember to use reliable 
               services to ensure a smooth viewing experience and stay updated with the latest episodes 
-              and eliminations of BB Telugu 9.
+              and eliminations of BB Telugu 10.
             </p>
           </div>
         </div>

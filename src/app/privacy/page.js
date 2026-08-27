@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata = {
-  title: 'Privacy Policy - Bigg Boss Telugu 9 Voting Platform',
-  description: 'Privacy Policy for Bigg Boss Telugu 9 Official Voting Platform. Learn how we protect your personal information and voting data.',
+  title: 'Privacy Policy - Bigg Boss Telugu 10 Voting Platform',
+  description: 'Privacy Policy for Bigg Boss Telugu 10 Official Voting Platform. Learn how we protect your personal information and voting data.',
 };
 
 export default function Privacy() {

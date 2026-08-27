@@ -106,19 +106,19 @@ export default function Hero() {
             {/* Season Badge */}
             <div className="inline-flex items-center gap-3 bg-red-500/20 border border-white/10 rounded-full px-6 py-3 mb-8">
               <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-              <span className="text-white font-bold text-lg">SEASON 9 • 2025</span>
+              <span className="text-white font-bold text-lg">SEASON 10 • 2026</span>
             </div>
 
             {/* Main Heading - SEO Optimized H1 - Performance Enhanced */}
             <h1 className="text-2xl md:text-3xl xl:text-4xl font-bold mb-6 leading-tight">
               <span className="text-blue-400 block">
-                BIGG BOSS TELUGU 9
+                BIGG BOSS TELUGU 10
               </span>
               <span className="text-orange-400 block">
-                VOTING ONLINE 2025
+                VOTING ONLINE 2026
               </span>
               <span className="text-white text-xs md:text-sm xl:text-base font-light block mt-2">
-                Vote Your Favorite BB Telugu Nine Contestant Free
+                Vote Your Favorite BB Telugu 10 Contestant Free
               </span>
             </h1>
 
@@ -126,11 +126,11 @@ export default function Hero() {
             <div className="mb-8">
               {featuredContestant && (
                 <p className="text-xl md:text-2xl text-gray-300 mb-4 animate-fade-in">
-                  Currently featuring <span className="text-purple-400 font-bold">{featuredContestant.name}</span> from Bigg Boss Telugu 9
+                  Currently featuring <span className="text-purple-400 font-bold">{featuredContestant.name}</span> from Bigg Boss Telugu 10
                 </p>
               )}
               <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
-                Your vote decides the fate of your favorite BB Telugu Nine contestants. Join millions in the ultimate Bigg Boss Telugu 9 reality show battle!
+                Your vote decides the fate of your favorite BB Telugu 10 contestants. Join millions in the ultimate Bigg Boss Telugu 10 reality show battle!
               </p>
             </div>
 
@@ -142,7 +142,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-700 via-red-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center justify-center">
-                  🗳️ Vote Bigg Boss Telugu 9 • FREE
+                  🗳️ Vote Bigg Boss Telugu 10 • FREE
                   <svg className="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
                   </svg>

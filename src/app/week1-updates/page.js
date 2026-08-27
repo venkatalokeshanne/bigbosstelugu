@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Week 1 Updates | BB Telugu Season 9 First Week Highlights',
-  description: 'Complete coverage of Bigg Boss Telugu 9 Week 1 episodes, eliminations, nominations, and contestant performances. Get all the latest BB Telugu Season 9 first week updates.',
+  title: 'Bigg Boss Telugu 10 Week 1 Updates | BB Telugu Season 10 First Week Highlights',
+  description: 'Complete coverage of Bigg Boss Telugu 10 Week 1 episodes, eliminations, nominations, and contestant performances. Get all the latest BB Telugu Season 10 first week updates.',
   keywords: [
-    'Bigg Boss Telugu 9 week 1', 'BB Telugu 9 first week', 'Bigg Boss Telugu season 9 week 1 updates',
-    'BB Telugu 9 week 1 elimination', 'Bigg Boss Telugu 9 week 1 nominations', 'first week highlights'
+    'Bigg Boss Telugu 10 week 1', 'BB Telugu 10 first week', 'Bigg Boss Telugu season 9 week 1 updates',
+    'BB Telugu 10 week 1 elimination', 'Bigg Boss Telugu 10 week 1 nominations', 'first week highlights'
   ]
 }
 
@@ -28,14 +28,14 @@ export default function Week1Updates() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Week 1 Updates"
-          description="Complete coverage of the first week of Bigg Boss Telugu Season 9"
+          title="Bigg Boss Telugu 10 Week 1 Updates"
+          description="Complete coverage of the first week of Bigg Boss Telugu Season 10"
         />
         
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Bigg Boss Telugu 9 Week 1 Updates
+              Bigg Boss Telugu 10 Week 1 Updates
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Complete coverage of the first week episodes, contestant introductions, initial nominations, and house dynamics
@@ -87,7 +87,7 @@ export default function Week1Updates() {
           <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 mb-8">
             <h2 className="text-3xl font-bold text-white mb-6">Contestant Performance Week 1</h2>
             <p className="text-gray-300 mb-4">
-              Track how each contestant performed during their first week in the Bigg Boss Telugu 9 house:
+              Track how each contestant performed during their first week in the Bigg Boss Telugu 10 house:
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-green-500/20 p-4 rounded-lg border border-green-400">

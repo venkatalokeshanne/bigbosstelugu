@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Voting Guide | How to Vote BB Telugu Season 9 Step-by-Step',
-  description: 'Complete step-by-step voting guide for Bigg Boss Telugu 9. Learn how to vote through Hotstar app, missed call, Google Assistant, and online methods for BB Telugu Season 9.',
+  title: 'Bigg Boss Telugu 10 Voting Guide | How to Vote BB Telugu Season 10 Step-by-Step',
+  description: 'Complete step-by-step voting guide for Bigg Boss Telugu 10. Learn how to vote through Hotstar app, missed call, Google Assistant, and online methods for BB Telugu Season 10.',
   keywords: [
-    'Bigg Boss Telugu 9 voting guide', 'how to vote BB Telugu 9', 'Bigg Boss Telugu voting steps',
-    'BB Telugu 9 voting methods', 'Hotstar voting guide', 'missed call voting guide'
+    'Bigg Boss Telugu 10 voting guide', 'how to vote BB Telugu 10', 'Bigg Boss Telugu voting steps',
+    'BB Telugu 10 voting methods', 'Hotstar voting guide', 'missed call voting guide'
   ]
 }
 
@@ -28,17 +28,17 @@ export default function VotingGuide() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Voting Guide"
-          description="Complete guide on how to vote for your favorite contestants in Bigg Boss Telugu Season 9"
+          title="Bigg Boss Telugu 10 Voting Guide"
+          description="Complete guide on how to vote for your favorite contestants in Bigg Boss Telugu Season 10"
         />
         
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Bigg Boss Telugu 9 Voting Guide
+              Bigg Boss Telugu 10 Voting Guide
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Complete step-by-step guide to vote for your favorite contestants in Bigg Boss Telugu Season 9
+              Complete step-by-step guide to vote for your favorite contestants in Bigg Boss Telugu Season 10
             </p>
           </div>
 
@@ -46,18 +46,18 @@ export default function VotingGuide() {
             <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
                 <span className="bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
-                Disney+ Hotstar Voting
+                JioHotstar Voting
               </h2>
               <div className="space-y-4 text-gray-300">
                 <div className="bg-blue-500/20 p-4 rounded-lg border border-blue-400">
                   <h4 className="text-blue-300 font-semibold mb-2">Official Voting Method</h4>
-                  <p className="text-sm">This is the primary official voting method for Bigg Boss Telugu 9</p>
+                  <p className="text-sm">This is the primary official voting method for Bigg Boss Telugu 10</p>
                 </div>
                 <h4 className="text-lg font-semibold text-white">Steps to Vote:</h4>
                 <ol className="space-y-2 ml-4">
-                  <li>• Download Disney+ Hotstar app on your mobile device</li>
+                  <li>• Download JioHotstar app on your mobile device</li>
                   <li>• Create an account or log in with existing credentials</li>
-                  <li>• Search for "Bigg Boss Telugu 9" or navigate to the show page</li>
+                  <li>• Search for "Bigg Boss Telugu 10" or navigate to the show page</li>
                   <li>• Look for the "Vote Now" button during nomination period</li>
                   <li>• Select your favorite contestant from the nominated list</li>
                   <li>• Confirm your vote (up to 50 votes per day)</li>
@@ -171,7 +171,7 @@ export default function VotingGuide() {
           <div className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-xl p-8 border border-yellow-400 mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Vote?</h2>
             <p className="text-gray-300 mb-6">
-              Choose your preferred voting method and support your favorite Bigg Boss Telugu 9 contestant. 
+              Choose your preferred voting method and support your favorite Bigg Boss Telugu 10 contestant. 
               Remember, every vote counts towards keeping your favorite contestant in the house!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">

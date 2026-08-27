@@ -71,14 +71,14 @@ export default function NewsSection() {
             <span className="text-green-400 font-semibold">LATEST NEWS</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-6">
-            Bigg Boss Telugu 9 Breaking
+            Bigg Boss Telugu 10 Breaking
             <span className="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               NEWS & UPDATES
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Stay updated with the latest developments, eliminations, and exclusive 
-            content from inside the Bigg Boss Telugu 9 house.
+            content from inside the Bigg Boss Telugu 10 house.
           </p>
         </div>
 
