@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import VotingSection from '../../components/VotingSection'
 import CommentsSection from '../../components/CommentsSection'
+import VotingStatsCTA from '../../components/VotingStatsCTA'
 import { generateMetaTags, generateStructuredData, generateViewport } from '../../utils/seo'
 
 export const metadata = generateMetaTags({
@@ -49,6 +50,7 @@ export default function VotingPage() {
 
         <VotingSection />
         <CommentsSection />
+        <VotingStatsCTA />
 
         <div className="text-center pb-20">
           <Link
