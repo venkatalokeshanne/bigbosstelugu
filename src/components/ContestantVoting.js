@@ -48,6 +48,7 @@ export default function ContestantVoting() {
     ? Math.max(0, VOTE_COOLDOWN_MS - (Date.now() - votedState.votedAt))
     : 0
   const hasActiveCooldown = cooldownRemaining > 0
+  const showResults = hasActiveCooldown
 
   const handleVote = async (slug) => {
     if (hasActiveCooldown || submittingSlug) return
@@ -98,7 +99,7 @@ export default function ContestantVoting() {
   }
 
   return (
-    <div className="px-4 sm:px-6 md:px-8">
+    <div className="px-4 sm:px-6 md:px-8 max-w-2xl mx-auto">
       {message && (
         <div
           className={`mb-6 rounded-2xl p-4 text-center font-semibold ${
@@ -111,73 +112,82 @@ export default function ContestantVoting() {
         </div>
       )}
 
-      {hasActiveCooldown && (
-        <div className="mb-6 rounded-2xl p-4 text-center bg-purple-500/10 border border-purple-500/20 text-purple-200">
-          You voted for{' '}
-          <span className="font-bold">{contestants.find(c => c.slug === votedState.slug)?.name}</span>. You can
-          vote again in {formatHours(cooldownRemaining)}.
-        </div>
-      )}
+      <div className="mb-6 flex items-center justify-between text-sm text-gray-400">
+        <span>{showResults ? 'Live results' : 'Tap a contestant to vote'}</span>
+        <span>{total.toLocaleString()} total votes</span>
+      </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="space-y-3 mb-6">
         {contestants.map((contestant) => {
           const count = votes[contestant.slug] || 0
-          const percentage = total > 0 ? ((count / total) * 100).toFixed(1) : '0.0'
-          const isThisSubmitting = submittingSlug === contestant.slug
+          const percentage = total > 0 ? (count / total) * 100 : 0
           const isVotedFor = votedState?.slug === contestant.slug && hasActiveCooldown
+          const isThisSubmitting = submittingSlug === contestant.slug
 
           return (
-            <div
+            <button
               key={contestant.slug}
-              className={`bg-white/5 backdrop-blur-sm border rounded-2xl overflow-hidden transition-all duration-300 ${
-                isVotedFor ? 'border-purple-400/60 ring-2 ring-purple-400/40' : 'border-white/10'
+              type="button"
+              onClick={() => handleVote(contestant.slug)}
+              disabled={hasActiveCooldown || !!submittingSlug}
+              className={`relative flex items-center gap-4 w-full text-left rounded-2xl border overflow-hidden transition-all duration-300 ${
+                isVotedFor
+                  ? 'border-purple-400/60 ring-2 ring-purple-400/40'
+                  : 'border-white/10 bg-white/5'
+              } ${
+                showResults || submittingSlug
+                  ? 'cursor-not-allowed'
+                  : 'cursor-pointer hover:bg-white/10 hover:border-purple-400/30'
               }`}
             >
-              <div className="aspect-square relative">
-                {contestant.imageUrl ? (
-                  <Image
-                    src={contestant.imageUrl}
-                    alt={contestant.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-800 flex items-center justify-center text-4xl">👤</div>
+              {/* Result fill bar (behind content) */}
+              {showResults && (
+                <div
+                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 transition-all duration-700"
+                  style={{ width: `${percentage}%` }}
+                ></div>
+              )}
+
+              <div className="relative flex items-center gap-4 w-full p-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 relative bg-gray-800">
+                  {contestant.imageUrl ? (
+                    <Image
+                      src={contestant.imageUrl}
+                      alt={contestant.name}
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-xl">👤</div>
+                  )}
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white font-semibold truncate">{contestant.name}</span>
+                    {isVotedFor && <span className="text-purple-300 text-xs font-bold flex-shrink-0">✓ Your vote</span>}
+                    {isThisSubmitting && <span className="text-gray-400 text-xs flex-shrink-0">Voting…</span>}
+                  </div>
+                  {showResults && (
+                    <span className="text-gray-400 text-xs">{count.toLocaleString()} votes</span>
+                  )}
+                </div>
+
+                {showResults && (
+                  <span className="text-white font-bold text-lg flex-shrink-0">{percentage.toFixed(1)}%</span>
                 )}
               </div>
-              <div className="p-3">
-                <h4 className="text-white font-bold text-sm truncate mb-1">{contestant.name}</h4>
-
-                <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden mb-1">
-                  <div
-                    className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
-                    style={{ width: `${percentage}%` }}
-                  ></div>
-                </div>
-                <div className="flex items-center justify-between text-xs text-gray-400 mb-3">
-                  <span>{percentage}%</span>
-                  <span>{count.toLocaleString()} votes</span>
-                </div>
-
-                <button
-                  onClick={() => handleVote(contestant.slug)}
-                  disabled={hasActiveCooldown || !!submittingSlug}
-                  className={`w-full py-2 rounded-xl font-bold text-xs transition-all duration-300 ${
-                    isVotedFor
-                      ? 'bg-purple-500/30 text-purple-200 cursor-default'
-                      : hasActiveCooldown || submittingSlug
-                      ? 'bg-white/5 text-gray-500 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-purple-600 to-red-600 text-white hover:from-purple-700 hover:to-red-700'
-                  }`}
-                >
-                  {isThisSubmitting ? 'Voting…' : isVotedFor ? '✓ Voted' : 'Vote'}
-                </button>
-              </div>
-            </div>
+            </button>
           )
         })}
       </div>
+
+      {showResults && (
+        <div className="text-center rounded-2xl p-4 bg-purple-500/10 border border-purple-500/20 text-purple-200">
+          Thanks for voting! You can vote again in {formatHours(cooldownRemaining)}.
+        </div>
+      )}
     </div>
   )
 }

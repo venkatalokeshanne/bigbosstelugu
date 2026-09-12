@@ -1,5 +1,6 @@
 import Hero from '../components/Hero'
 import VotingSection from '../components/VotingSection'
+import CommentsSection from '../components/CommentsSection'
 import ContestantGrid from '../components/ContestantGrid'
 import PosterSection from '../components/PosterSection'
 import ContentSection from '../components/ContentSection'
@@ -390,6 +391,7 @@ export default function HomePage() {
       <ContentSection />
       <PosterSection />
       <VotingSection />
+      <CommentsSection />
       <ContestantGrid />
       <HowToVote />
       <LiveUpdates />

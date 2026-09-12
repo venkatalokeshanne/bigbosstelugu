@@ -82,5 +82,47 @@
     "answer": "Vote counts are revealed during elimination episodes. The contestant with maximum votes is typically announced as safe from elimination during weekend episodes.",
     "category": "general",
     "order": 12
+  },
+  {
+    "_id": "faq-13",
+    "question": "When did Bigg Boss Telugu 10 premiere?",
+    "answer": "Bigg Boss Telugu 10 premiered on September 7, 2026, hosted by Akkineni Nagarjuna. The pre-show, Bigg Boss Agnipariksha Telugu Season 2, aired earlier from August 15, 2026 to select contestants for the main house.",
+    "category": "general",
+    "order": 13
+  },
+  {
+    "_id": "faq-14",
+    "question": "How many contestants are in Bigg Boss Telugu 10?",
+    "answer": "Bigg Boss Telugu 10 has 16 confirmed contestants this season, including television actors, film actors, comedians, singers, and commoners who entered through Agnipariksha.",
+    "category": "general",
+    "order": 14
+  },
+  {
+    "_id": "faq-15",
+    "question": "What is Bigg Boss Telugu Agnipariksha?",
+    "answer": "Agnipariksha is the pre-show selection round where aspiring commoner contestants compete through tasks and challenges to earn a direct entry into the main Bigg Boss Telugu house.",
+    "category": "general",
+    "order": 15
+  },
+  {
+    "_id": "faq-16",
+    "question": "Is the voting on this website official?",
+    "answer": "No. This website's poll is an independent fan platform for entertainment purposes and does not represent the official Bigg Boss vote count. Only votes cast through the Disney+ Hotstar / JioHotstar app or the official missed-call numbers are counted by the show.",
+    "category": "general",
+    "order": 16
+  },
+  {
+    "_id": "faq-17",
+    "question": "Which platform streams Bigg Boss Telugu 10?",
+    "answer": "Bigg Boss Telugu 10 airs on Star Maa TV and streams live on Disney+ Hotstar (JioHotstar), weekdays at 9:00 PM and weekends at 8:00 PM.",
+    "category": "general",
+    "order": 17
+  },
+  {
+    "_id": "faq-18",
+    "question": "How many days will Bigg Boss Telugu 10 run?",
+    "answer": "Bigg Boss Telugu 10 is scheduled to run for 100 days, following the format of previous seasons, with the grand finale expected around mid-December 2026.",
+    "category": "general",
+    "order": 18
   }
 ]

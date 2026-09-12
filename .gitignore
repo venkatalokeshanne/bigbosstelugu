@@ -38,3 +38,4 @@ yarn-error.log*
 # Sitemap files (generated)
 public/sitemap*.xml
 public/robots.txt
+.env*

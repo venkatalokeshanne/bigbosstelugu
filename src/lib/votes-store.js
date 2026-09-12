@@ -1,22 +1,36 @@
 import fs from 'fs'
 import path from 'path'
+import { Pool } from 'pg'
 import contestantsData from '../data/contestants.json'
 
 const VOTES_FILE = path.join(process.cwd(), 'src', 'data', 'votes.json')
-const KV_HASH_KEY = 'bb10:votes'
 
 const VALID_SLUGS = new Set(contestantsData.contestants.map(c => c.slug))
 
-// Use Vercel KV (Upstash Redis) whenever the project has a KV store linked —
-// this is what makes votes persist on Vercel's read-only serverless
-// filesystem. Falls back to a local JSON file (with an in-memory fallback if
-// even that isn't writable) for local development, where no KV store exists.
-const hasKv = Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN)
+// Use Supabase Postgres (via the Vercel integration) whenever a connection
+// string is configured — this is what makes votes persist on Vercel's
+// read-only serverless filesystem. Falls back to a local JSON file (with an
+// in-memory fallback if even that isn't writable) for local development,
+// where no database is configured.
+//
+// pg's connection-string SSL parsing treats Supabase's self-signed pooler
+// certificate as untrusted under 'sslmode=require'; swap in 'no-verify' so
+// the connection still uses TLS without failing certificate verification.
+function buildConnectionString() {
+  const raw = process.env.POSTGRES_URL || process.env.POSTGRES_PRISMA_URL
+  if (!raw) return null
+  return raw.replace('sslmode=require', 'sslmode=no-verify')
+}
 
-let kv = null
-if (hasKv) {
-  // Lazy require so local dev without KV env vars never touches the client.
-  kv = require('@vercel/kv').kv
+const CONNECTION_STRING = buildConnectionString()
+const hasDb = Boolean(CONNECTION_STRING)
+
+let pool = null
+function getPool() {
+  if (!pool) {
+    pool = new Pool({ connectionString: CONNECTION_STRING })
+  }
+  return pool
 }
 
 function emptyVotes() {
@@ -25,7 +39,7 @@ function emptyVotes() {
   return votes
 }
 
-// ---- File-based fallback (local dev, or any non-KV deployment) ----
+// ---- File-based fallback (local dev, or any non-DB deployment) ----
 let memoryStore = null
 let usingMemoryFallback = false
 
@@ -59,11 +73,11 @@ function writeVotesFile(data) {
 }
 
 export async function getVotes() {
-  if (hasKv) {
-    const raw = (await kv.hgetall(KV_HASH_KEY)) || {}
+  if (hasDb) {
+    const { rows } = await getPool().query('SELECT slug, count FROM votes')
     const votes = emptyVotes()
-    VALID_SLUGS.forEach(slug => {
-      if (raw[slug] != null) votes[slug] = Number(raw[slug])
+    rows.forEach(row => {
+      if (VALID_SLUGS.has(row.slug)) votes[row.slug] = Number(row.count)
     })
     return { votes, updatedAt: new Date().toISOString() }
   }
@@ -86,8 +100,12 @@ export async function castVote(slug) {
     throw new Error('Unknown contestant slug')
   }
 
-  if (hasKv) {
-    await kv.hincrby(KV_HASH_KEY, slug, 1)
+  if (hasDb) {
+    await getPool().query(
+      `INSERT INTO votes (slug, count, updated_at) VALUES ($1, 1, now())
+       ON CONFLICT (slug) DO UPDATE SET count = votes.count + 1, updated_at = now()`,
+      [slug]
+    )
     return getVotes()
   }
 
