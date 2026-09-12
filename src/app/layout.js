@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import StickyVoteButton from '../components/StickyVoteButton'
+import FloatingCommentButton from '../components/FloatingCommentButton'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import GoogleTagManager from '../components/GoogleTagManager'
 import { Analytics } from "@vercel/analytics/next"
@@ -350,28 +351,17 @@ export default function RootLayout({ children }) {
         <meta httpEquiv="Expires" content={new Date(Date.now() + 31536000000).toUTCString()} />
         
         {/* Preconnect and DNS Prefetch for Performance - Optimized */}
+        {/* Fonts are self-hosted at build time via next/font/google, so no
+            runtime connection to fonts.googleapis.com/fonts.gstatic.com is
+            ever made — preconnecting to them wastes an early connection. */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://strawpoll.com" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="dns-prefetch" href="https://cdn.strawpoll.com" />
-        
-        {/* Preload Critical Resources */}
-        <link 
-          rel="modulepreload" 
-          href="/_next/static/chunks/pages/_app.js" 
-          as="script" 
-          crossOrigin="anonymous" 
-        />
-        
+
         {/* Resource Hints for Third-party Scripts */}
         <link rel="preload" href="/logo.png" as="image" type="image/png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
+
         {/* Prefetch Non-Critical Resources */}
         <link rel="prefetch" href="/manifest.json" />
         
@@ -395,6 +385,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <StickyVoteButton />
+        <FloatingCommentButton />
       </body>
     </html>
   )

@@ -7,6 +7,7 @@ import PosterSection from '../components/PosterSection'
 import ContentSection from '../components/ContentSection'
 import SEOEnhancer from '../components/SEOEnhancer'
 import SitemapSection from '../components/SitemapSection'
+import ExploreMoreSection from '../components/ExploreMoreSection'
 import { generateStructuredData } from '../utils/seo'
 
 // Dynamic imports for better performance
@@ -245,147 +246,15 @@ export default function HomePage() {
       <meta name="cache-control" content="no-cache" />
       
       {/* Social Media Tags */}
-      <meta property="fb:app_id" content="your-facebook-app-id" />
       <meta name="twitter:domain" content="bigbossteluguvotes.in" />
       <meta name="twitter:label1" content="Genre" />
       <meta name="twitter:data1" content="Reality TV Show" />
       <meta name="twitter:label2" content="Host" />
       <meta name="twitter:data2" content="Akkineni Nagarjuna" />
       
-      {/* App Store Optimization */}
-      <meta name="apple-itunes-app" content="app-id=your-app-id, app-argument=https://bigbossteluguvotes.in" />
-      <meta name="google-play-app" content="app-id=your.package.name" />
-      
       {/* Additional SEO Enhancement */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
-      {/* Hidden SEO H Tags for Voting & Vote Checking - Maximum Coverage */}
-      <div className="sr-only">
-        <h2>Bigg Boss Telugu 10 Official Voting Platform 2026</h2>
-        <h3>BBT10 Vote Online Free Check Voting Results Hyderabad</h3>
-        
-        {/* Primary Voting Keywords */}
-        <h4>How to Vote Bigg Boss Telugu 10 Contestants Online</h4>
-        <h4>Check Bigg Boss Telugu 10 Voting Results Live</h4>
-        <h4>BB Telugu 10 Vote Count Real Time Updates</h4>
-        <h4>Bigg Boss Telugu 10 Voting Poll Results Today</h4>
-        <h4>How to Check My Vote Bigg Boss Telugu 10</h4>
-        <h4>BBT10 Voting Percentage Contestant Wise</h4>
-        <h4>Bigg Boss Telugu 10 Vote Online Disney+ Hotstar</h4>
-        <h4>Check Bigg Boss Telugu 10 Elimination Voting</h4>
-        <h4>BB Telugu 10 Live Voting Poll Results</h4>
-        <h4>How to Vote Multiple Times Bigg Boss Telugu 10</h4>
-        
-        {/* Voting Platforms & Methods */}
-        <h4>Bigg Boss Telugu 10 Voting App Download</h4>
-        <h4>Check BBT10 Contestant Vote Count Live</h4>
-        <h4>Bigg Boss Telugu 10 SMS Voting Number</h4>
-        <h4>Vote Bigg Boss Telugu 10 Missed Call Number</h4>
-        <h4>BBT10 Online Voting Website Official</h4>
-        <h4>Check Bigg Boss Telugu 10 Voting Trends</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 from Mobile</h4>
-        <h4>BB Telugu 10 Voting Process Step by Step</h4>
-        <h4>Bigg Boss Telugu 10 Free Voting Methods</h4>
-        <h4>Check BBT10 Elimination Voting Results</h4>
-        
-        {/* Vote Verification & Status */}
-        <h4>Bigg Boss Telugu 10 Vote Counting Process</h4>
-        <h4>How to Check Bigg Boss Telugu 10 Vote Status</h4>
-        <h4>BBT10 Voting Deadline Time Today</h4>
-        <h4>Bigg Boss Telugu 10 Vote Confirmation SMS</h4>
-        <h4>Check BB Telugu 10 Contestant Ranking Votes</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 International</h4>
-        <h4>BBT10 Voting Rules and Regulations</h4>
-        <h4>Bigg Boss Telugu 10 Vote Verification Process</h4>
-        <h4>Check BBT10 Weekly Voting Results</h4>
-        <h4>How to Cancel Vote Bigg Boss Telugu 10</h4>
-        
-        {/* Advanced Voting Features */}
-        <h4>BB Telugu 10 Voting History Check</h4>
-        <h4>Bigg Boss Telugu 10 Vote Limit Per Day</h4>
-        <h4>Check BBT10 Contestant Vote Percentage</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 WhatsApp</h4>
-        <h4>BBT10 Voting Technical Issues Solutions</h4>
-        <h4>Bigg Boss Telugu 10 Vote Through Website</h4>
-        <h4>Check BB Telugu 10 Real Time Vote Count</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 Star MAA</h4>
-        <h4>BBT10 Voting Demographics Analysis</h4>
-        <h4>Bigg Boss Telugu 10 Vote Manipulation Check</h4>
-        
-        {/* Long-tail Voting Keywords */}
-        <h4>Check BBT10 Voting Statistics Today</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 Safely</h4>
-        <h4>BB Telugu 10 Voting Platform Comparison</h4>
-        <h4>Bigg Boss Telugu 10 Vote Tracking System</h4>
-        <h4>Check BBT10 Contestant Vote Share</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 Effectively</h4>
-        <h4>BBT10 Voting Tips and Tricks</h4>
-        <h4>Bigg Boss Telugu 10 Vote Impact Analysis</h4>
-        <h4>Check BB Telugu 10 Voting Accuracy</h4>
-        <h4>How to Vote Bigg Boss Telugu 10 Fast</h4>
-        
-        {/* Regional & Platform Specific */}
-        <h4>Bigg Boss Telugu 10 Voting Hyderabad Telangana</h4>
-        <h4>BBT10 Vote Online Free No Registration</h4>
-        <h4>Star MAA Bigg Boss Telugu 10 Official Vote</h4>
-        <h4>Disney+ Hotstar BBT10 Voting Process</h4>
-        <h4>How to Vote BBT10 from Overseas</h4>
-        <h4>Bigg Boss Telugu 10 NRI Voting Options</h4>
-        <h4>BBT10 Voting for Android Users</h4>
-        <h4>Bigg Boss Telugu 10 iPhone Voting App</h4>
-        <h4>How to Vote BBT10 Without Internet</h4>
-        <h4>Bigg Boss Telugu 10 Offline Voting Methods</h4>
-        
-        {/* Voting Analytics & Insights */}
-        <h4>BBT10 Most Voted Contestant Today</h4>
-        <h4>Bigg Boss Telugu 10 Least Votes Contestant</h4>
-        <h4>Check BBT10 Voting Leader Board</h4>
-        <h4>BB Telugu 10 Vote Distribution Analysis</h4>
-        <h4>Bigg Boss Telugu 10 Voting Patterns Study</h4>
-        <h4>BBT10 Regional Voting Preferences</h4>
-        <h4>How to Predict BBT10 Elimination Voting</h4>
-        <h4>Bigg Boss Telugu 10 Vote Swing Analysis</h4>
-        <h4>BBT10 Age Group Voting Demographics</h4>
-        <h4>Bigg Boss Telugu 10 Gender Voting Trends</h4>
-        
-        {/* Contestant Specific Voting */}
-        <h4>How to Vote Individual BBT10 Contestants</h4>
-        <h4>Bigg Boss Telugu 10 Contestant Vote Comparison</h4>
-        <h4>BBT10 Strongest Contestant Voting Wise</h4>
-        <h4>Check Weakest BBT10 Contestant Votes</h4>
-        <h4>Bigg Boss Telugu 10 Dark Horse Voting</h4>
-        <h4>BBT10 Favorite Contestant Voting Poll</h4>
-        <h4>How to Vote BBT10 Underdog Contestants</h4>
-        <h4>Bigg Boss Telugu 10 Celebrity Voting Influence</h4>
-        <h4>BBT10 Social Media Voting Campaigns</h4>
-        <h4>Check BBT10 Contestant Fan Base Votes</h4>
-        
-        {/* Emergency & Troubleshooting */}
-        <h4>BBT10 Voting Not Working Solutions</h4>
-        <h4>How to Fix Bigg Boss Telugu 10 Vote Error</h4>
-        <h4>BBT10 Voting App Crash Solutions</h4>
-        <h4>Bigg Boss Telugu 10 Vote Not Counted</h4>
-        <h4>How to Report BBT10 Voting Issues</h4>
-        <h4>BB Telugu 10 Voting Server Down Fix</h4>
-        <h4>Bigg Boss Telugu 10 Double Vote Problem</h4>
-        <h4>BBT10 Voting Payment Issues Help</h4>
-        <h4>How to Get BBT10 Vote Refund</h4>
-        <h4>Bigg Boss Telugu 10 Voting Customer Support</h4>
-        
-        {/* Future & Predictions */}
-        <h4>BBT10 Next Elimination Voting Prediction</h4>
-        <h4>Bigg Boss Telugu 10 Finale Voting Strategy</h4>
-        <h4>How to Vote BBT10 Winner Prediction</h4>
-        <h4>BB Telugu 10 Top 5 Voting Analysis</h4>
-        <h4>Bigg Boss Telugu 10 Semi Final Voting</h4>
-        <h4>BBT10 Grand Finale Vote Count</h4>
-        <h4>How to Vote BBT10 Champion</h4>
-        <h4>Bigg Boss Telugu 10 Winner Vote Share</h4>
-        <h4>BBT10 Runner Up Voting Chances</h4>
-        <h4>Check BBT10 Title Winner Voting Trends</h4>
-      </div>
+
       
       <SEOEnhancer />
       <Hero />
@@ -399,6 +268,7 @@ export default function HomePage() {
       <LiveUpdates />
       <NewsSection />
       <FAQSection />
+      <ExploreMoreSection />
       <SitemapSection />
     </>
   )

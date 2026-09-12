@@ -105,7 +105,7 @@ export default async function ContestantPage({ params }) {
             
             {/* Contestant Image */}
             <div className="relative">
-              <div className="aspect-square max-w-md mx-auto relative overflow-hidden rounded-3xl shadow-2xl shadow-purple-500/20">
+              <div className="aspect-[3/4] max-w-md mx-auto relative overflow-hidden rounded-3xl shadow-2xl shadow-purple-500/20">
                 {contestant.imageUrl ? (
                   <Image
                     src={contestant.imageUrl}
@@ -146,14 +146,17 @@ export default async function ContestantPage({ params }) {
                 <span className="text-purple-400 font-semibold">BIGG BOSS TELUGU 10</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-                {contestant.name} - Bigg Boss Telugu 10 Contestant Profile 2026
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-3 leading-tight">
+                {contestant.name}
+                <span className="block text-2xl md:text-3xl font-bold text-white/60 mt-2">
+                  Bigg Boss Telugu 10 Contestant Profile 2026
+                </span>
               </h1>
-              
-              <h2 className="text-2xl md:text-3xl text-purple-300 font-semibold mb-6">
+
+              <h2 className="text-base md:text-lg text-purple-300/80 font-medium mb-6">
                 Vote {contestant.name} BBT10 | Biography Age Profession Hyderabad Telugu
               </h2>
-              
+
               <div className="mb-8 space-y-4">
                 {contestant.profession && (
                   <p className="text-2xl text-purple-300 font-semibold">
@@ -242,24 +245,6 @@ export default async function ContestantPage({ params }) {
                   </div>
                 </div>
               )}
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
-                  <div className="text-2xl font-black bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-1">
-                    #{contestant.currentRank || 'N/A'}
-                  </div>
-                  <div className="text-gray-300 text-sm">Rank</div>
-                </div>
-                
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center col-span-2 md:col-span-1">
-                  <div className="text-2xl font-black bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-1">
-                    {isActive ? 'ACTIVE' : 'OUT'}
-                  </div>
-                  <div className="text-gray-300 text-sm">Status</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import { generateStructuredData } from '../../utils/seo'
 import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
+import contestantsData from '../../data/contestants.json'
+import missedCallNumbers from '../../data/missed-call-numbers.json'
 
 export const metadata = {
   title: 'Bigg Boss Telugu 10 Missed Call Voting | Free BB Telugu 10 Phone Voting Numbers',
@@ -95,19 +97,37 @@ export default function MissedCallVoting() {
             <div className="bg-yellow-500/20 p-4 rounded-lg border border-yellow-400 mb-6">
               <p className="text-yellow-300 font-semibold mb-2">⚠️ Important Notice</p>
               <p className="text-gray-300 text-sm">
-                Missed call voting numbers are announced during episodes and change each week based on nominations. 
-                Please check the latest episode or official social media for current numbers.
+                Give a missed call to your favorite contestant's number below — the call disconnects automatically
+                and your vote is counted. Standard call charges may apply depending on your telecom provider.
               </p>
             </div>
-            
-            <div className="text-gray-300">
-              <p className="mb-4">Voting numbers are typically displayed during:</p>
-              <ul className="space-y-2 ml-6">
-                <li>• Nomination episodes</li>
-                <li>• Daily episodes throughout the week</li>
-                <li>• Weekend episodes with host</li>
-                <li>• Official social media posts</li>
-              </ul>
+
+            <div className="overflow-x-auto rounded-xl border border-white/20">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="bg-white/10">
+                    <th className="px-6 py-4 text-yellow-300 font-semibold">Contestant</th>
+                    <th className="px-6 py-4 text-yellow-300 font-semibold">Missed Call Number</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10">
+                  {contestantsData.contestants
+                    .filter((c) => c.status === 'active')
+                    .map((c) => (
+                      <tr key={c.slug} className="hover:bg-white/5 transition-colors">
+                        <td className="px-6 py-4 text-white">{c.name}</td>
+                        <td className="px-6 py-4">
+                          <a
+                            href={`tel:${missedCallNumbers[c.slug]}`}
+                            className="text-gray-300 hover:text-yellow-300 transition-colors"
+                          >
+                            {missedCallNumbers[c.slug] || 'Not available'}
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
             </div>
           </div>
 

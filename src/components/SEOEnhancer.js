@@ -12,27 +12,9 @@ export default function SEOEnhancer() {
       document.head.appendChild(canonical)
     }
 
-    // Add hreflang tags for regional SEO
-    const hreflangs = [
-      { lang: 'en', href: 'https://bigbossteluguvotes.in' },
-      { lang: 'te', href: 'https://bigbossteluguvotes.in/te' },
-      { lang: 'hi', href: 'https://bigbossteluguvotes.in/hi' }
-    ]
-
-    hreflangs.forEach(({ lang, href }) => {
-      if (!document.querySelector(`link[hreflang="${lang}"]`)) {
-        const hreflang = document.createElement('link')
-        hreflang.rel = 'alternate'
-        hreflang.hrefLang = lang
-        hreflang.href = href
-        document.head.appendChild(hreflang)
-      }
-    })
-
     // Add preload for critical resources
     const preloadResources = [
-      { href: '/images/bigboss.jpg', as: 'image', type: 'image/jpeg' },
-      { href: '/fonts/main.woff2', as: 'font', type: 'font/woff2', crossOrigin: 'anonymous' }
+      { href: '/images/bigboss.jpg', as: 'image', type: 'image/jpeg' }
     ]
 
     preloadResources.forEach(({ href, as, type, crossOrigin }) => {
@@ -51,7 +33,6 @@ export default function SEOEnhancer() {
     const performanceHints = [
       { rel: 'dns-prefetch', href: '//www.hotstar.com' },
       { rel: 'dns-prefetch', href: '//images.hotstar.com' },
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://www.google-analytics.com' }
     ]
 

@@ -65,7 +65,7 @@ function ReplyForm({ onSubmit, onCancel, submitting }) {
           disabled={!message.trim() || submitting}
           className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all duration-300 ${
             !message.trim() || submitting
-              ? 'bg-white/5 text-gray-500 cursor-not-allowed'
+              ? 'bg-white/5 text-gray-400 cursor-not-allowed'
               : 'bg-gradient-to-r from-purple-600 to-red-600 text-white hover:from-purple-700 hover:to-red-700'
           }`}
         >
@@ -91,7 +91,7 @@ function Comment({ comment, depth, replyingTo, setReplyingTo, onReply, submittin
       <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-5">
         <div className="flex items-center justify-between mb-2">
           <span className="text-white font-semibold">{comment.name}</span>
-          <span className="text-gray-500 text-xs">{formatTimeAgo(comment.createdAt)}</span>
+          <span className="text-gray-400 text-xs">{formatTimeAgo(comment.createdAt)}</span>
         </div>
         <p className="text-gray-300 leading-relaxed whitespace-pre-wrap mb-2">{comment.message}</p>
         <button
@@ -208,7 +208,7 @@ export default function CommentsSection() {
   const tree = buildTree(comments)
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+    <section id="comments-section" className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       <div className="container-custom relative z-10 max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full mb-6">
@@ -246,13 +246,13 @@ export default function CommentsSection() {
             className="w-full mb-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-400/50 resize-none"
           />
           <div className="flex items-center justify-between">
-            <span className="text-gray-500 text-xs">{message.length}/500</span>
+            <span className="text-gray-400 text-xs">{message.length}/500</span>
             <button
               type="submit"
               disabled={!message.trim() || submitting}
               className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 ${
                 !message.trim() || submitting
-                  ? 'bg-white/5 text-gray-500 cursor-not-allowed'
+                  ? 'bg-white/5 text-gray-400 cursor-not-allowed'
                   : 'bg-gradient-to-r from-purple-600 to-red-600 text-white hover:from-purple-700 hover:to-red-700'
               }`}
             >
@@ -269,10 +269,10 @@ export default function CommentsSection() {
         ) : loadError ? (
           <div className="text-center py-10 text-gray-400">
             <p className="mb-2">⚠️ Comments are temporarily unavailable.</p>
-            <p className="text-sm text-gray-500">Please refresh the page in a moment.</p>
+            <p className="text-sm text-gray-400">Please refresh the page in a moment.</p>
           </div>
         ) : tree.length === 0 ? (
-          <p className="text-center text-gray-500">Be the first to share your thoughts!</p>
+          <p className="text-center text-gray-400">Be the first to share your thoughts!</p>
         ) : (
           <div className="space-y-4">
             {tree.map((comment) => (
