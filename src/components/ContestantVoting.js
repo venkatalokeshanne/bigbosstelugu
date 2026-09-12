@@ -19,6 +19,7 @@ export default function ContestantVoting() {
   const [submittingSlug, setSubmittingSlug] = useState(null)
   const [message, setMessage] = useState(null)
   const [votedState, setVotedState] = useState(null) // { slug, votedAt }
+  const [loadError, setLoadError] = useState(false)
 
   useEffect(() => {
     try {
@@ -34,11 +35,13 @@ export default function ContestantVoting() {
   const fetchVotes = async () => {
     try {
       const res = await fetch('/api/votes')
+      if (!res.ok) throw new Error('Failed to load votes')
       const data = await res.json()
       setVotes(data.votes || {})
       setTotal(data.total || 0)
     } catch (error) {
       console.error('Error loading votes:', error)
+      setLoadError(true)
     } finally {
       setLoading(false)
     }
@@ -94,6 +97,15 @@ export default function ContestantVoting() {
     return (
       <div className="flex items-center justify-center py-20">
         <div className="animate-spin w-12 h-12 border-4 border-purple-400 border-t-transparent rounded-full"></div>
+      </div>
+    )
+  }
+
+  if (loadError) {
+    return (
+      <div className="text-center py-16 text-gray-400">
+        <p className="mb-2">⚠️ Voting is temporarily unavailable.</p>
+        <p className="text-sm text-gray-500">Please refresh the page in a moment.</p>
       </div>
     )
   }

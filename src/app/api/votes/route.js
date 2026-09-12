@@ -13,7 +13,7 @@ export async function GET() {
     return NextResponse.json({ votes: data.votes, total, updatedAt: data.updatedAt })
   } catch (error) {
     console.error('Error fetching votes:', error)
-    return NextResponse.json({ votes: {}, total: 0 }, { status: 200 })
+    return NextResponse.json({ error: 'votes_unavailable', message: 'Could not load votes right now.' }, { status: 500 })
   }
 }
 

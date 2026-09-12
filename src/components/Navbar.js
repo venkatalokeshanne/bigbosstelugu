@@ -60,15 +60,22 @@ export default function Navbar() {
               News
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link 
-              href="/watch-online-international" 
+            <Link
+              href="/watch-online-international"
               className="relative text-gray-300 hover:text-white font-semibold transition-all duration-300 group"
             >
               Watch Bigg Boss Telugu 10 Online
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link 
-              href="/#vote-section" 
+            <Link
+              href="/voting"
+              className="relative text-gray-300 hover:text-white font-semibold transition-all duration-300 group"
+            >
+              Voting & Comments
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
+            </Link>
+            <Link
+              href="/#vote-section"
               className="relative px-6 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-xl font-bold shadow-lg hover:shadow-red-500/25 transition-all duration-300 hover:scale-105 overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -117,15 +124,22 @@ export default function Navbar() {
               >
                 News
               </Link>
-              <Link 
-                href="/watch-online-international" 
+              <Link
+                href="/watch-online-international"
                 className="block text-gray-300 hover:text-primary-400 font-medium transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Watch Bigg Boss Telugu 10 Online
               </Link>
-              <Link 
-                href="/#vote-section" 
+              <Link
+                href="/voting"
+                className="block text-gray-300 hover:text-primary-400 font-medium transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Voting & Comments
+              </Link>
+              <Link
+                href="/#vote-section"
                 className="block btn-primary text-center"
                 onClick={() => setIsOpen(false)}
               >

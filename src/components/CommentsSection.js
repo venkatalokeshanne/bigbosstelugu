@@ -145,6 +145,7 @@ export default function CommentsSection() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(null)
   const [replyingTo, setReplyingTo] = useState(null)
+  const [loadError, setLoadError] = useState(false)
 
   useEffect(() => {
     fetchComments()
@@ -153,10 +154,12 @@ export default function CommentsSection() {
   const fetchComments = async () => {
     try {
       const res = await fetch('/api/comments')
+      if (!res.ok) throw new Error('Failed to load comments')
       const data = await res.json()
       setComments(data.comments || [])
     } catch (err) {
       console.error('Error loading comments:', err)
+      setLoadError(true)
     } finally {
       setLoading(false)
     }
@@ -262,6 +265,11 @@ export default function CommentsSection() {
         {loading ? (
           <div className="flex justify-center py-10">
             <div className="animate-spin w-10 h-10 border-4 border-purple-400 border-t-transparent rounded-full"></div>
+          </div>
+        ) : loadError ? (
+          <div className="text-center py-10 text-gray-400">
+            <p className="mb-2">⚠️ Comments are temporarily unavailable.</p>
+            <p className="text-sm text-gray-500">Please refresh the page in a moment.</p>
           </div>
         ) : tree.length === 0 ? (
           <p className="text-center text-gray-500">Be the first to share your thoughts!</p>

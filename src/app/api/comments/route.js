@@ -12,7 +12,7 @@ export async function GET() {
     return NextResponse.json({ comments })
   } catch (error) {
     console.error('Error fetching comments:', error)
-    return NextResponse.json({ comments: [] }, { status: 200 })
+    return NextResponse.json({ error: 'comments_unavailable', message: 'Could not load comments right now.' }, { status: 500 })
   }
 }
 
