@@ -1,4 +1,5 @@
 import { getOptimizedContestants } from '../lib/optimized-contestants'
+import newsData from '../data/news.json'
 
 export default async function sitemap() {
   const baseUrl = 'https://bigbossteluguvotes.in'
@@ -121,6 +122,30 @@ export default async function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.4,
     },
+    {
+      url: `${baseUrl}/voting`,
+      lastModified: new Date(),
+      changeFrequency: 'hourly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/watch-online-international`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
   ]
 
   // Dynamic contestant pages
@@ -131,23 +156,11 @@ export default async function sitemap() {
     priority: 0.8,
   }))
 
-  // News articles (enhanced with more realistic content)
-  const newsArticles = [
-    'bigg-boss-telugu-9-grand-launch',
-    'week-1-nominations-revealed',
-    'luxury-budget-task-highlights',
-    'elimination-predictions-week-3',
-    'contestants-latest-updates',
-    'nagarjuna-host-special-moments',
-    'secret-room-twist-unveiled',
-    'voting-trends-analysis',
-    'contestant-profiles-complete-guide',
-    'eviction-results-live-updates'
-  ]
-
-  const newsPages = newsArticles.map((slug) => ({
-    url: `${baseUrl}/news/${slug}`,
-    lastModified: new Date(),
+  // News articles — sourced from the real news data so the sitemap never
+  // drifts out of sync with what actually exists on the site.
+  const newsPages = newsData.map((article) => ({
+    url: `${baseUrl}/news/${article.slug}`,
+    lastModified: article.modifiedAt || article.publishedAt || new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,
   }))
