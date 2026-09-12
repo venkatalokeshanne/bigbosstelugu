@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { getOptimizedVotingSettings, isVotingActive } from '../lib/optimized-voting'
-import LazyStrawPoll from './LazyStrawPoll'
+import ContestantVoting from './ContestantVoting'
 
 export default function VotingSection() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -35,101 +35,6 @@ export default function VotingSection() {
       // Keep default fallback settings
     }
   }, [])
-
-  // Auto-resize iframe effect
-  useEffect(() => {
-    const resizeStrawPollIframe = () => {
-      const iframe = document.getElementById('strawpoll_iframe_ajnE1Xj40nW');
-      const container = document.getElementById('strawpoll_ajnE1Xj40nW');
-      
-      if (iframe && container) {
-        const screenWidth = window.innerWidth;
-        let targetHeight = 900; // Default for desktop
-        
-        // Mobile-first responsive approach
-        if (screenWidth < 640) {
-          targetHeight = 1100; // Mobile - extra height for better display
-          iframe.style.minHeight = '900px';
-          // Ensure container takes full width on mobile
-          container.style.padding = '0 16px';
-          container.style.margin = '0';
-        } else if (screenWidth < 768) {
-          targetHeight = 1000; // Small tablet
-          iframe.style.minHeight = '800px';
-          container.style.padding = '0 24px';
-        } else if (screenWidth < 1024) {
-          targetHeight = 950; // Large tablet
-          iframe.style.minHeight = '750px';
-          container.style.padding = '0 32px';
-        } else {
-          targetHeight = 900; // Desktop
-          iframe.style.minHeight = '700px';
-          container.style.padding = '0 32px';
-        }
-        
-        iframe.style.height = `${targetHeight}px`;
-        iframe.style.width = '100%';
-        
-        // Optimize for mobile viewport
-        if (screenWidth < 640) {
-          // Ensure no horizontal scrolling on mobile
-          iframe.style.maxWidth = '100%';
-          iframe.style.overflowX = 'hidden';
-        }
-        
-        // Try to get actual content height if possible
-        try {
-          if (iframe.contentWindow) {
-            setTimeout(() => {
-              try {
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                if (iframeDoc && iframeDoc.body) {
-                  const contentHeight = Math.max(
-                    iframeDoc.body.scrollHeight,
-                    iframeDoc.body.offsetHeight,
-                    iframeDoc.documentElement.clientHeight,
-                    iframeDoc.documentElement.scrollHeight,
-                    iframeDoc.documentElement.offsetHeight
-                  );
-                  
-                  if (contentHeight > 400 && contentHeight < 2500) {
-                    const extraSpace = screenWidth < 640 ? 200 : 100;
-                    iframe.style.height = (contentHeight + extraSpace) + 'px';
-                  }
-                }
-              } catch (e) {
-                // CORS restriction - keep the responsive height
-                console.log('Using responsive fallback height');
-              }
-            }, 2000);
-          }
-        } catch (error) {
-          console.log('Iframe resize fallback applied');
-        }
-      }
-    };
-
-    // Resize on window resize with debouncing
-    let resizeTimeout;
-    const debouncedResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(resizeStrawPollIframe, 250);
-    };
-    
-    window.addEventListener('resize', debouncedResize);
-    window.addEventListener('orientationchange', debouncedResize);
-    
-    // Initial resize after component mount
-    setTimeout(resizeStrawPollIframe, 1000);
-    setTimeout(resizeStrawPollIframe, 3000);
-    setTimeout(resizeStrawPollIframe, 5000);
-    
-    return () => {
-      window.removeEventListener('resize', debouncedResize);
-      window.removeEventListener('orientationchange', debouncedResize);
-      clearTimeout(resizeTimeout);
-    };
-  }, []);
 
   // Countdown timer effect
   useEffect(() => {
@@ -166,14 +71,14 @@ export default function VotingSection() {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Vote Bigg Boss Telugu Nine Online Free 2025
+            Vote Bigg Boss Telugu 10 Online Free 2026
           </h2>
           <h3 className="text-lg md:text-xl text-purple-300 font-medium mb-4">
-            BB Telugu 9 Voting Guide Hyderabad | Star MAA Disney+ Hotstar
+            BB Telugu 10 Voting Guide Hyderabad | Star MAA Disney+ Hotstar
           </h3>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Your vote decides the fate of your favorite BB Telugu Nine contestant! Join millions in shaping 
-            <span className="text-purple-400 font-medium"> Bigg Boss Telugu 9</span> destiny.
+            Your vote decides the fate of your favorite BB Telugu 10 contestant! Join millions in shaping 
+            <span className="text-purple-400 font-medium"> Bigg Boss Telugu 10</span> destiny.
           </p>
         </div>
 
@@ -206,11 +111,8 @@ export default function VotingSection() {
             {/* Poll Container - Optimized */}
             <div className="bg-gray-900/60 relative py-8">
               
-              {/* StrawPoll Embed - Lazy Loaded and Optimized */}
-              <LazyStrawPoll 
-                pollId="ajnE1Xj40nW" 
-                className="px-4 sm:px-6 md:px-8"
-              />
+              {/* Native Contestant Voting Widget */}
+              <ContestantVoting />
             </div>
 
             {/* Poll Stats - Redesigned */}
@@ -263,20 +165,20 @@ export default function VotingSection() {
                   <span className="text-5xl">🎯</span>
                 </div>
                 <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white via-purple-200 to-red-200 bg-clip-text text-transparent mb-6">
-                  Every BB Telugu 9 Vote Matters!
+                  Every BB Telugu 10 Vote Matters!
                 </h3>
                 <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                  Your favorite Bigg Boss Telugu Nine contestant needs YOUR support to stay in the house. 
-                  Don't wait - vote for BB Telugu 9 now and make a difference in their journey!
+                  Your favorite Bigg Boss Telugu 10 contestant needs YOUR support to stay in the house. 
+                  Don't wait - vote for BB Telugu 10 now and make a difference in their journey!
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a 
-                  href="#strawpoll_ajnE1Xj40nW" 
+                  href="#vote-section" 
                   className="bg-gradient-to-r from-purple-600 to-red-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:from-purple-700 hover:to-red-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105"
                 >
-                  🗳️ Vote BB Telugu 9 Above
+                  🗳️ Vote BB Telugu 10 Above
                 </a>
                 <a
                   href="https://www.hotstar.com/in/shows/bigg-boss-telugu/vote"
@@ -284,7 +186,7 @@ export default function VotingSection() {
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105"
                 >
-                  📺 Official BB Telugu 9 Hotstar Vote
+                  📺 Official BB Telugu 10 Hotstar Vote
                 </a>
               </div>
               

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { fetchNews, fetchFeaturedNews, formatTimeAgo, urlFor } from '@/lib/sanity-client'
+import { fetchNews, fetchFeaturedNews, formatTimeAgo, urlFor } from '@/lib/static-data-client'
 
 // Helper function to get category icons
 function getCategoryIcon(category) {
@@ -35,7 +35,7 @@ export default function NewsPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('Fetching news from Sanity...')
+        console.log('Fetching news...')
         const [allNews, featured] = await Promise.all([
           fetchNews(),
           fetchFeaturedNews()
@@ -123,14 +123,14 @@ export default function NewsPage() {
             <span className="text-green-400 font-semibold">LATEST NEWS</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-            Bigg Boss Telugu 9
+            Bigg Boss Telugu 10
             <span className="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               NEWS & UPDATES
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Stay updated with the latest developments, eliminations, drama, and exclusive 
-            content from inside the Bigg Boss Telugu 9 house. Never miss a moment!
+            content from inside the Bigg Boss Telugu 10 house. Never miss a moment!
           </p>
         </div>
 

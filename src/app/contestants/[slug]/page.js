@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getOptimizedContestantBySlug, getOptimizedContestants } from '../../../lib/optimized-contestants'
-import { generateViewport } from '../../../utils/seo'
+import { generateViewport, generateStructuredData } from '../../../utils/seo'
+import contestantProfiles from '../../../data/contestant-profiles.json'
 
 export const viewport = generateViewport()
 
@@ -29,18 +30,18 @@ export async function generateMetadata({ params }) {
     }
 
     return {
-      title: `${contestant.name} - Bigg Boss Telugu 9 Contestant | Profile & Updates`,
-      description: `Get to know ${contestant.name}, ${contestant.age ? `${contestant.age}-year-old ` : ''}${contestant.profession || 'contestant'} from ${contestant.hometown || 'Telugu states'}. Vote and support your favorite BB Telugu 9 contestant.`,
-      keywords: `${contestant.name}, ${contestant.name} Bigg Boss Telugu 9, vote ${contestant.name}, BB Telugu 9 ${contestant.name}`,
+      title: `${contestant.name} - Bigg Boss Telugu 10 Contestant | Profile & Updates`,
+      description: `Get to know ${contestant.name}, ${contestant.age ? `${contestant.age}-year-old ` : ''}${contestant.profession || 'contestant'} from ${contestant.hometown || 'Telugu states'}. Vote and support your favorite BB Telugu 10 contestant.`,
+      keywords: `${contestant.name}, ${contestant.name} Bigg Boss Telugu 10, vote ${contestant.name}, BB Telugu 10 ${contestant.name}, ${contestant.name} age, ${contestant.name} biography, ${contestant.name} family, ${contestant.name} net worth, ${contestant.name} salary${contestant.realName ? `, ${contestant.realName}` : ''}`,
       openGraph: {
-        title: `${contestant.name} - Bigg Boss Telugu 9`,
-        description: `Vote for ${contestant.name} in Bigg Boss Telugu 9`,
+        title: `${contestant.name} - Bigg Boss Telugu 10`,
+        description: `Vote for ${contestant.name} in Bigg Boss Telugu 10`,
         images: [
           {
             url: contestant.imageUrl || '/images/contestants/default.jpg',
             width: 800,
             height: 600,
-            alt: `${contestant.name} - Bigg Boss Telugu 9 Contestant`,
+            alt: `${contestant.name} - Bigg Boss Telugu 10 Contestant`,
           },
         ],
       },
@@ -75,9 +76,22 @@ export default async function ContestantPage({ params }) {
   }
 
   const isActive = contestant.status === 'active'
+  const profile = contestantProfiles[contestant.slug]
+  const faqStructuredData = profile?.faqs?.length
+    ? generateStructuredData({
+        type: 'FAQPage',
+        questions: profile.faqs.map(f => ({ question: f.q, answer: f.a })),
+      })
+    : null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-black">
+      {faqStructuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        />
+      )}
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900/30 to-black">
         {/* Background Elements */}
@@ -95,7 +109,7 @@ export default async function ContestantPage({ params }) {
                 {contestant.imageUrl ? (
                   <Image
                     src={contestant.imageUrl}
-                    alt={`${contestant.name} - Bigg Boss Telugu 9 Contestant`}
+                    alt={`${contestant.name} - Bigg Boss Telugu 10 Contestant`}
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -129,21 +143,27 @@ export default async function ContestantPage({ params }) {
             {/* Contestant Info */}
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full mb-6">
-                <span className="text-purple-400 font-semibold">BIGG BOSS TELUGU 9</span>
+                <span className="text-purple-400 font-semibold">BIGG BOSS TELUGU 10</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-                {contestant.name} - Bigg Boss Telugu 9 Contestant Profile 2025
+                {contestant.name} - Bigg Boss Telugu 10 Contestant Profile 2026
               </h1>
               
               <h2 className="text-2xl md:text-3xl text-purple-300 font-semibold mb-6">
-                Vote {contestant.name} BBT9 | Biography Age Profession Hyderabad Telugu
+                Vote {contestant.name} BBT10 | Biography Age Profession Hyderabad Telugu
               </h2>
               
               <div className="mb-8 space-y-4">
                 {contestant.profession && (
                   <p className="text-2xl text-purple-300 font-semibold">
                     {contestant.profession}
+                  </p>
+                )}
+
+                {contestant.realName && (
+                  <p className="text-gray-400 text-sm">
+                    Real name: <span className="text-gray-300">{contestant.realName}</span>
                   </p>
                 )}
                 
@@ -168,6 +188,27 @@ export default async function ContestantPage({ params }) {
                 <div className="mb-8">
                   <p className="text-lg text-gray-300 leading-relaxed max-w-2xl">
                     {contestant.biography}
+                  </p>
+                </div>
+              )}
+
+              {(contestant.reportedSalary || contestant.netWorth) && (
+                <div className="mb-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 max-w-2xl">
+                  <h3 className="text-lg font-bold text-white mb-3">💰 Reported Earnings</h3>
+                  {contestant.reportedSalary && (
+                    <p className="text-gray-300 mb-2">
+                      <span className="text-purple-400 font-semibold">Bigg Boss remuneration: </span>
+                      {contestant.reportedSalary}
+                    </p>
+                  )}
+                  {contestant.netWorth && (
+                    <p className="text-gray-300">
+                      <span className="text-purple-400 font-semibold">Net worth: </span>
+                      {contestant.netWorth}
+                    </p>
+                  )}
+                  <p className="text-gray-500 text-xs mt-3 italic">
+                    Figures are drawn from media reports, not official contracts, and are not confirmed by the Bigg Boss production team.
                   </p>
                 </div>
               )}
@@ -223,6 +264,82 @@ export default async function ContestantPage({ params }) {
           </div>
         </div>
       </div>
+
+      {/* Extended Profile */}
+      {profile && (
+        <div className="py-20 border-t border-white/10">
+          <div className="container-custom max-w-4xl mx-auto space-y-16">
+
+            {/* Quick Facts */}
+            {profile.quickFacts?.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-black text-white mb-6">
+                  {contestant.name} Quick Facts
+                </h2>
+                <div className="overflow-x-auto rounded-2xl border border-white/10">
+                  <table className="w-full text-left">
+                    <tbody className="divide-y divide-white/10">
+                      {profile.quickFacts.map(([label, value]) => (
+                        <tr key={label} className="hover:bg-white/5 transition-colors">
+                          <td className="px-6 py-4 font-semibold text-purple-300 w-1/3">{label}</td>
+                          <td className="px-6 py-4 text-gray-300">{value}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            )}
+
+            {/* Career */}
+            {profile.career && (
+              <section>
+                <h2 className="text-3xl font-black text-white mb-6">
+                  {contestant.name} Career
+                </h2>
+                <p className="text-lg text-gray-300 leading-relaxed">{profile.career}</p>
+              </section>
+            )}
+
+            {/* Family */}
+            {profile.family && (
+              <section>
+                <h2 className="text-3xl font-black text-white mb-6">
+                  {contestant.name} Family
+                </h2>
+                <p className="text-lg text-gray-300 leading-relaxed">{profile.family}</p>
+              </section>
+            )}
+
+            {/* Bigg Boss Journey */}
+            {profile.biggBoss && (
+              <section>
+                <h2 className="text-3xl font-black text-white mb-6">
+                  {contestant.name} on Bigg Boss Telugu 10
+                </h2>
+                <p className="text-lg text-gray-300 leading-relaxed">{profile.biggBoss}</p>
+              </section>
+            )}
+
+            {/* FAQs */}
+            {profile.faqs?.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-black text-white mb-6">
+                  Frequently Asked Questions about {contestant.name}
+                </h2>
+                <div className="space-y-4">
+                  {profile.faqs.map((faq, index) => (
+                    <div key={index} className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
+                      <h3 className="text-lg font-bold text-white mb-2">Q. {faq.q}</h3>
+                      <p className="text-gray-300 leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Back to All Contestants */}
       <div className="py-20">

@@ -1,7 +1,7 @@
 {
-  "name": "Bigg Boss Telugu 9 Voting",
-  "short_name": "BBT9 Voting",
-  "description": "Official voting platform for Bigg Boss Telugu 9. Vote for your favorite contestants online.",
+  "name": "Bigg Boss Telugu 10 Voting",
+  "short_name": "BBT10 Voting",
+  "description": "Official voting platform for Bigg Boss Telugu 10. Vote for your favorite contestants online.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

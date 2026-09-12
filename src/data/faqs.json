@@ -1,0 +1,86 @@
+[
+  {
+    "_id": "faq-1",
+    "question": "Who will win Bigg Boss 10 Telugu Title?",
+    "answer": "The winner will be decided by public voting. The contestant with the highest number of votes in the finale will win the Bigg Boss 10 Telugu title. Keep voting for your favorite contestant!",
+    "category": "general",
+    "order": 1
+  },
+  {
+    "_id": "faq-2",
+    "question": "Who will be eliminated this week?",
+    "answer": "The contestant with the least number of votes among the nominated contestants will be eliminated. Elimination is announced every weekend by host Akkineni Nagarjuna.",
+    "category": "general",
+    "order": 2
+  },
+  {
+    "_id": "faq-3",
+    "question": "Who got least votes in Bigg Boss Telugu?",
+    "answer": "Vote counts are revealed during the weekend episodes. The contestant with the minimum votes gets eliminated from the house.",
+    "category": "general",
+    "order": 3
+  },
+  {
+    "_id": "faq-4",
+    "question": "Who got the highest votes in BB10 Telugu Voting?",
+    "answer": "The voting results and percentages are announced during the elimination episodes. The contestant leading in votes is usually safe from elimination.",
+    "category": "general",
+    "order": 4
+  },
+  {
+    "_id": "faq-5",
+    "question": "How can I vote for Bigg Boss in Telugu in USA?",
+    "answer": "International viewers can vote through the Hotstar app with a valid subscription. You can also participate in online polls on official websites.",
+    "category": "general",
+    "order": 5
+  },
+  {
+    "_id": "faq-6",
+    "question": "Who is eliminated in BB10 Telugu today?",
+    "answer": "Elimination results are announced every weekend during the special episodes hosted by Nagarjuna. Check our updates section for the latest elimination news.",
+    "category": "general",
+    "order": 6
+  },
+  {
+    "_id": "faq-7",
+    "question": "Where can I watch Bigg Boss in Telugu?",
+    "answer": "You can watch Bigg Boss Telugu 10 on Star Maa TV (9 PM on weekdays, 8 PM on weekends) or stream live on Disney+ Hotstar app.",
+    "category": "general",
+    "order": 7
+  },
+  {
+    "_id": "faq-8",
+    "question": "Who is the host of Bigg Boss season 10 Telugu?",
+    "answer": "Akkineni Nagarjuna is the host of Bigg Boss Telugu Season 10. He has been hosting the show for the past several seasons.",
+    "category": "general",
+    "order": 8
+  },
+  {
+    "_id": "faq-9",
+    "question": "How can I watch Bigg Boss in Telugu in USA?",
+    "answer": "International viewers can watch through Disney+ Hotstar with international subscription or through official Star Maa international streaming services.",
+    "category": "general",
+    "order": 9
+  },
+  {
+    "_id": "faq-10",
+    "question": "How to Vote Telugu Bigg Boss 10?",
+    "answer": "You can vote through: 1) Disney+ Hotstar app (up to 10 votes per day), 2) Missed call numbers (50 votes per week), 3) Google voting polls (unofficial), 4) SMS voting when available.",
+    "category": "general",
+    "order": 10
+  },
+  {
+    "_id": "faq-11",
+    "question": "Who is leading Bigg Boss Telugu?",
+    "answer": "The leading contestant changes weekly based on voting trends. Check our voting poll results and weekly updates for current standings.",
+    "category": "general",
+    "order": 11
+  },
+  {
+    "_id": "faq-12",
+    "question": "Who has the highest votes in Bigg Boss Telugu?",
+    "answer": "Vote counts are revealed during elimination episodes. The contestant with maximum votes is typically announced as safe from elimination during weekend episodes.",
+    "category": "general",
+    "order": 12
+  }
+]

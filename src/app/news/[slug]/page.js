@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
-import { fetchNewsArticle, fetchNews, fetchRelatedNews, urlFor } from '@/lib/sanity-client'
+import { fetchNewsArticle, fetchNews, fetchRelatedNews, urlFor } from '@/lib/static-data-client'
 import { generateMetaTags, generateStructuredData, generateViewport } from '@/utils/seo'
 
 export async function generateStaticParams() {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
     }
 
     return generateMetaTags({
-      title: `${article.title} | Bigg Boss Telugu 9 News`,
+      title: `${article.title} | Bigg Boss Telugu 10 News`,
       description: article.excerpt,
       keywords: article.tags?.join(', '),
       url: `/news/${article.slug}`,
@@ -300,7 +300,7 @@ export default async function ArticlePage({ params }) {
               Don't Miss the Action
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Stay updated with the latest Bigg Boss Telugu 9 news and vote for your favorite contestants.
+              Stay updated with the latest Bigg Boss Telugu 10 news and vote for your favorite contestants.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/#vote-section" className="btn-primary bg-yellow-400 text-gray-900 hover:bg-yellow-300">

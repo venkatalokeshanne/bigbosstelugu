@@ -68,10 +68,10 @@ export default function SEOEnhancer() {
     const ogTags = [
       { property: 'og:updated_time', content: new Date().toISOString() },
       { property: 'og:section', content: 'Reality TV' },
-      { property: 'og:tag', content: 'Bigg Boss Telugu Nine' },
-      { property: 'article:author', content: 'Bigg Boss Telugu Nine Team' },
+      { property: 'og:tag', content: 'Bigg Boss Telugu 10' },
+      { property: 'article:author', content: 'Bigg Boss Telugu 10 Team' },
       { property: 'article:section', content: 'Entertainment' },
-      { property: 'article:tag', content: 'Bigg Boss Telugu 9, BB Telugu Nine, Reality TV, Voting, Entertainment' }
+      { property: 'article:tag', content: 'Bigg Boss Telugu 10, BB Telugu 10, Reality TV, Voting, Entertainment' }
     ]
 
     ogTags.forEach(({ property, content }) => {
@@ -85,7 +85,7 @@ export default function SEOEnhancer() {
 
     // Add additional meta tags for better SEO
     const additionalMetas = [
-      { name: 'news_keywords', content: 'Bigg Boss Telugu 9, BB Telugu Nine, Voting, Reality TV, Entertainment, Nagarjuna, Star Maa, Hotstar, Telugu Show' },
+      { name: 'news_keywords', content: 'Bigg Boss Telugu 10, BB Telugu 10, Voting, Reality TV, Entertainment, Nagarjuna, Star Maa, Hotstar, Telugu Show' },
       { name: 'content-language', content: 'en-US' },
       { name: 'audience', content: 'all' },
       { name: 'rating', content: 'safe for kids' },
@@ -93,9 +93,9 @@ export default function SEOEnhancer() {
       { name: 'target', content: 'all' },
       { name: 'HandheldFriendly', content: 'True' },
       { name: 'MobileOptimized', content: '320' },
-      { name: 'apple-mobile-web-app-title', content: 'BB Telugu Nine Vote' },
-      { name: 'application-name', content: 'Bigg Boss Telugu Nine Voting' },
-      { name: 'msapplication-tooltip', content: 'Vote for Bigg Boss Telugu Nine contestants online' }
+      { name: 'apple-mobile-web-app-title', content: 'BB Telugu 10 Vote' },
+      { name: 'application-name', content: 'Bigg Boss Telugu 10 Voting' },
+      { name: 'msapplication-tooltip', content: 'Vote for Bigg Boss Telugu 10 contestants online' }
     ]
 
     additionalMetas.forEach(({ name, content }) => {

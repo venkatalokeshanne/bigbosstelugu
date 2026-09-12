@@ -3,8 +3,8 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Accessibility Statement | Bigg Boss Telugu 9 Voting Website Accessibility Features',
-  description: 'Learn about accessibility features on BigBossTeluguVotes.in. Our commitment to making Bigg Boss Telugu 9 voting accessible to all users with disabilities.',
+  title: 'Accessibility Statement | Bigg Boss Telugu 10 Voting Website Accessibility Features',
+  description: 'Learn about accessibility features on BigBossTeluguVotes.in. Our commitment to making Bigg Boss Telugu 10 voting accessible to all users with disabilities.',
   keywords: [
     'accessibility statement', 'Bigg Boss Telugu accessibility', 'website accessibility features',
     'inclusive voting', 'disability friendly voting', 'screen reader compatible'
@@ -49,7 +49,7 @@ export default function Accessibility() {
                 <p>
                   BigBossTeluguVotes.in is committed to ensuring that our website is accessible to all users, 
                   including those with visual, hearing, motor, or cognitive disabilities. We strive to provide 
-                  an inclusive voting experience for Bigg Boss Telugu 9.
+                  an inclusive voting experience for Bigg Boss Telugu 10.
                 </p>
                 <p>
                   We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards 
@@ -132,7 +132,7 @@ export default function Accessibility() {
               <h2 className="text-3xl font-bold text-white mb-6">Alternative Voting Methods</h2>
               <div className="text-gray-300 space-y-4">
                 <p>
-                  If you have difficulty using our website, alternative voting methods for Bigg Boss Telugu 9 include:
+                  If you have difficulty using our website, alternative voting methods for Bigg Boss Telugu 10 include:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-green-500/20 p-4 rounded-lg border border-green-400">

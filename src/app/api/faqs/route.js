@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { fetchFAQs } from '../../../lib/sanity-client';
+import { fetchFAQs } from '../../../lib/static-data-client';
 
 export async function GET() {
   try {

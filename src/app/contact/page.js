@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata = {
-  title: 'Contact Us - Bigg Boss Telugu 9 Voting Platform',
-  description: 'Contact the Bigg Boss Telugu 9 Official Voting Platform team. Get help with voting, technical issues, and general inquiries.',
+  title: 'Contact Us - Bigg Boss Telugu 10 Voting Platform',
+  description: 'Contact the Bigg Boss Telugu 10 Official Voting Platform team. Get help with voting, technical issues, and general inquiries.',
 };
 
 export default function Contact() {

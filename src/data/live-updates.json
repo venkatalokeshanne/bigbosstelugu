@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "update-1",
+    "title": "Bigg Boss Telugu 10 premieres with 16 contestants",
+    "description": "The house welcomed its first batch of contestants including Debjani Modak, Thrigun, Singer Jhansi, and Sudheer Reddy as the new season kicked off in style.",
+    "updateType": "task",
+    "isLive": false,
+    "priority": "breaking",
+    "timestamp": "2026-09-07T14:00:00.000Z"
+  },
+  {
+    "_id": "update-2",
+    "title": "First captaincy task turns dramatic",
+    "description": "Contestants clashed during the opening captaincy task as alliances started forming in the house within the first few days.",
+    "updateType": "drama",
+    "isLive": false,
+    "priority": "high",
+    "timestamp": "2026-09-08T18:30:00.000Z"
+  },
+  {
+    "_id": "update-3",
+    "title": "Nagarjuna addresses the house on Weekend Mirchi",
+    "description": "Host Akkineni Nagarjuna reviewed the week's events and pulled up contestants for their behavior during tasks.",
+    "updateType": "nomination",
+    "isLive": false,
+    "priority": "medium",
+    "timestamp": "2026-09-12T15:00:00.000Z"
+  },
+  {
+    "_id": "update-4",
+    "title": "Secret task keeps contestants on their toes",
+    "description": "A surprise secret task was assigned to a few contestants, adding an extra layer of strategy to house dynamics this week.",
+    "updateType": "secret",
+    "isLive": false,
+    "priority": "medium",
+    "timestamp": "2026-09-10T11:00:00.000Z"
+  },
+  {
+    "_id": "update-5",
+    "title": "First nominations of the season announced",
+    "description": "Contestants faced the nomination process for the first time this season, setting the stage for the week's voting.",
+    "updateType": "nomination",
+    "isLive": false,
+    "priority": "high",
+    "timestamp": "2026-09-09T20:00:00.000Z"
+  }
+]

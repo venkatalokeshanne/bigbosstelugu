@@ -12,12 +12,12 @@ export default function ContentSection() {
         {/* Main Article Style Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Bigg Boss Telugu 9 Voting, BB Telugu Nine Contestants and Latest Updates
+            Bigg Boss Telugu 10 Voting, BB Telugu 10 Contestants and Latest Updates
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            As you know, you have to vote to save any Bigg Boss Telugu Nine contestant. So Bigg Boss Telugu 9 
+            As you know, you have to vote to save any Bigg Boss Telugu 10 contestant. So Bigg Boss Telugu 10 
             Voting process is the same for this year as well. Keep reading to know how to vote 
-            BB Telugu 9 contestants to save them from elimination.
+            BB Telugu 10 contestants to save them from elimination.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function ContentSection() {
           <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
             <Image
               src="/images/bigboss.jpg"
-              alt="Bigg Boss Telugu 9 Vote Featured Image - BB Telugu Nine Voting Process"
+              alt="Bigg Boss Telugu 10 Vote Featured Image - BB Telugu 10 Voting Process"
               width={1024}
               height={615}
               className="w-full h-auto"
@@ -42,23 +42,23 @@ export default function ContentSection() {
         <div className="prose prose-lg prose-invert max-w-6xl mx-auto mb-16">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
             <p className="text-gray-300 leading-relaxed mb-6">
-              After so much anticipation, it is officially announced that Season 9 of Bigg Boss Telugu 
+              After so much anticipation, it is officially announced that Season 10 of Bigg Boss Telugu 
               is going to be started in September. Everyone thought that the most controversial show, 
-              Bigg Boss Telugu Nine will be canceled this year as the team already hosted the Bigg Boss 
+              Bigg Boss Telugu 10 will be canceled this year as the team already hosted the Bigg Boss 
               Telugu Non Stop OTT version.
             </p>
             
             <p className="text-gray-300 leading-relaxed mb-6">
               But the makers have decided to go ahead and conduct the show with the at-most precautions. 
               The makers first decided to cancel the show this year, but due to demand and requests from 
-              the audience, they decided to take risks and continue Bigg Boss 9 Telugu Show.
+              the audience, they decided to take risks and continue Bigg Boss 10 Telugu Show.
             </p>
 
             <p className="text-gray-300 leading-relaxed">
               <strong className="text-purple-400">Akkineni Nagarjuna</strong> appears as the host in 
-              Bigg Boss Telugu 9 whereas Jr. NTR hosted Season 1 and Nani Hosted the Show in Season 2. 
+              Bigg Boss Telugu 10 whereas Jr. NTR hosted Season 1 and Nani Hosted the Show in Season 2. 
               Akkineni Nagarjuna Was the host for the past five years. He has hosted Bigg Boss Telugu 3, 
-              Bigg Boss 4 Telugu, Bigg Boss Non stop, and now, Bigg Boss 9 Telugu.
+              Bigg Boss 4 Telugu, Bigg Boss Non stop, and now, Bigg Boss 10 Telugu.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function ContentSection() {
                 <tbody className="divide-y divide-white/10">
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Season</td>
-                    <td className="px-6 py-4 text-gray-300">Bigg Boss 9 Telugu</td>
+                    <td className="px-6 py-4 text-gray-300">Bigg Boss 10 Telugu</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Host</td>
@@ -82,7 +82,7 @@ export default function ContentSection() {
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Number of Housemates</td>
-                    <td className="px-6 py-4 text-gray-300">15</td>
+                    <td className="px-6 py-4 text-gray-300">16</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Timing</td>
@@ -106,7 +106,7 @@ export default function ContentSection() {
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4 font-semibold text-purple-400">Release Date</td>
-                    <td className="px-6 py-4 text-gray-300">September 07, 2025</td>
+                    <td className="px-6 py-4 text-gray-300">September 07, 2026</td>
                   </tr>
                 </tbody>
               </table>
@@ -151,9 +151,9 @@ export default function ContentSection() {
                   </p>
                   
                   <p className="leading-relaxed">
-                    Now you can vote and Watch Bigg Boss Telugu Season 9 on Hotstar App. Star Maa Bigg Boss 
+                    Now you can vote and Watch Bigg Boss Telugu Season 10 on Hotstar App. Star Maa Bigg Boss 
                     Telugu Vote Results are announced by host, Akkineni Nagarjuna every week. Bigg Boss Telugu 
-                    Season 9, the Biggest Reality show in Telugu airing on Star Maa television and also live 
+                    Season 10, the Biggest Reality show in Telugu airing on Star Maa television and also live 
                     stream on their streaming partner Hotstar App.
                   </p>
 
@@ -197,7 +197,7 @@ export default function ContentSection() {
                       <li>First Download the Hotstar App from Google Play Store.</li>
                       <li>After Downloading the App Install the app on your mobile phone.</li>
                       <li>Sign up using your Google account/Gmail or mobile number.</li>
-                      <li>Search for "Bigg Boss Telugu Show" or "Bigg Boss 9 Telugu Vote" on Hotstar</li>
+                      <li>Search for "Bigg Boss Telugu Show" or "Bigg Boss 10 Telugu Vote" on Hotstar</li>
                       <li>Click on the official Banner of the Show.</li>
                       <li>You will now see a line "Voting for today is now open" along with the VOTE button.</li>
                       <li>After clicking the vote button you will see the list of nominated contestants.</li>
@@ -264,7 +264,7 @@ export default function ContentSection() {
                     <h4 className="text-lg font-bold text-purple-400 mb-4">🌐 Google Voting Process:</h4>
                     <ol className="space-y-3 list-decimal list-inside">
                       <li>First of all search for "Google.co.in" from any browser.</li>
-                      <li>Simply search for "Bigg Boss Telugu Vote" or "Bigg Boss 9 Telugu Vote"</li>
+                      <li>Simply search for "Bigg Boss Telugu Vote" or "Bigg Boss 10 Telugu Vote"</li>
                       <li>Click on your favorite contestant from the voting poll</li>
                       <li>You can increase the number up to 50 votes per day from a single Google Account</li>
                       <li>Don't forget to submit the votes after voting for the contestant</li>

@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Contact Support | Bigg Boss Telugu 9 Voting Help and Support',
-  description: 'Get help with Bigg Boss Telugu 9 voting issues, technical support, and general inquiries. Contact our support team for BB Telugu Season 9 assistance.',
+  title: 'Contact Support | Bigg Boss Telugu 10 Voting Help and Support',
+  description: 'Get help with Bigg Boss Telugu 10 voting issues, technical support, and general inquiries. Contact our support team for BB Telugu Season 10 assistance.',
   keywords: [
     'Bigg Boss Telugu support', 'BB Telugu voting help', 'contact support',
-    'BB Telugu 9 technical support', 'voting assistance', 'help center'
+    'BB Telugu 10 technical support', 'voting assistance', 'help center'
   ]
 }
 
@@ -28,7 +28,7 @@ export default function ContactSupport() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Contact Support - Bigg Boss Telugu 9"
+          title="Contact Support - Bigg Boss Telugu 10"
           description="Get technical support and assistance for voting and website issues"
         />
         
@@ -38,7 +38,7 @@ export default function ContactSupport() {
               Contact Support
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Need help with voting or have questions about Bigg Boss Telugu 9? Our support team is here to assist you.
+              Need help with voting or have questions about Bigg Boss Telugu 10? Our support team is here to assist you.
             </p>
           </div>
 

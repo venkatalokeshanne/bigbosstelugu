@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Show Timings | BB Telugu Season 9 Episode Schedule',
-  description: 'Complete Bigg Boss Telugu 9 show timings, episode schedule, and streaming details. Watch BB Telugu Season 9 on Star Maa and Disney+ Hotstar with accurate timings.',
+  title: 'Bigg Boss Telugu 10 Show Timings | BB Telugu Season 10 Episode Schedule',
+  description: 'Complete Bigg Boss Telugu 10 show timings, episode schedule, and streaming details. Watch BB Telugu Season 10 on Star Maa and Disney+ Hotstar with accurate timings.',
   keywords: [
-    'Bigg Boss Telugu 9 timings', 'BB Telugu 9 schedule', 'Bigg Boss Telugu show time',
-    'BB Telugu 9 episode timing', 'Star Maa Bigg Boss timings', 'Hotstar BB Telugu timing'
+    'Bigg Boss Telugu 10 timings', 'BB Telugu 10 schedule', 'Bigg Boss Telugu show time',
+    'BB Telugu 10 episode timing', 'Star Maa Bigg Boss timings', 'Hotstar BB Telugu timing'
   ]
 }
 
@@ -28,17 +28,17 @@ export default function ShowTimings() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Show Timings"
-          description="Complete schedule and timing details for Bigg Boss Telugu Season 9 episodes"
+          title="Bigg Boss Telugu 10 Show Timings"
+          description="Complete schedule and timing details for Bigg Boss Telugu Season 10 episodes"
         />
         
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Bigg Boss Telugu 9 Timings
+              Bigg Boss Telugu 10 Timings
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Complete schedule and episode timings for Bigg Boss Telugu Season 9 on Star Maa and Disney+ Hotstar
+              Complete schedule and episode timings for Bigg Boss Telugu Season 10 on Star Maa and Disney+ Hotstar
             </p>
           </div>
 
@@ -181,7 +181,7 @@ export default function ShowTimings() {
           <div className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-xl p-8 border border-yellow-400 mb-8">
             <h2 className="text-3xl font-bold text-white mb-4">Don't Miss Any Episode!</h2>
             <p className="text-gray-300 mb-6">
-              Set reminders for your favorite episodes and never miss the drama, voting, and eliminations of Bigg Boss Telugu 9.
+              Set reminders for your favorite episodes and never miss the drama, voting, and eliminations of Bigg Boss Telugu 10.
             </p>
             <div className="flex flex-wrap gap-4">
               <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300">

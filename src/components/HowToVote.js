@@ -7,7 +7,7 @@ export default function HowToVote() {
       steps: [
         'Download Disney+ Hotstar app',
         'Login with your account',
-        'Navigate to Bigg Boss Telugu 9',
+        'Navigate to Bigg Boss Telugu 10',
         'Click on "Vote" section',
         'Select your favorite contestant',
         'Submit your vote'
@@ -47,13 +47,13 @@ export default function HowToVote() {
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
-            How to Vote Bigg Boss Telugu 9 Online Free 2025? Step by Step Guide
+            How to Vote Bigg Boss Telugu 10 Online Free 2026? Step by Step Guide
           </h2>
           <h3 className="text-xl md:text-2xl text-purple-300 font-semibold mb-6">
-            BBT9 Voting Methods | Disney+ Hotstar SMS Online Polls Hyderabad Telugu
+            BBT10 Voting Methods | Disney+ Hotstar SMS Online Polls Hyderabad Telugu
           </h3>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Multiple ways to cast your vote and support your favorite Bigg Boss Telugu 9 contestant. 
+            Multiple ways to cast your vote and support your favorite Bigg Boss Telugu 10 contestant. 
             Choose the method that works best for you.
           </p>
         </div>

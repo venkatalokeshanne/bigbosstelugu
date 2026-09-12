@@ -9,7 +9,7 @@ export default function Loading() {
         </div>
         
         <h2 className="text-2xl font-semibold text-gray-900 mb-2">
-          Loading Bigg Boss Telugu 9...
+          Loading Bigg Boss Telugu 10...
         </h2>
         <p className="text-gray-600">
           Getting the latest updates from the house

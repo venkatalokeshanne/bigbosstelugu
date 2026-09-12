@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Missed Call Voting | Free BB Telugu 9 Phone Voting Numbers',
-  description: 'Vote for Bigg Boss Telugu 9 contestants using missed call voting method. Get all contestant phone numbers, voting procedure, and step-by-step guide for BB Telugu Season 9.',
+  title: 'Bigg Boss Telugu 10 Missed Call Voting | Free BB Telugu 10 Phone Voting Numbers',
+  description: 'Vote for Bigg Boss Telugu 10 contestants using missed call voting method. Get all contestant phone numbers, voting procedure, and step-by-step guide for BB Telugu Season 10.',
   keywords: [
-    'Bigg Boss Telugu 9 missed call voting', 'BB Telugu 9 phone numbers', 'missed call voting numbers',
-    'BB Telugu 9 free voting', 'Bigg Boss Telugu phone voting', 'contestant voting numbers'
+    'Bigg Boss Telugu 10 missed call voting', 'BB Telugu 10 phone numbers', 'missed call voting numbers',
+    'BB Telugu 10 free voting', 'Bigg Boss Telugu phone voting', 'contestant voting numbers'
   ]
 }
 
@@ -28,8 +28,8 @@ export default function MissedCallVoting() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Missed Call Voting"
-          description="Complete guide for missed call voting in Bigg Boss Telugu Season 9"
+          title="Bigg Boss Telugu 10 Missed Call Voting"
+          description="Complete guide for missed call voting in Bigg Boss Telugu Season 10"
         />
         
         <div className="container mx-auto px-4 py-8">
@@ -38,7 +38,7 @@ export default function MissedCallVoting() {
               Missed Call Voting Guide
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Vote for your favorite Bigg Boss Telugu 9 contestants using the free missed call voting method
+              Vote for your favorite Bigg Boss Telugu 10 contestants using the free missed call voting method
             </p>
           </div>
 

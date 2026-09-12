@@ -7,12 +7,12 @@ import {
 } from '../../lib/optimized-contestants'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Contestants | Meet All Participants 2025',
-  description: 'Meet all Bigg Boss Telugu Season 9 contestants. View profiles, vote for your favorites, and get latest updates on all participants from the house.',
-  keywords: 'Bigg Boss Telugu 9 contestants, BB Telugu 9 participants, contestant profiles, voting, Telugu reality show',
+  title: 'Bigg Boss Telugu 10 Contestants | Meet All Participants 2026',
+  description: 'Meet all Bigg Boss Telugu Season 10 contestants. View profiles, vote for your favorites, and get latest updates on all participants from the house.',
+  keywords: 'Bigg Boss Telugu 10 contestants, BB Telugu 10 participants, contestant profiles, voting, Telugu reality show',
   openGraph: {
-    title: 'All Bigg Boss Telugu 9 Contestants - Profiles & Voting',
-    description: 'Discover all contestants of Bigg Boss Telugu 9. Vote for your favorites and follow their journey.',
+    title: 'All Bigg Boss Telugu 10 Contestants - Profiles & Voting',
+    description: 'Discover all contestants of Bigg Boss Telugu 10. Vote for your favorites and follow their journey.',
     images: ['/images/contestants/group-photo.jpg'],
   }
 }
@@ -38,18 +38,18 @@ export default async function ContestantsPage() {
         <div className="container-custom relative z-10">
           <div className="text-center">
             <div className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full mb-6">
-              <span className="text-purple-400 font-semibold">SEASON 9 • ALL CONTESTANTS</span>
+              <span className="text-purple-400 font-semibold">SEASON 10 • ALL CONTESTANTS</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
-              Bigg Boss Telugu 9
+              Bigg Boss Telugu 10
               <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
                 CONTESTANTS LIST
               </span>
             </h1>
             
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-              15 brave souls entered the Bigg Boss Telugu 9 house with dreams of glory. 
+              {stats.total} brave souls entered the Bigg Boss Telugu 10 house with dreams of glory.
               Get to know them, follow their incredible journey, and vote for your favorites to keep them in the game.
             </p>
 
@@ -114,7 +114,7 @@ export default async function ContestantsPage() {
                       {contestant.imageUrl ? (
                         <Image
                           src={contestant.imageUrl}
-                          alt={`${contestant.name} - Bigg Boss Telugu 9 Contestant`}
+                          alt={`${contestant.name} - Bigg Boss Telugu 10 Contestant`}
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 16vw"
@@ -169,6 +169,54 @@ export default async function ContestantsPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Reported Salary Comparison */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+              💰 Bigg Boss Telugu 10 Reported Remuneration
+            </h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              Weekly pay figures reported by Telugu entertainment media, not an official Bigg Boss salary sheet.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto overflow-x-auto rounded-2xl border border-white/10">
+            <table className="w-full text-left">
+              <thead>
+                <tr className="bg-white/10">
+                  <th className="px-6 py-4 text-purple-300 font-semibold">Contestant</th>
+                  <th className="px-6 py-4 text-purple-300 font-semibold">Reported Weekly Remuneration</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/10">
+                {[
+                  ['Auto Ram Prasad', '₹4.50 lakh'],
+                  ['Varshini Sounderajan', '₹3.50–₹3.75 lakh'],
+                  ['Mukesh Gowda', '₹3.00 lakh'],
+                  ['Thrigun (Adith Arun)', '₹2.75 lakh'],
+                  ['Debjani Modak', '₹2.75 lakh'],
+                  ['Jabardasth Naresh', '₹2.50 lakh'],
+                  ['Chaitra Rai', '₹2.50 lakh'],
+                  ['Temper Vamsi', '₹2.00 lakh'],
+                  ['Krishnudu', '₹2.00 lakh'],
+                  ['Sudheer Reddy', '₹1.25 lakh'],
+                  ['Commoner contestants (Agnipariksha)', '~₹70,000'],
+                ].map(([name, amount]) => (
+                  <tr key={name} className="hover:bg-white/5 transition-colors">
+                    <td className="px-6 py-4 text-white font-medium">{name}</td>
+                    <td className="px-6 py-4 text-gray-300">{amount}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-gray-500 text-sm text-center mt-6 max-w-2xl mx-auto italic">
+            Figures are reported estimates from Telugu entertainment media and are not confirmed by the Bigg Boss production team. Net worth figures are not officially disclosed for any contestant and are intentionally not published as fact on this site.
+          </p>
         </div>
       </section>
 

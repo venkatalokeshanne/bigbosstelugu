@@ -3,11 +3,11 @@ import SEOEnhancer from '../../components/SEOEnhancer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Bigg Boss Telugu 9 Voting FAQ | BB Telugu 9 Frequently Asked Questions',
-  description: 'Get answers to frequently asked questions about Bigg Boss Telugu 9 voting, elimination process, contestant details, and show updates. Complete FAQ guide for BB Telugu Season 9.',
+  title: 'Bigg Boss Telugu 10 Voting FAQ | BB Telugu 10 Frequently Asked Questions',
+  description: 'Get answers to frequently asked questions about Bigg Boss Telugu 10 voting, elimination process, contestant details, and show updates. Complete FAQ guide for BB Telugu Season 10.',
   keywords: [
-    'Bigg Boss Telugu 9 FAQ', 'BB Telugu 9 questions answers', 'Bigg Boss Telugu voting help',
-    'BB Telugu 9 how to vote', 'Bigg Boss Telugu 9 rules', 'voting process FAQ'
+    'Bigg Boss Telugu 10 FAQ', 'BB Telugu 10 questions answers', 'Bigg Boss Telugu voting help',
+    'BB Telugu 10 how to vote', 'Bigg Boss Telugu 10 rules', 'voting process FAQ'
   ]
 }
 
@@ -21,11 +21,11 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How can I vote for Bigg Boss Telugu 9?",
+      question: "How can I vote for Bigg Boss Telugu 10?",
       answer: "You can vote for your favorite contestant through multiple methods: Disney+ Hotstar app, missed call voting, Google Assistant, and our website polls."
     },
     {
-      question: "Is voting for Bigg Boss Telugu 9 free?",
+      question: "Is voting for Bigg Boss Telugu 10 free?",
       answer: "Yes, voting through most methods is free. Hotstar app voting is free for premium subscribers, and missed call voting may have standard call charges."
     },
     {
@@ -37,7 +37,7 @@ export default function FAQ() {
       answer: "Voting typically closes on Friday night before the weekend episodes. Exact timing is announced during the show."
     },
     {
-      question: "Who can vote for Bigg Boss Telugu 9?",
+      question: "Who can vote for Bigg Boss Telugu 10?",
       answer: "Anyone with access to voting platforms can vote. For official Hotstar voting, you need a Hotstar account and be in supported regions."
     },
     {
@@ -79,17 +79,17 @@ export default function FAQ() {
       
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <SEOEnhancer 
-          title="Bigg Boss Telugu 9 Voting FAQ"
-          description="Comprehensive FAQ guide for Bigg Boss Telugu 9 voting and show information"
+          title="Bigg Boss Telugu 10 Voting FAQ"
+          description="Comprehensive FAQ guide for Bigg Boss Telugu 10 voting and show information"
         />
         
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              Bigg Boss Telugu 9 FAQ
+              Bigg Boss Telugu 10 FAQ
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Get answers to all your questions about Bigg Boss Telugu Season 9 voting, contestants, and show updates
+              Get answers to all your questions about Bigg Boss Telugu Season 10 voting, contestants, and show updates
             </p>
           </div>
 
@@ -149,7 +149,7 @@ export default function FAQ() {
               <div className="text-gray-300 space-y-4">
                 <p>
                   If you couldn't find the answer to your question above, feel free to reach out to us. 
-                  We're here to help you with any queries about Bigg Boss Telugu 9 voting or the show.
+                  We're here to help you with any queries about Bigg Boss Telugu 10 voting or the show.
                 </p>
                 <div className="bg-blue-500/20 p-4 rounded-lg border border-blue-400">
                   <p className="text-blue-300 font-semibold mb-2">Contact Options:</p>

@@ -1,524 +1,317 @@
 {
   "contestants": [
     {
-      "_id": "contestant-rithu-chowdary",
-      "age": 23,
-      "biography": "Young social media influencer with a strong presence on Instagram and TikTok.",
+      "_id": "contestant-debjani-modak",
+      "age": 30,
+      "biography": "Bengali actress, model and entrepreneur who built her career across Bengali, Tamil and Telugu television. She became widely known to Telugu audiences for playing Vedha in Ennenno Janmala Bandham before recently launching her own business venture.",
       "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/ritu.webp",
-      "name": "Rithu Chowdary",
-      "profession": "Social media influencer",
-      "slug": "rithu-chowdary",
+      "entryDate": "2026-09-07",
+      "hometown": "Kolkata",
+      "imageUrl": "/images/contestants/debjani-modak.jpg",
+      "name": "Debjani Modak",
+      "profession": "Actress, model & entrepreneur",
+      "reportedSalary": "Reported ₹2.75 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "debjani-modak",
       "socialMedia": {
-        "instagram": "@rithuchowdary",
-        "twitter": "@rithuchowdary"
+        "instagram": "@debjanimodak",
+        "twitter": "@debjanimodak"
       },
       "status": "active"
     },
     {
-      "_id": "contestant-sanjjanaa-galrani",
-      "age": 35,
-      "biography": "Accomplished actress known for her work in Telugu and Kannada cinema with versatile roles.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Bangalore",
-      "imageUrl": "/images/contestants/sanajana.webp",
-      "name": "Sanjjanaa Galrani",
-      "profession": "Actress (Telugu, Kannada)",
-      "slug": "sanjjanaa-galrani",
-      "socialMedia": {
-        "instagram": "@sanjjanaagalrani",
-        "twitter": "@sanjjanaagalrani"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-bharani-shankar",
-      "age": 35,
-      "biography": "Popular television actor known for his versatile roles in Telugu serials and comedy shows.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/barani.webp",
-      "name": "Bharani Shankar",
-      "profession": "TV actor",
-      "slug": "bharani-shankar",
-      "socialMedia": {
-        "instagram": "@bharanishankar",
-        "twitter": "@bharanishankar"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-kalyan-padala",
-      "age": 29,
-      "biography": "Energetic contestant who impressed through Agnipariksha and secured his spot in the house.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Guntur",
-      "imageUrl": "/images/contestants/kalyan.webp",
-      "name": "Kalyan Padala",
-      "profession": "Commoner (Agnipariksha contestant)",
-      "slug": "kalyan-padala",
-      "socialMedia": {
-        "instagram": "@kalyanpadala",
-        "twitter": "@kalyanpadala"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-flora-saini",
-      "age": 42,
-      "biography": "Versatile actress who has worked in Telugu, Tamil, Kannada, and Hindi films with memorable performances.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Chandigarh",
-      "imageUrl": "/images/contestants/flora.webp",
-      "name": "Flora Saini (Asha Saini)",
-      "profession": "Film actress (Telugu, Tamil, Kannada, Hindi)",
-      "slug": "flora-saini-asha-saini",
-      "socialMedia": {
-        "instagram": "@florasainiashasaini",
-        "twitter": "@florasainiashasaini"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-priya-shetty",
-      "age": 25,
-      "biography": "Public-voted contestant who earned her place through audience support and vibrant personality.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Bangalore",
-      "imageUrl": "/images/contestants/priya.webp",
-      "name": "Priya Shetty",
-      "profession": "Commoner (public-vote contestant)",
-      "slug": "priya-shetty",
-      "socialMedia": {
-        "instagram": "@priyashetty",
-        "twitter": "@priyashetty"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-jabardasth-emmanuel",
-      "age": 32,
-      "biography": "Popular comedian from Telugu TV skit shows like Jabardasth and Patas.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/emmanuel.webp",
-      "name": "Jabardasth Emmanuel",
-      "profession": "Comedian (TV)",
-      "slug": "jabardasth-emmanuel",
-      "socialMedia": {
-        "instagram": "@jabardasthemmanuel",
-        "twitter": "@jabardasthemmanuel"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-suman-setty",
-      "age": 38,
-      "biography": "Veteran comedian who has entertained audiences through numerous Telugu films and comedy shows.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/suman.webp",
-      "name": "Suman Setty",
-      "profession": "Comedian (films)",
-      "slug": "suman-setty",
-      "socialMedia": {
-        "instagram": "@sumansetty",
-        "twitter": "@sumansetty"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-shrasti-verma",
-      "age": 28,
-      "biography": "Talented choreographer turned actress who has worked on various Telugu film projects.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Mumbai",
-      "imageUrl": "/images/contestants/shrasti.webp",
-      "name": "Shrasti Verma",
-      "profession": "Choreographer-turned-actress",
-      "slug": "shrasti-verma",
-      "socialMedia": {
-        "instagram": "@shrastiverma",
-        "twitter": "@shrastiverma"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-ramu-rathod",
-      "age": 45,
-      "biography": "Talented folk singer known for preserving traditional Telugu music and cultural heritage.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Nizamabad",
-      "imageUrl": "/images/contestants/rathod.webp",
-      "name": "Ramu Rathod",
-      "profession": "Folk singer",
-      "slug": "ramu-rathod",
-      "socialMedia": {
-        "instagram": "@ramurathod",
-        "twitter": "@ramurathod"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-thanuja-puttaswamy",
-      "age": 33,
-      "biography": "Television actress known for her roles in popular Kannada and Telugu serial dramas.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Bangalore",
-      "imageUrl": "/images/contestants/thanuja.webp",
-      "name": "Thanuja Puttaswamy",
-      "profession": "Television actress",
-      "slug": "thanuja-puttaswamy",
-      "socialMedia": {
-        "instagram": "@thanujaputtaswamy",
-        "twitter": "@thanujaputtaswamy"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-manish-maryada",
+      "_id": "contestant-thrigun",
       "age": 26,
-      "biography": "Content creator and actor who built a strong following through entertaining social media content.",
+      "biography": "Telugu and Tamil film actor formerly credited as Adith Arun, known for films including Katha, Inidhu Inidhu, PSV Garuda Vega, Manasuku Nachindi, Dear Megha and Premadesam.",
       "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Karimnagar",
-      "imageUrl": "/images/contestants/manish.webp",
-      "name": "Manish Maryada",
-      "profession": "Content creator / actor (commoner)",
-      "slug": "manish-maryada",
+      "entryDate": "2026-09-07",
+      "hometown": "Chennai",
+      "imageUrl": "/images/contestants/thrigun.jpg",
+      "name": "Thrigun (Adith Arun)",
+      "profession": "Film actor",
+      "reportedSalary": "Reported ₹2.75 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "thrigun-adith-arun",
       "socialMedia": {
-        "instagram": "@manishmaryada",
-        "twitter": "@manishmaryada"
+        "instagram": "@thriguntweets",
+        "twitter": "@thriguntweets"
       },
       "status": "active"
     },
     {
-      "_id": "contestant-harita-harish",
-      "age": 24,
-      "biography": "Young contestant who gained attention through Agnipariksha competition and social media presence.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Vijayawada",
-      "imageUrl": "/images/contestants/harish.webp",
-      "name": "Harita Harish",
-      "profession": "Commoner (Agnipariksha contestant)",
-      "slug": "harita-harish",
-      "socialMedia": {
-        "instagram": "@haritaharish",
-        "twitter": "@haritaharish"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-demon-pawan",
-      "age": 28,
-      "biography": "Social media influencer and content creator who became popular through viral comedy videos.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Warangal",
-      "imageUrl": "/images/contestants/pavan.webp",
-      "name": "Demon Pawan",
-      "profession": "Social media influencer (commoner)",
-      "slug": "demon-pawan",
-      "socialMedia": {
-        "instagram": "@demonpawan",
-        "twitter": "@demonpawan"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-srija-dammu",
-      "age": 22,
-      "biography": "Instagram influencer and content creator known for lifestyle and fashion content.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Visakhapatnam",
-      "imageUrl": "/images/contestants/srija.webp",
-      "name": "Srija Dammu",
-      "profession": "Instagram influencer (commoner)",
-      "slug": "srija-dammu",
-      "socialMedia": {
-        "instagram": "@srijadammu",
-        "twitter": "@srijadammu"
-      },
-      "status": "active"
-    }
-  ],
-  "activeContestants": [
-    {
-      "_id": "contestant-thanuja-puttaswamy",
-      "age": 33,
-      "biography": "Television actress known for her roles in popular Kannada and Telugu serial dramas.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Bangalore",
-      "imageUrl": "/images/contestants/thanuja.webp",
-      "name": "Thanuja Puttaswamy",
-      "profession": "Television actress",
-      "slug": "thanuja-puttaswamy",
-      "socialMedia": {
-        "instagram": "@thanujaputtaswamy",
-        "twitter": "@thanujaputtaswamy"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-bharani-shankar",
-      "age": 35,
-      "biography": "Popular television actor known for his versatile roles in Telugu serials and comedy shows.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/barani.webp",
-      "name": "Bharani Shankar",
-      "profession": "TV actor",
-      "slug": "bharani-shankar",
-      "socialMedia": {
-        "instagram": "@bharanishankar",
-        "twitter": "@bharanishankar"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-ramu-rathod",
-      "age": 45,
-      "biography": "Talented folk singer known for preserving traditional Telugu music and cultural heritage.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Nizamabad",
-      "imageUrl": "/images/contestants/rathod.webp",
-      "name": "Ramu Rathod",
-      "profession": "Folk singer",
-      "slug": "ramu-rathod",
-      "socialMedia": {
-        "instagram": "@ramurathod",
-        "twitter": "@ramurathod"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-shrasti-verma",
-      "age": 28,
-      "biography": "Talented choreographer turned actress who has worked on various Telugu film projects.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Mumbai",
-      "imageUrl": "/images/contestants/shrasti.webp",
-      "name": "Shrasti Verma",
-      "profession": "Choreographer-turned-actress",
-      "slug": "shrasti-verma",
-      "socialMedia": {
-        "instagram": "@shrastiverma",
-        "twitter": "@shrastiverma"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-harita-harish",
-      "age": 24,
-      "biography": "Young contestant who gained attention through Agnipariksha competition and social media presence.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Vijayawada",
-      "imageUrl": "/images/contestants/harish.webp",
-      "name": "Harita Harish",
-      "profession": "Commoner (Agnipariksha contestant)",
-      "slug": "harita-harish",
-      "socialMedia": {
-        "instagram": "@haritaharish",
-        "twitter": "@haritaharish"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-sanjjanaa-galrani",
-      "age": 35,
-      "biography": "Accomplished actress known for her work in Telugu and Kannada cinema with versatile roles.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Bangalore",
-      "imageUrl": "/images/contestants/sanajana.webp",
-      "name": "Sanjjanaa Galrani",
-      "profession": "Actress (Telugu, Kannada)",
-      "slug": "sanjjanaa-galrani",
-      "socialMedia": {
-        "instagram": "@sanjjanaagalrani",
-        "twitter": "@sanjjanaagalrani"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-manish-maryada",
+      "_id": "contestant-singer-jhansi",
       "age": 26,
-      "biography": "Content creator and actor who built a strong following through entertaining social media content.",
+      "biography": "Telugu folk singer from a farming family in Komatikunta village, Suryapet district. She became the first Agnipariksha Season 2 contestant to earn direct entry into the main Bigg Boss Telugu 10 house after an emotional performance as a Raitu Bidda.",
       "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Karimnagar",
-      "imageUrl": "/images/contestants/manish.webp",
-      "name": "Manish Maryada",
-      "profession": "Content creator / actor (commoner)",
-      "slug": "manish-maryada",
+      "entryDate": "2026-09-07",
+      "hometown": "Komatikunta, Suryapet district",
+      "imageUrl": "/images/contestants/jhansi.jpg",
+      "name": "Singer Jhansi",
+      "profession": "Folk singer & farmer",
+      "reportedSalary": "Reported ~₹70,000/week, the commoner rate (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "singer-jhansi",
       "socialMedia": {
-        "instagram": "@manishmaryada",
-        "twitter": "@manishmaryada"
+        "instagram": "@singerjhansi",
+        "twitter": "@singerjhansi"
       },
       "status": "active"
     },
     {
-      "_id": "contestant-jabardasth-emmanuel",
+      "_id": "contestant-sudheer-reddy",
       "age": 32,
-      "biography": "Popular comedian from Telugu TV skit shows like Jabardasth and Patas.",
+      "biography": "Digital media anchor and interviewer from Rayalaseema known for his interview platform Sudheer Talks, associated with Aadhan Media. He built his audience through YouTube and digital interviews rather than traditional television.",
       "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/emmanuel.webp",
-      "name": "Jabardasth Emmanuel",
-      "profession": "Comedian (TV)",
-      "slug": "jabardasth-emmanuel",
+      "entryDate": "2026-09-07",
+      "hometown": "Rayalaseema, Andhra Pradesh",
+      "imageUrl": "/images/contestants/sudheer-reddy.jpg",
+      "name": "Sudheer Reddy",
+      "profession": "Digital anchor & interviewer (Sudheer Talks)",
+      "reportedSalary": "Reported ₹1.25 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "sudheer-reddy",
       "socialMedia": {
-        "instagram": "@jabardasthemmanuel",
-        "twitter": "@jabardasthemmanuel"
+        "instagram": "@sudheerreddy",
+        "twitter": "@sudheerreddy"
       },
       "status": "active"
     },
     {
-      "_id": "contestant-suman-setty",
-      "age": 38,
-      "biography": "Veteran comedian who has entertained audiences through numerous Telugu films and comedy shows.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/suman.webp",
-      "name": "Suman Setty",
-      "profession": "Comedian (films)",
-      "slug": "suman-setty",
-      "socialMedia": {
-        "instagram": "@sumansetty",
-        "twitter": "@sumansetty"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-priya-shetty",
-      "age": 25,
-      "biography": "Public-voted contestant who earned her place through audience support and vibrant personality.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Bangalore",
-      "imageUrl": "/images/contestants/priya.webp",
-      "name": "Priya Shetty",
-      "profession": "Commoner (public-vote contestant)",
-      "slug": "priya-shetty",
-      "socialMedia": {
-        "instagram": "@priyashetty",
-        "twitter": "@priyashetty"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-rithu-chowdary",
-      "age": 23,
-      "biography": "Young social media influencer with a strong presence on Instagram and TikTok.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Hyderabad",
-      "imageUrl": "/images/contestants/ritu.webp",
-      "name": "Rithu Chowdary",
-      "profession": "Social media influencer",
-      "slug": "rithu-chowdary",
-      "socialMedia": {
-        "instagram": "@rithuchowdary",
-        "twitter": "@rithuchowdary"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-srija-dammu",
-      "age": 22,
-      "biography": "Instagram influencer and content creator known for lifestyle and fashion content.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Visakhapatnam",
-      "imageUrl": "/images/contestants/srija.webp",
-      "name": "Srija Dammu",
-      "profession": "Instagram influencer (commoner)",
-      "slug": "srija-dammu",
-      "socialMedia": {
-        "instagram": "@srijadammu",
-        "twitter": "@srijadammu"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-flora-saini",
-      "age": 42,
-      "biography": "Versatile actress who has worked in Telugu, Tamil, Kannada, and Hindi films with memorable performances.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Chandigarh",
-      "imageUrl": "/images/contestants/flora.webp",
-      "name": "Flora Saini (Asha Saini)",
-      "profession": "Film actress (Telugu, Tamil, Kannada, Hindi)",
-      "slug": "flora-saini-asha-saini",
-      "socialMedia": {
-        "instagram": "@florasainiashasaini",
-        "twitter": "@florasainiashasaini"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-kalyan-padala",
-      "age": 29,
-      "biography": "Energetic contestant who impressed through Agnipariksha and secured his spot in the house.",
-      "eliminationDate": null,
-      "entryDate": "2024-09-08",
-      "hometown": "Guntur",
-      "imageUrl": "/images/contestants/kalyan.webp",
-      "name": "Kalyan Padala",
-      "profession": "Commoner (Agnipariksha contestant)",
-      "slug": "kalyan-padala",
-      "socialMedia": {
-        "instagram": "@kalyanpadala",
-        "twitter": "@kalyanpadala"
-      },
-      "status": "active"
-    },
-    {
-      "_id": "contestant-demon-pawan",
+      "_id": "contestant-aman-masood",
       "age": 28,
-      "biography": "Social media influencer and content creator who became popular through viral comedy videos.",
+      "biography": "Actor, model and digital creator known for short films and modelling work, representing the newer generation of contestants who built their following through digital platforms.",
       "eliminationDate": null,
-      "entryDate": "2024-09-01",
-      "hometown": "Warangal",
-      "imageUrl": "/images/contestants/pavan.webp",
-      "name": "Demon Pawan",
-      "profession": "Social media influencer (commoner)",
-      "slug": "demon-pawan",
+      "entryDate": "2026-09-07",
+      "hometown": "Hyderabad",
+      "imageUrl": "/images/contestants/aman-masood.jpg",
+      "name": "Aman Masood",
+      "profession": "Actor, model & digital creator",
+      "reportedSalary": "Reported ~₹70,000/week, the commoner rate (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "aman-masood",
       "socialMedia": {
-        "instagram": "@demonpawan",
-        "twitter": "@demonpawan"
+        "instagram": "@amanmasood",
+        "twitter": "@amanmasood"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-chaitra-rai",
+      "age": 38,
+      "biography": "Television and film actress who built a long career across Kannada and Telugu entertainment, becoming familiar to Telugu viewers through television serials before entering the Bigg Boss house.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Mangalore",
+      "imageUrl": "/images/contestants/chaitra-rai.jpg",
+      "name": "Chaitra Rai",
+      "profession": "Television & film actress (Kannada, Telugu)",
+      "reportedSalary": "Reported ₹2.5 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "chaitra-rai",
+      "socialMedia": {
+        "instagram": "@chaitrarai",
+        "twitter": "@chaitrarai"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-auto-ram-prasad",
+      "age": 40,
+      "biography": "Born in Visakhapatnam on May 3, 1986, Ram Prasad became famous through Jabardasth, where his comedy writing and 'Auto' punchlines became his trademark. He began his film career with Josh, ran a medical wholesale business, then returned to Hyderabad as a Jabardasth scriptwriter before moving on screen. His films include Nenu Local, Cinema Choopistha Mava, Khaidi No. 150, Uma Maheswara Ugra Roopasya, Bedurulanka 2012 and The Family Star.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Visakhapatnam",
+      "imageUrl": "/images/contestants/ram-prasad.jpg",
+      "name": "Auto Ram Prasad",
+      "profession": "Comedian, writer & actor (Jabardasth)",
+      "reportedSalary": "Reported ₹4.5 lakh/week, the highest among currently reported contestants (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "auto-ram-prasad",
+      "socialMedia": {
+        "instagram": "@autoramprasad",
+        "twitter": "@autoramprasad"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-shalini-patel",
+      "age": 25,
+      "biography": "Model, short-film actress and emcee, also reported as Shalini Damera, who entered Bigg Boss Telugu 10 through the Agnipariksha selection process.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Visakhapatnam",
+      "imageUrl": "/images/contestants/shalini-patel.jpg",
+      "name": "Shalini Patel",
+      "profession": "Model, actress & emcee",
+      "reportedSalary": "Reported ~₹70,000/week, the commoner rate (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "shalini-patel",
+      "socialMedia": {
+        "instagram": "@shalinipatel",
+        "twitter": "@shalinipatel"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-temper-vamsi",
+      "age": 46,
+      "biography": "Telugu film actor known for supporting and negative-shade roles, with his screen identity strongly associated with Temper, the Jr NTR-starrer directed by Puri Jagannadh. His filmography includes Bharat Ane Nenu, Saaho, Pushpa and Double iSmart.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Hyderabad",
+      "imageUrl": "/images/contestants/temper-vamsi.jpg",
+      "name": "Temper Vamsi",
+      "profession": "Film actor",
+      "reportedSalary": "Reported ₹2 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "temper-vamsi",
+      "socialMedia": {
+        "instagram": "@tempervamsi",
+        "twitter": "@tempervamsi"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-srishti-vyakaranam",
+      "age": 28,
+      "biography": "Model, actress and pageant contestant whose background spans modelling, pageantry and acting. She was among the top 15 Agnipariksha contestants, standing out for her confidence and public-speaking ability.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Hyderabad",
+      "imageUrl": "/images/contestants/srishti-vyakaranam.jpg",
+      "name": "Shiva Srishti Vyakaranam",
+      "profession": "Model, actress & pageant contestant",
+      "reportedSalary": "Reported ~₹70,000/week, the commoner rate (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "srishti-vyakaranam",
+      "socialMedia": {
+        "instagram": "@srishtivyakaranam",
+        "twitter": "@srishtivyakaranam"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-jabardasth-naresh",
+      "age": 26,
+      "biography": "Popular comedy performer, also known as Potti Naresh, who built his identity through Jabardasth and went on to appear across Telugu television comedy programs and entertainment events.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Nellore",
+      "imageUrl": "/images/contestants/jabardasth-naresh.jpg",
+      "name": "Jabardasth Naresh",
+      "profession": "Comedian (Jabardasth)",
+      "reportedSalary": "Reported ₹2.5 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "jabardasth-naresh",
+      "socialMedia": {
+        "instagram": "@jabardasthnaresh",
+        "twitter": "@jabardasthnaresh"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-rj-charan",
+      "age": 22,
+      "biography": "Radio jockey, anchor and content creator, also known as RJ Charan Mahadev, who entered Bigg Boss Telugu 10 through Agnipariksha. His radio background gives him strong communication and audience-engagement skills.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Hyderabad",
+      "imageUrl": "/images/contestants/rj-charan.jpg",
+      "name": "RJ Charan",
+      "profession": "Radio jockey, anchor & content creator",
+      "reportedSalary": "Reported ~₹70,000/week, the commoner rate (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "rj-charan",
+      "socialMedia": {
+        "instagram": "@rjcharan",
+        "twitter": "@rjcharan"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-krishnudu",
+      "age": 46,
+      "biography": "Telugu actor born Alluri Krishna in Chintalapalli, East Godavari district, best known for playing the lead role in Vinayakudu. He completed a diploma in automobile engineering in Bengaluru, worked in photography and as an assistant director before becoming an established actor. His family's reported historical landholding of roughly 4,500 acres was affected by land-ceiling legislation during Indira Gandhi's era.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Chintalapalli, East Godavari district",
+      "imageUrl": "/images/contestants/krishnudu.jpg",
+      "name": "Krishnudu",
+      "realName": "Alluri Krishna",
+      "profession": "Actor",
+      "reportedSalary": "Reported ₹2 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "krishnudu",
+      "socialMedia": {
+        "instagram": "@krishnudu",
+        "twitter": "@krishnudu"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-varshini-sounderajan",
+      "age": 22,
+      "biography": "Actress, model and television anchor born to a Tamil family settled in Hyderabad, known for television shows including Dhee, Jabardasth and Pataas 2. She made her Telugu film debut with Chandamama Kathalu and has since appeared in Lovers and Shaakuntalam.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Hyderabad",
+      "imageUrl": "/images/contestants/varshini-sounderajan.jpg",
+      "name": "Varshini Sounderajan",
+      "profession": "Actress, model & anchor",
+      "reportedSalary": "Reported ₹3.5–₹3.75 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "varshini-sounderajan",
+      "socialMedia": {
+        "instagram": "@varshinisounderajan",
+        "twitter": "@varshinisounderajan"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-rohit-naidu",
+      "age": 22,
+      "biography": "Digital creator, model and influencer from Vijayawada, also known as Rohit Naidu Patnam, who earned his place through Agnipariksha. He drew attention for staying composed during difficult tasks and confrontations in the selection process.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Vijayawada",
+      "imageUrl": "/images/contestants/rohit-naidu.jpg",
+      "name": "Rohit Naidu",
+      "profession": "Digital creator, model & influencer",
+      "reportedSalary": "Reported ~₹70,000/week, the commoner rate (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "rohit-naidu",
+      "socialMedia": {
+        "instagram": "@rohitnaidu",
+        "twitter": "@rohitnaidu"
+      },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-mukesh-gowda",
+      "age": 31,
+      "biography": "Television and film actor born in Mysuru, Karnataka, who rose to fame playing Rishi (Rishendra Bhushan) in Guppedantha Manasu after starting his career in modelling and pageantry across Kannada and Telugu television.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-07",
+      "hometown": "Mysuru, Karnataka",
+      "imageUrl": "/images/contestants/mukesh-gowda.jpg",
+      "name": "Mukesh Gowda",
+      "profession": "Television & film actor",
+      "reportedSalary": "Reported ₹3 lakh/week (media estimate, not an official figure)",
+      "netWorth": "Not officially disclosed",
+      "slug": "mukesh-gowda",
+      "socialMedia": {
+        "instagram": "@mukeshgowda",
+        "twitter": "@mukeshgowda"
       },
       "status": "active"
     }
   ],
   "eliminatedContestants": [],
   "stats": {
-    "total": 15,
-    "active": 15,
+    "total": 16,
+    "active": 16,
     "eliminated": 0
   },
-  "generatedAt": "2025-09-09T18:41:36.020Z",
-  "buildVersion": "1.0.0"
+  "generatedAt": "2026-09-12T00:00:00.000Z",
+  "buildVersion": "1.0.1"
 }
