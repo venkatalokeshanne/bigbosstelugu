@@ -67,7 +67,7 @@ export const metadata = {
   category: 'Entertainment',
   classification: 'Reality TV Show Voting Platform',
   alternates: {
-    canonical: 'https://bigbossteluguvotes.in',
+    canonical: 'https://www.bigbossteluguvotes.in',
   },
   robots: {
     index: true,
@@ -86,7 +86,7 @@ export const metadata = {
     siteName: 'Bigg Boss Telugu 10 Voting Online | BB Telugu 10 Official Vote',
     title: 'Bigg Boss Telugu 10 Voting Online 2026 | Vote Your Favorite BB Telugu 10 Contestant Free',
     description: 'Vote for Bigg Boss Telugu 10 contestants online through Hotstar app, BB Telugu 10 missed call numbers, and official Bigg Boss Telugu 10 voting platforms. Get BB Telugu 10 live updates, elimination results, and voting guides.',
-    url: 'https://bigbossteluguvotes.in',
+    url: 'https://www.bigbossteluguvotes.in',
     images: [
       {
         url: '/images/bigboss.jpg',
@@ -151,7 +151,7 @@ export default function HomePage() {
     "@type": "WebApplication",
     "name": "Bigg Boss Telugu 10 Voting Platform",
     "description": "Official voting platform for Bigg Boss Telugu Season 10. Vote for your favorite contestants through multiple methods.",
-    "url": "https://bigbossteluguvotes.in",
+    "url": "https://www.bigbossteluguvotes.in",
     "applicationCategory": "Entertainment",
     "operatingSystem": ["Windows", "macOS", "Android", "iOS"],
     "offers": {
@@ -172,8 +172,8 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Bigg Boss Telugu 10 Voting",
-    "url": "https://bigbossteluguvotes.in",
-    "logo": "https://bigbossteluguvotes.in/images/bigboss.jpg",
+    "url": "https://www.bigbossteluguvotes.in",
+    "logo": "https://www.bigbossteluguvotes.in/images/bigboss.jpg",
     "description": "The ultimate platform for Bigg Boss Telugu 10 voting, updates, and contestant information.",
     "sameAs": [
       "https://www.facebook.com/BiggBossTeluguVoting",
@@ -190,19 +190,19 @@ export default function HomePage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://bigbossteluguvotes.in"
+        "item": "https://www.bigbossteluguvotes.in"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Bigg Boss Telugu 10",
-        "item": "https://bigbossteluguvotes.in"
+        "item": "https://www.bigbossteluguvotes.in"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Voting",
-        "item": "https://bigbossteluguvotes.in/#vote-section"
+        "item": "https://www.bigbossteluguvotes.in/#vote-section"
       }
     ]
   }

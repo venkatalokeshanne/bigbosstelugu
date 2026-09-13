@@ -5,12 +5,12 @@ export const metadata = {
   description: 'Complete guide to watch Bigg Boss Telugu 10 online from USA, UK, Europe and other countries. Stream BB Telugu 10 episodes live and on-demand using Hotstar, VPN, YuppTV. Watch Bigg Boss Telugu 10 internationally.',
   keywords: 'watch bigg boss telugu 10 online USA, BB Telugu 10 UK streaming, bigg boss telugu 10 Europe, BB Telugu 10 international streaming, VPN for bigg boss telugu 10, hotstar bigg boss telugu 10 abroad, YuppTV bigg boss telugu 10, watch BB Telugu 10 outside India, bigg boss telugu 10 global streaming',
   alternates: {
-    canonical: 'https://bigbossteluguvotes.in/watch-online-international',
+    canonical: 'https://www.bigbossteluguvotes.in/watch-online-international',
   },
   openGraph: {
     title: 'Watch Bigg Boss Telugu 10 Online Internationally | BB Telugu 10 USA, UK, Europe',
     description: 'Stream BB Telugu 10 episodes from anywhere in the world. Complete international Bigg Boss Telugu 10 viewing guide with VPN setup and streaming platforms.',
-    url: 'https://bigbossteluguvotes.in/watch-online-international',
+    url: 'https://www.bigbossteluguvotes.in/watch-online-international',
     images: [
       {
         url: '/images/bb-international-streaming.jpg',

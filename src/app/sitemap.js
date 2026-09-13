@@ -2,7 +2,7 @@ import { getOptimizedContestants } from '../lib/optimized-contestants'
 import newsData from '../data/news.json'
 
 export default async function sitemap() {
-  const baseUrl = 'https://bigbossteluguvotes.in'
+  const baseUrl = 'https://www.bigbossteluguvotes.in'
   
   // Get all contestants for dynamic routes
   let contestants = []
