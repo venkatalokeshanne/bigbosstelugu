@@ -180,6 +180,12 @@ const nextConfig = {
         destination: '/contestant-photos',
         permanent: true,
       },
+      // Leftover from removed hreflang tags, never a real page.
+      {
+        source: '/te',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   trailingSlash: false,
