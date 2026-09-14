@@ -1,13 +1,20 @@
 import { NextResponse } from 'next/server'
-import { getVotes, castVote } from '../../../lib/votes-store'
+import { getVotes, castVote, getRecentVoteCount } from '../../../lib/votes-store'
 
 export const dynamic = 'force-dynamic'
 
 const VOTE_COOKIE = 'bb10_last_vote_at'
 const VOTE_COOLDOWN_MS = 24 * 60 * 60 * 1000 // one vote per browser per day
 
-export async function GET() {
+export async function GET(request) {
   try {
+    const since = request.nextUrl.searchParams.get('since')
+
+    if (since === '24h') {
+      const recent = await getRecentVoteCount(24)
+      return NextResponse.json(recent)
+    }
+
     const data = await getVotes()
     const total = Object.values(data.votes).reduce((sum, n) => sum + n, 0)
     return NextResponse.json({ votes: data.votes, total, updatedAt: data.updatedAt })

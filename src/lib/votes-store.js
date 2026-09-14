@@ -46,10 +46,42 @@ export async function castVote(slug) {
     throw new Error('Unknown contestant slug')
   }
 
-  await getPool().query(
+  const pool = getPool()
+  await pool.query(
     `INSERT INTO votes (slug, count, updated_at) VALUES ($1, 1, now())
      ON CONFLICT (slug) DO UPDATE SET count = votes.count + 1, updated_at = now()`,
     [slug]
   )
+  // Per-vote timestamped log, kept separately from the running `votes.count`
+  // totals so recent activity (e.g. votes in the last 24h) can be queried.
+  await pool.query(
+    `CREATE TABLE IF NOT EXISTS vote_events (
+       id BIGSERIAL PRIMARY KEY,
+       slug TEXT NOT NULL,
+       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+     )`
+  )
+  await pool.query('INSERT INTO vote_events (slug) VALUES ($1)', [slug])
   return getVotes()
+}
+
+export async function getRecentVoteCount(hours = 24) {
+  const pool = getPool()
+  await pool.query(
+    `CREATE TABLE IF NOT EXISTS vote_events (
+       id BIGSERIAL PRIMARY KEY,
+       slug TEXT NOT NULL,
+       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+     )`
+  )
+  const { rows } = await pool.query(
+    `SELECT slug, COUNT(*)::int AS count FROM vote_events
+     WHERE created_at > now() - ($1 || ' hours')::interval
+     GROUP BY slug`,
+    [hours]
+  )
+  const bySlug = {}
+  let total = 0
+  rows.forEach(r => { bySlug[r.slug] = r.count; total += r.count })
+  return { bySlug, total, sinceHours: hours }
 }
