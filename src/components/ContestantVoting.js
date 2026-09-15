@@ -58,9 +58,10 @@ export default function ContestantVoting() {
     ? Math.max(0, VOTE_COOLDOWN_MS - (Date.now() - votedState.votedAt))
     : 0
   const hasActiveCooldown = cooldownRemaining > 0
-  // Results are always visible (a live poll), independent of whether this
-  // visitor has voted — only casting a new vote is gated by the cooldown.
-  const showResults = true
+  // Results stay hidden until this visitor votes, then update live (the
+  // polling interval above keeps refetching) rather than freezing at the
+  // moment they voted.
+  const showResults = hasActiveCooldown
 
   const handleVote = async (slug) => {
     if (hasActiveCooldown || submittingSlug) return
@@ -138,8 +139,8 @@ export default function ContestantVoting() {
       </div>
       <div className="mb-6 flex items-center justify-between text-sm text-gray-400">
         <span className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-          {hasActiveCooldown ? 'Live results' : 'Live results — tap a contestant to vote'}
+          {hasActiveCooldown && <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>}
+          {hasActiveCooldown ? 'Live results' : 'Tap a contestant to vote'}
         </span>
         <span>{total.toLocaleString()} total votes</span>
       </div>
