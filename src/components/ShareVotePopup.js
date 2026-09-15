@@ -55,11 +55,11 @@ export default function ShareVotePopup({ contestantName, onClose }) {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 pb-4 sm:pb-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm px-4"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-sm rounded-3xl bg-gradient-to-br from-gray-900 to-black border border-purple-400/30 shadow-2xl shadow-purple-500/20 p-6"
+        className="relative w-full max-w-sm max-h-[90vh] overflow-y-auto rounded-3xl bg-gradient-to-br from-gray-900 to-black border border-purple-400/30 shadow-2xl shadow-purple-500/20 p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <button

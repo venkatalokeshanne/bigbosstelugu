@@ -73,7 +73,7 @@ export default function VoteNotificationToast() {
   if (!toast) return null
 
   return (
-    <div className="fixed bottom-24 left-6 z-40 max-w-[calc(100vw-3rem)] animate-[fadeInUp_0.3s_ease-out]">
+    <div className="fixed bottom-24 right-6 z-40 max-w-[calc(100vw-3rem)] animate-[fadeInUp_0.3s_ease-out]">
       <div className="flex items-center gap-2.5 rounded-full bg-gray-900/95 border border-purple-400/30 shadow-2xl shadow-purple-500/20 px-4 py-2.5 backdrop-blur-sm">
         <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0"></span>
         <span className="text-sm text-white font-medium truncate">{toast}</span>
