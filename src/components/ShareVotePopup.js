@@ -1,10 +1,22 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { pushGTMEvent } from '../utils/analytics'
 
 export default function ShareVotePopup({ contestantName, onClose }) {
   const [copied, setCopied] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  // Portal straight to <body> — this component is nested inside
+  // ContestantVoting, and an ancestor's backdrop-blur/transform traps
+  // position:fixed children in a local stacking context, letting the
+  // root-level floating buttons (vote button, chat widget) render on top
+  // of this popup despite its higher z-index. Escaping via a portal fixes
+  // that regardless of what ancestors do.
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const shareUrl = typeof window !== 'undefined'
     ? `${window.location.origin}/voting`
@@ -39,9 +51,11 @@ export default function ShareVotePopup({ contestantName, onClose }) {
   const whatsappHref = `https://wa.me/?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`
   const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`
 
-  return (
+  if (!mounted) return null
+
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 pb-4 sm:pb-4"
+      className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm px-4 pb-4 sm:pb-4"
       onClick={onClose}
     >
       <div
@@ -105,6 +119,7 @@ export default function ShareVotePopup({ contestantName, onClose }) {
           💭 Tell us why in the comments
         </button>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
