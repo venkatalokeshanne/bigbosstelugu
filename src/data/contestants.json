@@ -99,7 +99,7 @@
       "_id": "contestant-chaitra-rai",
       "age": 38,
       "biography": "Television and film actress who built a long career across Kannada and Telugu entertainment, becoming familiar to Telugu viewers through television serials before entering the Bigg Boss house.",
-      "eliminationDate": null,
+      "eliminationDate": "2026-09-11",
       "entryDate": "2026-09-07",
       "hometown": "Mangalore",
       "imageUrl": "/images/contestants/chaitra-rai.jpg",
@@ -112,7 +112,7 @@
         "instagram": "@chaitrarai",
         "twitter": "@chaitrarai"
       },
-      "status": "active"
+      "status": "eliminated"
     },
     {
       "_id": "contestant-auto-ram-prasad",
@@ -213,7 +213,7 @@
       "_id": "contestant-rj-charan",
       "age": 22,
       "biography": "Radio jockey, anchor and content creator, also known as RJ Charan Mahadev, who entered Bigg Boss Telugu 10 through Agnipariksha. His radio background gives him strong communication and audience-engagement skills.",
-      "eliminationDate": null,
+      "eliminationDate": "2026-09-10",
       "entryDate": "2026-09-07",
       "hometown": "Hyderabad",
       "imageUrl": "/images/contestants/rj-charan.jpg",
@@ -226,7 +226,7 @@
         "instagram": "@rjcharan",
         "twitter": "@rjcharan"
       },
-      "status": "active"
+      "status": "eliminated"
     },
     {
       "_id": "contestant-krishnudu",

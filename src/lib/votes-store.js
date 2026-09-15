@@ -1,7 +1,12 @@
 import { Pool } from 'pg'
-import contestantsData from '../data/contestants.json'
+import nominationsData from '../data/nominations.json'
 
-const VALID_SLUGS = new Set(contestantsData.contestants.map(c => c.slug))
+// The nominee list changes every week (see src/data/nominations.json).
+// Voting is scoped to the current week's nominees only, and counts start
+// fresh each week — a contestant nominated again in a later week starts
+// back at 0.
+const CURRENT_WEEK = nominationsData.week
+const VALID_SLUGS = new Set(nominationsData.nominees)
 
 // Always backed by Supabase Postgres (via the Vercel integration) — no
 // fallback storage. POSTGRES_URL must be configured in every environment
@@ -26,6 +31,18 @@ function getPool() {
   return pool
 }
 
+async function ensureWeeklyVotesTable(pool) {
+  await pool.query(
+    `CREATE TABLE IF NOT EXISTS weekly_votes (
+       week INTEGER NOT NULL,
+       slug TEXT NOT NULL,
+       count INTEGER NOT NULL DEFAULT 0,
+       updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+       PRIMARY KEY (week, slug)
+     )`
+  )
+}
+
 function emptyVotes() {
   const votes = {}
   VALID_SLUGS.forEach(slug => { votes[slug] = 0 })
@@ -33,27 +50,36 @@ function emptyVotes() {
 }
 
 export async function getVotes() {
-  const { rows } = await getPool().query('SELECT slug, count FROM votes')
+  const pool = getPool()
+  await ensureWeeklyVotesTable(pool)
+  const { rows } = await pool.query('SELECT slug, count FROM weekly_votes WHERE week = $1', [CURRENT_WEEK])
   const votes = emptyVotes()
   rows.forEach(row => {
     if (VALID_SLUGS.has(row.slug)) votes[row.slug] = Number(row.count)
   })
-  return { votes, updatedAt: new Date().toISOString() }
+  return { votes, updatedAt: new Date().toISOString(), week: CURRENT_WEEK }
 }
 
 export async function castVote(slug) {
   if (!VALID_SLUGS.has(slug)) {
-    throw new Error('Unknown contestant slug')
+    throw new Error('This contestant is not nominated this week')
   }
 
   const pool = getPool()
+  await ensureWeeklyVotesTable(pool)
   await pool.query(
-    `INSERT INTO votes (slug, count, updated_at) VALUES ($1, 1, now())
-     ON CONFLICT (slug) DO UPDATE SET count = votes.count + 1, updated_at = now()`,
-    [slug]
+    `INSERT INTO weekly_votes (week, slug, count, updated_at) VALUES ($1, $2, 1, now())
+     ON CONFLICT (week, slug) DO UPDATE SET count = weekly_votes.count + 1, updated_at = now()`,
+    [CURRENT_WEEK, slug]
   )
-  // Per-vote timestamped log, kept separately from the running `votes.count`
-  // totals so recent activity (e.g. votes in the last 24h) can be queried.
+  // Per-vote timestamped log, kept separately from the running weekly counts
+  // so recent activity (e.g. votes in the last 24h) can be queried.
+  await ensureVoteEventsTable(pool)
+  await pool.query('INSERT INTO vote_events (week, slug) VALUES ($1, $2)', [CURRENT_WEEK, slug])
+  return getVotes()
+}
+
+async function ensureVoteEventsTable(pool) {
   await pool.query(
     `CREATE TABLE IF NOT EXISTS vote_events (
        id BIGSERIAL PRIMARY KEY,
@@ -61,19 +87,13 @@ export async function castVote(slug) {
        created_at TIMESTAMPTZ NOT NULL DEFAULT now()
      )`
   )
-  await pool.query('INSERT INTO vote_events (slug) VALUES ($1)', [slug])
-  return getVotes()
+  // The table may already exist from before weekly nominations were added.
+  await pool.query('ALTER TABLE vote_events ADD COLUMN IF NOT EXISTS week INTEGER NOT NULL DEFAULT 1')
 }
 
 export async function getRecentVoteCount(hours = 24) {
   const pool = getPool()
-  await pool.query(
-    `CREATE TABLE IF NOT EXISTS vote_events (
-       id BIGSERIAL PRIMARY KEY,
-       slug TEXT NOT NULL,
-       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
-     )`
-  )
+  await ensureVoteEventsTable(pool)
   const { rows } = await pool.query(
     `SELECT slug, COUNT(*)::int AS count FROM vote_events
      WHERE created_at > now() - ($1 || ' hours')::interval

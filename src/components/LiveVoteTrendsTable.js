@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import contestantsData from '../data/contestants.json'
+import nominationsData from '../data/nominations.json'
 
 export default function LiveVoteTrendsTable() {
   const [votes, setVotes] = useState({})
@@ -19,7 +20,8 @@ export default function LiveVoteTrendsTable() {
       .finally(() => setLoading(false))
   }, [])
 
-  const contestants = contestantsData.contestants.filter(c => c.status === 'active')
+  const nomineeSlugs = new Set(nominationsData.nominees)
+  const contestants = contestantsData.contestants.filter(c => nomineeSlugs.has(c.slug))
   const ranked = [...contestants]
     .map(c => ({ ...c, count: votes[c.slug] || 0 }))
     .sort((a, b) => b.count - a.count)

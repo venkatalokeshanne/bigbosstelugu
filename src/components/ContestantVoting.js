@@ -3,15 +3,16 @@
 import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import contestantsData from '../data/contestants.json'
+import nominationsData from '../data/nominations.json'
 
 const VOTE_COOLDOWN_MS = 24 * 60 * 60 * 1000
 const LOCAL_KEY = 'bb10_vote_state'
 
 export default function ContestantVoting() {
-  const contestants = useMemo(
-    () => contestantsData.contestants.filter(c => c.status === 'active'),
-    []
-  )
+  const contestants = useMemo(() => {
+    const nomineeSlugs = new Set(nominationsData.nominees)
+    return contestantsData.contestants.filter(c => nomineeSlugs.has(c.slug))
+  }, [])
 
   const [votes, setVotes] = useState({})
   const [total, setTotal] = useState(0)
@@ -124,6 +125,9 @@ export default function ContestantVoting() {
         </div>
       )}
 
+      <div className="mb-2 text-center text-xs font-semibold uppercase tracking-wide text-purple-300">
+        Week {nominationsData.week} Nominees
+      </div>
       <div className="mb-6 flex items-center justify-between text-sm text-gray-400">
         <span>{showResults ? 'Live results' : 'Tap a contestant to vote'}</span>
         <span>{total.toLocaleString()} total votes</span>
