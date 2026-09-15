@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { pushGTMEvent } from '../utils/analytics'
 
 function buildTree(flatComments) {
   const byId = new Map()
@@ -183,6 +184,7 @@ export default function CommentsSection() {
       }
 
       setComments(prev => [...prev, data.comment])
+      pushGTMEvent('comment_posted', { is_reply: parentId != null })
       return true
     } catch (err) {
       console.error('Error posting comment:', err)

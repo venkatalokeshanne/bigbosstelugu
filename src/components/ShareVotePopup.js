@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { pushGTMEvent } from '../utils/analytics'
 
 export default function ShareVotePopup({ contestantName, onClose }) {
   const [copied, setCopied] = useState(false)
@@ -17,6 +18,7 @@ export default function ShareVotePopup({ contestantName, onClose }) {
     try {
       await navigator.clipboard.writeText(shareUrl)
       setCopied(true)
+      pushGTMEvent('vote_share', { method: 'copy_link' })
       setTimeout(() => setCopied(false), 2000)
     } catch {
       // clipboard API unavailable — ignore, the link is still visible to copy manually
@@ -24,6 +26,7 @@ export default function ShareVotePopup({ contestantName, onClose }) {
   }
 
   const handleComment = () => {
+    pushGTMEvent('vote_popup_comment_click')
     onClose()
     const section = document.getElementById('comments-section')
     if (section) {
@@ -70,6 +73,7 @@ export default function ShareVotePopup({ contestantName, onClose }) {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => pushGTMEvent('vote_share', { method: 'whatsapp' })}
             className="flex items-center justify-center gap-2 rounded-xl bg-green-500/15 border border-green-500/30 text-green-300 font-semibold py-2.5 text-sm hover:bg-green-500/25 transition-colors"
           >
             💬 WhatsApp
@@ -78,6 +82,7 @@ export default function ShareVotePopup({ contestantName, onClose }) {
             href={twitterHref}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => pushGTMEvent('vote_share', { method: 'twitter' })}
             className="flex items-center justify-center gap-2 rounded-xl bg-sky-500/15 border border-sky-500/30 text-sky-300 font-semibold py-2.5 text-sm hover:bg-sky-500/25 transition-colors"
           >
             🐦 Twitter

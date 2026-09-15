@@ -5,6 +5,7 @@ import Image from 'next/image'
 import contestantsData from '../data/contestants.json'
 import nominationsData from '../data/nominations.json'
 import ShareVotePopup from './ShareVotePopup'
+import { pushGTMEvent } from '../utils/analytics'
 
 const VOTE_COOLDOWN_MS = 60 * 60 * 1000
 const LOCAL_KEY = 'bb10_vote_state'
@@ -92,6 +93,7 @@ export default function ContestantVoting() {
       const votedName = contestants.find(c => c.slug === slug)?.name
       setMessage({ type: 'success', text: `Your vote for ${votedName} has been counted!` })
       setSharePopupContestant(votedName)
+      pushGTMEvent('vote_cast', { contestant_slug: slug, contestant_name: votedName, week: nominationsData.week })
     } catch (error) {
       console.error('Error casting vote:', error)
       setMessage({ type: 'error', text: 'Something went wrong. Please try again.' })
