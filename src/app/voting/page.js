@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import VotingSection from '../../components/VotingSection'
 import CommentsSection from '../../components/CommentsSection'
+import LiveChatRoom from '../../components/LiveChatRoom'
 import VotingStatsCTA from '../../components/VotingStatsCTA'
 import { generateMetaTags, generateStructuredData, generateViewport } from '../../utils/seo'
 
@@ -50,6 +51,19 @@ export default function VotingPage() {
 
         <VotingSection />
         <CommentsSection />
+
+        <section className="py-16 bg-gradient-to-br from-black via-gray-900 to-black">
+          <div className="container-custom">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Live Fan Chat</h2>
+              <p className="text-gray-400 max-w-xl mx-auto">
+                Chat with other Bigg Boss Telugu 10 fans in real time.
+              </p>
+            </div>
+            <LiveChatRoom />
+          </div>
+        </section>
+
         <VotingStatsCTA />
 
         <div className="text-center pb-20">
