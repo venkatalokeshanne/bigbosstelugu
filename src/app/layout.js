@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import StickyVoteButton from '../components/StickyVoteButton'
 import FloatingCommentButton from '../components/FloatingCommentButton'
+import VoteNotificationToast from '../components/VoteNotificationToast'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import GoogleTagManager from '../components/GoogleTagManager'
 import { Analytics } from "@vercel/analytics/next"
@@ -386,6 +387,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <StickyVoteButton />
         <FloatingCommentButton />
+        <VoteNotificationToast />
       </body>
     </html>
   )
