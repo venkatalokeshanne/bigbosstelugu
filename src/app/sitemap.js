@@ -75,6 +75,12 @@ export default async function sitemap() {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/week2-updates`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/elimination-predictions`,
       lastModified: new Date(),
       changeFrequency: 'daily',

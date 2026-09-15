@@ -24,6 +24,7 @@ const sitemapGroups = [
     links: [
       { href: '/show-timings', title: 'Show Timings & Schedule', description: 'BB Telugu 10 telecast timings on Star Maa' },
       { href: '/week1-updates', title: 'Week 1 Updates', description: 'First week highlights, nominations, and eliminations' },
+      { href: '/week2-updates', title: 'Week 2 Updates', description: 'Second week highlights, captaincy task, and nominations' },
       { href: '/elimination-predictions', title: 'Elimination Predictions', description: 'Who might get eliminated this week' },
       { href: '/watch-online-international', title: 'Watch Online (International)', description: 'How to stream BB Telugu 10 from abroad' },
     ],
