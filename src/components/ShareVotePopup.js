@@ -60,6 +60,9 @@ export default function ShareVotePopup({ contestantName, onClose }) {
           <p className="text-sm text-gray-400">
             Every vote counts — share with friends so {contestantName || 'your favorite'} gets more support.
           </p>
+          <p className="text-xs text-purple-300 font-semibold mt-2">
+            ⏰ You can vote again in 1 hour — come back and vote once every hour!
+          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-3">
