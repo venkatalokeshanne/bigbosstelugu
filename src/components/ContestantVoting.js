@@ -5,8 +5,9 @@ import Image from 'next/image'
 import contestantsData from '../data/contestants.json'
 import nominationsData from '../data/nominations.json'
 
-const VOTE_COOLDOWN_MS = 24 * 60 * 60 * 1000
+const VOTE_COOLDOWN_MS = 60 * 60 * 1000
 const LOCAL_KEY = 'bb10_vote_state'
+const LIVE_REFRESH_MS = 15 * 1000
 
 export default function ContestantVoting() {
   const contestants = useMemo(() => {
@@ -31,6 +32,11 @@ export default function ContestantVoting() {
     }
 
     fetchVotes()
+
+    // Keep results live while the section is on screen, so counts move
+    // without the visitor needing to refresh or vote themselves.
+    const interval = setInterval(fetchVotes, LIVE_REFRESH_MS)
+    return () => clearInterval(interval)
   }, [])
 
   const fetchVotes = async () => {
@@ -52,7 +58,9 @@ export default function ContestantVoting() {
     ? Math.max(0, VOTE_COOLDOWN_MS - (Date.now() - votedState.votedAt))
     : 0
   const hasActiveCooldown = cooldownRemaining > 0
-  const showResults = hasActiveCooldown
+  // Results are always visible (a live poll), independent of whether this
+  // visitor has voted — only casting a new vote is gated by the cooldown.
+  const showResults = true
 
   const handleVote = async (slug) => {
     if (hasActiveCooldown || submittingSlug) return
@@ -69,7 +77,7 @@ export default function ContestantVoting() {
       const data = await res.json()
 
       if (!res.ok) {
-        setMessage({ type: 'error', text: data.message || 'You have already voted today. Come back tomorrow!' })
+        setMessage({ type: 'error', text: data.message || 'You have already voted this hour. Try again shortly!' })
         return
       }
 
@@ -129,7 +137,10 @@ export default function ContestantVoting() {
         Week {nominationsData.week} Nominees
       </div>
       <div className="mb-6 flex items-center justify-between text-sm text-gray-400">
-        <span>{showResults ? 'Live results' : 'Tap a contestant to vote'}</span>
+        <span className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+          {hasActiveCooldown ? 'Live results' : 'Live results — tap a contestant to vote'}
+        </span>
         <span>{total.toLocaleString()} total votes</span>
       </div>
 
@@ -151,7 +162,7 @@ export default function ContestantVoting() {
                   ? 'border-purple-400/60 ring-2 ring-purple-400/40'
                   : 'border-white/10 bg-white/5'
               } ${
-                showResults || submittingSlug
+                hasActiveCooldown || submittingSlug
                   ? 'cursor-not-allowed'
                   : 'cursor-pointer hover:bg-white/10 hover:border-purple-400/30'
               }`}
@@ -199,7 +210,7 @@ export default function ContestantVoting() {
         })}
       </div>
 
-      {showResults && (
+      {hasActiveCooldown && (
         <div className="text-center rounded-2xl p-4 bg-purple-500/10 border border-purple-500/20 text-purple-200">
           Thanks for voting! You can vote again in {formatHours(cooldownRemaining)}.
         </div>

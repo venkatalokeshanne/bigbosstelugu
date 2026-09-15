@@ -4,7 +4,7 @@ import { getVotes, castVote, getRecentVoteCount } from '../../../lib/votes-store
 export const dynamic = 'force-dynamic'
 
 const VOTE_COOKIE = 'bb10_last_vote_at'
-const VOTE_COOLDOWN_MS = 24 * 60 * 60 * 1000 // one vote per browser per day
+const VOTE_COOLDOWN_MS = 60 * 60 * 1000 // one vote per browser per hour
 
 export async function GET(request) {
   try {
@@ -37,9 +37,9 @@ export async function POST(request) {
     if (lastVoteAt) {
       const elapsed = Date.now() - Number(lastVoteAt)
       if (elapsed < VOTE_COOLDOWN_MS) {
-        const hoursLeft = Math.ceil((VOTE_COOLDOWN_MS - elapsed) / (60 * 60 * 1000))
+        const minutesLeft = Math.ceil((VOTE_COOLDOWN_MS - elapsed) / (60 * 1000))
         return NextResponse.json(
-          { error: 'already_voted', message: `You can vote again in about ${hoursLeft} hour(s).` },
+          { error: 'already_voted', message: `You can vote again in about ${minutesLeft} minute(s).` },
           { status: 429 }
         )
       }

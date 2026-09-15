@@ -10,14 +10,20 @@ export default function LiveVoteTrendsTable() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/votes')
-      .then(res => res.json())
-      .then(data => {
-        setVotes(data.votes || {})
-        setTotal(data.total || 0)
-      })
-      .catch(err => console.error('Error loading voting trends:', err))
-      .finally(() => setLoading(false))
+    const fetchVotes = () => {
+      fetch('/api/votes')
+        .then(res => res.json())
+        .then(data => {
+          setVotes(data.votes || {})
+          setTotal(data.total || 0)
+        })
+        .catch(err => console.error('Error loading voting trends:', err))
+        .finally(() => setLoading(false))
+    }
+
+    fetchVotes()
+    const interval = setInterval(fetchVotes, 15 * 1000)
+    return () => clearInterval(interval)
   }, [])
 
   const nomineeSlugs = new Set(nominationsData.nominees)
