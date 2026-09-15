@@ -1,68 +1,11 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import { getSupabaseBrowserClient } from '../lib/supabase-browser-client'
-import { pushGTMEvent } from '../utils/analytics'
-
-const NAME_KEY = 'bb10_chat_name'
+import { useEffect, useRef } from 'react'
+import { useLiveChat } from '../hooks/useLiveChat'
 
 export default function LiveChatRoom() {
-  const [messages, setMessages] = useState([])
-  const [name, setName] = useState('')
-  const [text, setText] = useState('')
-  const [loading, setLoading] = useState(true)
-  const [loadError, setLoadError] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [error, setError] = useState(null)
+  const { messages, name, setName, text, setText, loading, loadError, sending, error, sendMessage } = useLiveChat()
   const listRef = useRef(null)
-  const seenIds = useRef(new Set())
-
-  useEffect(() => {
-    try {
-      const savedName = localStorage.getItem(NAME_KEY)
-      if (savedName) setName(savedName)
-    } catch {
-      // ignore
-    }
-
-    fetch('/api/chat', { cache: 'no-store' })
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to load chat')
-        return res.json()
-      })
-      .then((data) => {
-        const initial = data.messages || []
-        initial.forEach((m) => seenIds.current.add(m.id))
-        setMessages(initial)
-      })
-      .catch((err) => {
-        console.error('Error loading chat:', err)
-        setLoadError(true)
-      })
-      .finally(() => setLoading(false))
-
-    const supabase = getSupabaseBrowserClient()
-    const channel = supabase
-      .channel('chat_messages_realtime')
-      .on(
-        'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'chat_messages' },
-        (payload) => {
-          const row = payload.new
-          if (seenIds.current.has(row.id)) return
-          seenIds.current.add(row.id)
-          setMessages((prev) => [
-            ...prev,
-            { id: row.id, name: row.name, message: row.message, createdAt: row.created_at },
-          ])
-        }
-      )
-      .subscribe()
-
-    return () => {
-      supabase.removeChannel(channel)
-    }
-  }, [])
 
   useEffect(() => {
     if (listRef.current) {
@@ -70,48 +13,9 @@ export default function LiveChatRoom() {
     }
   }, [messages])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    if (!text.trim() || sending) return
-
-    const cleanName = name.trim() || 'BB Fan'
-    setSending(true)
-    setError(null)
-
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: cleanName, message: text.trim() }),
-      })
-      const data = await res.json()
-
-      if (!res.ok) {
-        setError(data.message || data.error || 'Could not send your message.')
-        return
-      }
-
-      // Realtime will also deliver this row, but adding it immediately keeps
-      // the sender's own message feeling instant instead of waiting on the
-      // round trip through Postgres' replication stream.
-      if (data.message && !seenIds.current.has(data.message.id)) {
-        seenIds.current.add(data.message.id)
-        setMessages((prev) => [...prev, data.message])
-      }
-
-      setText('')
-      try {
-        localStorage.setItem(NAME_KEY, cleanName)
-      } catch {
-        // ignore
-      }
-      pushGTMEvent('chat_message_sent')
-    } catch (err) {
-      console.error('Error sending chat message:', err)
-      setError('Something went wrong. Please try again.')
-    } finally {
-      setSending(false)
-    }
+    sendMessage()
   }
 
   if (loading) {

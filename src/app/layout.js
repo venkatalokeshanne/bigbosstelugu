@@ -3,7 +3,7 @@ import { Inter, Poppins } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import StickyVoteButton from '../components/StickyVoteButton'
-import FloatingCommentButton from '../components/FloatingCommentButton'
+import FloatingChatWidget from '../components/FloatingChatWidget'
 import VoteNotificationToast from '../components/VoteNotificationToast'
 import GoogleAnalytics from '../components/GoogleAnalytics'
 import GoogleTagManager from '../components/GoogleTagManager'
@@ -386,7 +386,7 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <StickyVoteButton />
-        <FloatingCommentButton />
+        <FloatingChatWidget />
         <VoteNotificationToast />
       </body>
     </html>
