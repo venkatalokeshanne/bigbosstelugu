@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import contestantsData from '../data/contestants.json'
 import nominationsData from '../data/nominations.json'
+import ShareVotePopup from './ShareVotePopup'
 
 const VOTE_COOLDOWN_MS = 60 * 60 * 1000
 const LOCAL_KEY = 'bb10_vote_state'
@@ -22,6 +23,7 @@ export default function ContestantVoting() {
   const [message, setMessage] = useState(null)
   const [votedState, setVotedState] = useState(null) // { slug, votedAt }
   const [loadError, setLoadError] = useState(false)
+  const [sharePopupContestant, setSharePopupContestant] = useState(null)
 
   useEffect(() => {
     try {
@@ -87,7 +89,9 @@ export default function ContestantVoting() {
       const newState = { slug, votedAt: Date.now() }
       setVotedState(newState)
       localStorage.setItem(LOCAL_KEY, JSON.stringify(newState))
-      setMessage({ type: 'success', text: `Your vote for ${contestants.find(c => c.slug === slug)?.name} has been counted!` })
+      const votedName = contestants.find(c => c.slug === slug)?.name
+      setMessage({ type: 'success', text: `Your vote for ${votedName} has been counted!` })
+      setSharePopupContestant(votedName)
     } catch (error) {
       console.error('Error casting vote:', error)
       setMessage({ type: 'error', text: 'Something went wrong. Please try again.' })
@@ -215,6 +219,13 @@ export default function ContestantVoting() {
         <div className="text-center rounded-2xl p-4 bg-purple-500/10 border border-purple-500/20 text-purple-200">
           Thanks for voting! You can vote again in {formatHours(cooldownRemaining)}.
         </div>
+      )}
+
+      {sharePopupContestant && (
+        <ShareVotePopup
+          contestantName={sharePopupContestant}
+          onClose={() => setSharePopupContestant(null)}
+        />
       )}
     </div>
   )
