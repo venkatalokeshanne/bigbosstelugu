@@ -27,7 +27,7 @@ export default function VoteNotificationToast() {
   useEffect(() => {
     const poll = async () => {
       try {
-        const res = await fetch('/api/votes')
+        const res = await fetch('/api/votes', { cache: 'no-store' })
         if (!res.ok) return
         const data = await res.json()
         const votes = data.votes || {}

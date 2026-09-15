@@ -11,7 +11,7 @@ export default function LiveVoteTrendsTable() {
 
   useEffect(() => {
     const fetchVotes = () => {
-      fetch('/api/votes')
+      fetch('/api/votes', { cache: 'no-store' })
         .then(res => res.json())
         .then(data => {
           setVotes(data.votes || {})

@@ -41,7 +41,7 @@ export default function ContestantVoting() {
 
   const fetchVotes = async () => {
     try {
-      const res = await fetch('/api/votes')
+      const res = await fetch('/api/votes', { cache: 'no-store' })
       if (!res.ok) throw new Error('Failed to load votes')
       const data = await res.json()
       setVotes(data.votes || {})

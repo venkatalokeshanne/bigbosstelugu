@@ -2,9 +2,19 @@ import { NextResponse } from 'next/server'
 import { getVotes, castVote, getRecentVoteCount } from '../../../lib/votes-store'
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
+export const fetchCache = 'force-no-store'
 
 const VOTE_COOKIE = 'bb10_last_vote_at'
 const VOTE_COOLDOWN_MS = 60 * 60 * 1000 // one vote per browser per hour
+
+// Vote counts must never be served from a cache — a polling client relies on
+// every GET returning the live count, not a stale copy from the browser's
+// HTTP cache or an intermediary edge cache.
+const NO_CACHE_HEADERS = {
+  'Cache-Control': 'no-store, no-cache, must-revalidate, max-age=0',
+  'Pragma': 'no-cache',
+}
 
 export async function GET(request) {
   try {
@@ -12,15 +22,18 @@ export async function GET(request) {
 
     if (since === '24h') {
       const recent = await getRecentVoteCount(24)
-      return NextResponse.json(recent)
+      return NextResponse.json(recent, { headers: NO_CACHE_HEADERS })
     }
 
     const data = await getVotes()
     const total = Object.values(data.votes).reduce((sum, n) => sum + n, 0)
-    return NextResponse.json({ votes: data.votes, total, updatedAt: data.updatedAt })
+    return NextResponse.json({ votes: data.votes, total, updatedAt: data.updatedAt }, { headers: NO_CACHE_HEADERS })
   } catch (error) {
     console.error('Error fetching votes:', error)
-    return NextResponse.json({ error: 'votes_unavailable', message: 'Could not load votes right now.' }, { status: 500 })
+    return NextResponse.json(
+      { error: 'votes_unavailable', message: 'Could not load votes right now.' },
+      { status: 500, headers: NO_CACHE_HEADERS }
+    )
   }
 }
 
@@ -48,7 +61,10 @@ export async function POST(request) {
     const data = await castVote(slug)
     const total = Object.values(data.votes).reduce((sum, n) => sum + n, 0)
 
-    const response = NextResponse.json({ votes: data.votes, total, updatedAt: data.updatedAt })
+    const response = NextResponse.json(
+      { votes: data.votes, total, updatedAt: data.updatedAt },
+      { headers: NO_CACHE_HEADERS }
+    )
     response.cookies.set(VOTE_COOKIE, String(Date.now()), {
       maxAge: VOTE_COOLDOWN_MS / 1000,
       httpOnly: true,
