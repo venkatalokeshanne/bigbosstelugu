@@ -22,7 +22,7 @@ function mergeUniqueById(existing, incoming) {
 // sending) used by both the full-page chat room and the floating chat widget,
 // so there's a single source of truth for messages instead of two
 // independent connections drifting out of sync.
-export function useLiveChat() {
+export function useLiveChat({ onInsert } = {}) {
   const [messages, setMessages] = useState([])
   const [name, setName] = useState('')
   const [text, setText] = useState('')
@@ -31,6 +31,8 @@ export function useLiveChat() {
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(null)
   const seenIds = useRef(new Set())
+  const onInsertRef = useRef(onInsert)
+  onInsertRef.current = onInsert
 
   useEffect(() => {
     try {
@@ -75,6 +77,10 @@ export function useLiveChat() {
               { id: row.id, name: row.name, message: row.message, createdAt: row.created_at },
             ])
           )
+          // Fired directly from the realtime delivery — independent of
+          // whether the initial GET has resolved yet, so callers (e.g. an
+          // unread badge) never race against that fetch.
+          onInsertRef.current?.(row)
         }
       )
       .subscribe()

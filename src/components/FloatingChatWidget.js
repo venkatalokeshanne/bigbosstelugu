@@ -7,9 +7,20 @@ export default function FloatingChatWidget() {
   const [isVisible, setIsVisible] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [unread, setUnread] = useState(0)
-  const { messages, name, setName, text, setText, loading, loadError, sending, error, sendMessage } = useLiveChat()
+  const isOpenRef = useRef(isOpen)
+  isOpenRef.current = isOpen
+
+  const { messages, name, setName, text, setText, loading, loadError, sending, error, sendMessage } = useLiveChat({
+    // Fires only for genuinely new messages delivered via realtime — never
+    // for the initial backlog fetch — so the badge can't race against that
+    // fetch and swallow a message that arrives before it resolves.
+    onInsert: () => {
+      if (!isOpenRef.current) {
+        setUnread((u) => u + 1)
+      }
+    },
+  })
   const listRef = useRef(null)
-  const prevCount = useRef(0)
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -18,13 +29,6 @@ export default function FloatingChatWidget() {
     window.addEventListener('scroll', toggleVisibility)
     return () => window.removeEventListener('scroll', toggleVisibility)
   }, [])
-
-  useEffect(() => {
-    if (messages.length > prevCount.current && !isOpen) {
-      setUnread((u) => u + (messages.length - prevCount.current))
-    }
-    prevCount.current = messages.length
-  }, [messages, isOpen])
 
   useEffect(() => {
     if (isOpen) {
