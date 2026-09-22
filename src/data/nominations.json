@@ -1,21 +1,21 @@
 {
-  "week": 2,
+  "week": 3,
   "nominees": [
+    "mukesh-gowda",
+    "rohit-naidu",
     "shalini-patel",
     "thrigun-adith-arun",
-    "singer-jhansi",
-    "krishnudu",
-    "auto-ram-prasad",
+    "srishti-vyakaranam",
     "varshini-sounderajan",
     "sudheer-reddy",
-    "rohit-naidu",
-    "mukesh-gowda",
-    "debjani-modak"
+    "temper-vamsi"
   ],
   "safe": [
-    "srishti-vyakaranam",
-    "temper-vamsi",
+    "debjani-modak",
+    "singer-jhansi",
+    "aman-masood",
+    "auto-ram-prasad",
     "jabardasth-naresh",
-    "aman-masood"
+    "krishnudu"
   ]
 }
