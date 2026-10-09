@@ -117,12 +117,16 @@ export default function MissedCallVoting() {
                       <tr key={c.slug} className="hover:bg-white/5 transition-colors">
                         <td className="px-6 py-4 text-white">{c.name}</td>
                         <td className="px-6 py-4">
-                          <a
-                            href={`tel:${missedCallNumbers[c.slug]}`}
-                            className="text-gray-300 hover:text-yellow-300 transition-colors"
-                          >
-                            {missedCallNumbers[c.slug] || 'Not available'}
-                          </a>
+                          {missedCallNumbers[c.slug] ? (
+                            <a
+                              href={`tel:${missedCallNumbers[c.slug]}`}
+                              className="text-gray-300 hover:text-yellow-300 transition-colors"
+                            >
+                              {missedCallNumbers[c.slug]}
+                            </a>
+                          ) : (
+                            <span className="text-gray-500">Not available</span>
+                          )}
                         </td>
                       </tr>
                     ))}

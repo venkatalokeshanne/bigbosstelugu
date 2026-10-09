@@ -175,7 +175,7 @@
       "_id": "contestant-srishti-vyakaranam",
       "age": 28,
       "biography": "Model, actress and pageant contestant whose background spans modelling, pageantry and acting. She was among the top 15 Agnipariksha contestants, standing out for her confidence and public-speaking ability.",
-      "eliminationDate": null,
+      "eliminationDate": "2026-10-04",
       "entryDate": "2026-09-07",
       "hometown": "Hyderabad",
       "imageUrl": "/images/contestants/srishti-vyakaranam.jpg",
@@ -188,7 +188,7 @@
         "instagram": "@srishtivyakaranam",
         "twitter": "@srishtivyakaranam"
       },
-      "status": "active"
+      "status": "eliminated"
     },
     {
       "_id": "contestant-jabardasth-naresh",
@@ -213,7 +213,7 @@
       "_id": "contestant-rj-charan",
       "age": 22,
       "biography": "Radio jockey, anchor and content creator, also known as RJ Charan Mahadev, who entered Bigg Boss Telugu 10 through Agnipariksha. His radio background gives him strong communication and audience-engagement skills.",
-      "eliminationDate": "2026-09-10",
+      "eliminationDate": null,
       "entryDate": "2026-09-07",
       "hometown": "Hyderabad",
       "imageUrl": "/images/contestants/rj-charan.jpg",
@@ -226,13 +226,13 @@
         "instagram": "@rjcharan",
         "twitter": "@rjcharan"
       },
-      "status": "eliminated"
+      "status": "active"
     },
     {
       "_id": "contestant-krishnudu",
       "age": 46,
       "biography": "Telugu actor born Alluri Krishna in Chintalapalli, East Godavari district, best known for playing the lead role in Vinayakudu. He completed a diploma in automobile engineering in Bengaluru, worked in photography and as an assistant director before becoming an established actor. His family's reported historical landholding of roughly 4,500 acres was affected by land-ceiling legislation during Indira Gandhi's era.",
-      "eliminationDate": null,
+      "eliminationDate": "2026-09-20",
       "entryDate": "2026-09-07",
       "hometown": "Chintalapalli, East Godavari district",
       "imageUrl": "/images/contestants/krishnudu.jpg",
@@ -246,7 +246,7 @@
         "instagram": "@krishnudu",
         "twitter": "@krishnudu"
       },
-      "status": "active"
+      "status": "eliminated"
     },
     {
       "_id": "contestant-varshini-sounderajan",
@@ -303,6 +303,22 @@
         "instagram": "@mukeshgowda",
         "twitter": "@mukeshgowda"
       },
+      "status": "active"
+    },
+    {
+      "_id": "contestant-apoorva-tungaturthy",
+      "age": null,
+      "biography": "Model and television anchor who entered Bigg Boss Telugu 10 as a wild card contestant after the Agnipariksha pre-show. Full profile details will be added soon.",
+      "eliminationDate": null,
+      "entryDate": "2026-09-25",
+      "hometown": "Telugu states",
+      "imageUrl": "",
+      "name": "Apoorva Tungaturthy",
+      "profession": "Model & TV anchor",
+      "reportedSalary": "Not officially disclosed",
+      "netWorth": "Not officially disclosed",
+      "slug": "apoorva-tungaturthy",
+      "socialMedia": {},
       "status": "active"
     }
   ],
