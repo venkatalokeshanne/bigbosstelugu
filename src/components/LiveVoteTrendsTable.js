@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useVisiblePolling } from '../hooks/useVisiblePolling'
 import contestantsData from '../data/contestants.json'
 import nominationsData from '../data/nominations.json'
 
@@ -8,6 +9,7 @@ export default function LiveVoteTrendsTable() {
   const [votes, setVotes] = useState({})
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
+  const fetchRef = useRef(null)
 
   useEffect(() => {
     const fetchVotes = () => {
@@ -22,9 +24,10 @@ export default function LiveVoteTrendsTable() {
     }
 
     fetchVotes()
-    const interval = setInterval(fetchVotes, 15 * 1000)
-    return () => clearInterval(interval)
+    fetchRef.current = fetchVotes
   }, [])
+
+  useVisiblePolling(() => fetchRef.current && fetchRef.current(), 45 * 1000)
 
   const nomineeSlugs = new Set(nominationsData.nominees)
   const contestants = contestantsData.contestants.filter(c => nomineeSlugs.has(c.slug))

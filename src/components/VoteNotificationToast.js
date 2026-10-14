@@ -1,10 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useVisiblePolling } from '../hooks/useVisiblePolling'
 import contestantsData from '../data/contestants.json'
 import nominationsData from '../data/nominations.json'
 
-const POLL_MS = 8 * 1000
+const POLL_MS = 45 * 1000
 const VISIBLE_MS = 4 * 1000
 
 const MESSAGE_TEMPLATES = [
@@ -23,6 +24,7 @@ export default function VoteNotificationToast() {
   const previousVotes = useRef(null)
   const queue = useRef([])
   const dismissTimer = useRef(null)
+  const pollRef = useRef(null)
 
   useEffect(() => {
     const poll = async () => {
@@ -62,13 +64,14 @@ export default function VoteNotificationToast() {
       }, VISIBLE_MS)
     }
 
+    pollRef.current = poll
     poll()
-    const interval = setInterval(poll, POLL_MS)
     return () => {
-      clearInterval(interval)
       if (dismissTimer.current) clearTimeout(dismissTimer.current)
     }
   }, [])
+
+  useVisiblePolling(() => pollRef.current && pollRef.current(), POLL_MS)
 
   if (!toast) return null
 

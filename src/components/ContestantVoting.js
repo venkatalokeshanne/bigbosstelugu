@@ -5,11 +5,12 @@ import Image from 'next/image'
 import contestantsData from '../data/contestants.json'
 import nominationsData from '../data/nominations.json'
 import ShareVotePopup from './ShareVotePopup'
+import { useVisiblePolling } from '../hooks/useVisiblePolling'
 import { pushGTMEvent } from '../utils/analytics'
 
 const VOTE_COOLDOWN_MS = 60 * 60 * 1000
 const LOCAL_KEY = 'bb10_vote_state'
-const LIVE_REFRESH_MS = 15 * 1000
+const LIVE_REFRESH_MS = 45 * 1000
 
 export default function ContestantVoting() {
   const contestants = useMemo(() => {
@@ -36,11 +37,10 @@ export default function ContestantVoting() {
 
     fetchVotes()
 
-    // Keep results live while the section is on screen, so counts move
-    // without the visitor needing to refresh or vote themselves.
-    const interval = setInterval(fetchVotes, LIVE_REFRESH_MS)
-    return () => clearInterval(interval)
   }, [])
+
+  // Keeps results moving while the tab is visible; paused in background tabs.
+  useVisiblePolling(() => fetchVotes(), LIVE_REFRESH_MS)
 
   const fetchVotes = async () => {
     try {
